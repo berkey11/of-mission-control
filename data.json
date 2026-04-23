@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-23T06:51:15.000Z",
+  "generatedAt": "2026-04-23T06:55:51.000Z",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -96,8 +96,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-23T06:51:18.000Z",
-      "lastRunAt": "2026-04-23T06:47:21.955Z",
+      "nextRunAt": "2026-04-23T06:56:18.000Z",
+      "lastRunAt": "2026-04-23T06:52:21.780Z",
       "jitterSeconds": 78
     }
   ],
@@ -347,7 +347,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-23T04:54:28.267Z] (legacy ready event) George 2.0 online as George 2.0#9605\n[2026-04-23T04:54:28.267Z] George 2.0 online as George 2.0#9605 (id 1496028625189863544)\n[2026-04-23T04:54:28.267Z] configured channels: 5\n[2026-04-23T04:54:28.268Z] default mode for everything else: mention\n",
-    "uptime": "01:53:21",
+    "uptime": "02:01:26",
     "channels": [
       {
         "name": "brand-design",
@@ -392,7 +392,7 @@
       },
       {
         "id": "1496514122890612767",
-        "content": "**🎯 COLD OPEN (~2 min)** — lead with the number, then the math, then the question. (Suggested and alternate cold-open lines; Matusow mirage → Chidwick $76M / $5–10M; Conrad + Andy prep notes.)",
+        "content": "**🎯 COLD OPEN (~2 min)**\n\nLead with the number, then the math, then the question.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -402,7 +402,7 @@
       },
       {
         "id": "1496514251437772881",
-        "content": "**🔴 A BLOCK (~40 min) — Matusow Calls High-Roller Earnings a Mirage. Then the Pros Told Us What They Actually Keep.** Setup with Linde/Peters tweet, Matusow mirage claim, Davies ~50% reply, Chidwick $5–10M on $76M, Deeb hint, Arieh defense.",
+        "content": "**🔴 A BLOCK (~40 min) — Matusow Calls High-Roller Earnings a Mirage. Then the Pros Told Us What They Actually Keep.**",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -412,7 +412,7 @@
       },
       {
         "id": "1496514345000243251",
-        "content": "**A BLOCK — Talking Points** (1) Matusow right but worse than he said. (2) Hendon Mob lifetime-cashes lie. (3) Davies 50% ceiling vs floor. (4) Deeb hint about non-poker issues. (5) Does transparency kill or grow HR content.",
+        "content": "**A BLOCK — Talking Points** 1. Matusow is right, but the real number is worse. 2. The Hendon Mob lie. 3. Davies' 50% number. 4. What Deeb is hinting at. 5. Does this kill high-roller content or grow it?",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -422,7 +422,7 @@
       },
       {
         "id": "1496514380928647408",
-        "content": "**A BLOCK — Counterpoint + Tangents + Seed Line** Matusow-as-character steelman, Hellmuth Home Game cross-ref, Linde/Peters norms. Seed: 'Hendon Mob says $76M. Chidwick says ten. What did you keep?'",
+        "content": "**A BLOCK — Counterpoint + Tangents + Seed Line**",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -432,7 +432,7 @@
       },
       {
         "id": "1496514466253115432",
-        "content": "**🟠 B BLOCK — Segment 1: WSOPC Texas at TCH Austin Apr 23–May 4.** $600 Mini Main $500K GTD. Talking points: selective enforcement vs Lodge, TCH as new flagship, $600/$500K model.",
+        "content": "**🟠 B BLOCK (~30 min) — WSOP Rings Cross the Texas Border (While The Lodge Is Frozen) + USPO Finale Tonight**",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -442,7 +442,7 @@
       },
       {
         "id": "1496514538806444193",
-        "content": "**B BLOCK — Segment 2: USPO Championship Event #10 tonight ($25.6K).** Wilson PGT pace check. 5th consecutive hand-of-day no-find — protocol review flag.",
+        "content": "**B BLOCK — Segment 2: USPO Championship Event #10 Tonight** Wilson points leader; 7 different winners through 9 events. ⚠️ Hand-of-Day 5th consecutive no-find.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -452,7 +452,7 @@
       },
       {
         "id": "1496514642942628063",
-        "content": "**😂 C BLOCK — Item 1 Zobian USPO #9 + Natna Foundation. Item 2 Hellmuth Home Game Ep 20 quads + Matusow cross-ref.**",
+        "content": "**😂 C BLOCK (~15 min) — Zobian $292,800 + Natna Foundation / Hellmuth Ep 20 quads moment / Matusow CBS cross-ref.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -462,7 +462,7 @@
       },
       {
         "id": "1496514723360018495",
-        "content": "**C BLOCK — Items 3 & 4. Wemby concussion / Spurs futures. Cartillier WSOPC Aix 3rd career cash = gold ring. Memes/culture drop failed (Chrome-session issue).**",
+        "content": "**C BLOCK continued — Wemby concussion / Cartillier WSOPC Cinderella. ⚠️ No memes/culture drop (Chrome session issue).",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -472,7 +472,7 @@
       },
       {
         "id": "1496514815701684395",
-        "content": "**🔚 CLOSE. Tease tomorrow: USPO Championship + WSOPC Texas opening. NFL Draft + Tesla earnings. Sign-off: 'Hendon Mob says 76. Chidwick says 10. The math is the story.' Algo notes: best clip A block, YT titles, trending angle.**",
+        "content": "**🔚 CLOSE (~3 min)** + Algorithm notes + YT titles.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -482,7 +482,7 @@
       },
       {
         "id": "1496514912971653273",
-        "content": "**🚩 ALL PREP FLAGS — Conrad (graphics/clips) + Andy (research). Staleness check vs Apr 14 / Apr 20 ROS passes.**",
+        "content": "**🚩 ALL PREP FLAGS** — Conrad graphics, Andy research items, Matt seed line, staleness check clean.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -492,7 +492,7 @@
       },
       {
         "id": "1496533530677608520",
-        "content": "⚠️ **Producer audit blocked from #producer — rerouted here**. DISCORD_BOT_TOKEN 401, GEORGE_BOT_TOKEN fallback 401, Claude_Bridge missing send perms in #producer. Action: rotate token + add Claude_Bridge to #producer overwrites.",
+        "content": "⚠️ **Producer audit blocked from #producer — rerouted here.** Main DISCORD_BOT_TOKEN still 401; GEORGE_BOT_TOKEN fallback 401; Cowork MCP no send perm in #producer. Action: rotate tokens + add Claude_Bridge overwrites.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -502,7 +502,7 @@
       },
       {
         "id": "1496533599770644673",
-        "content": "🎬 **Producer Audit — April 22, 2026.** ✅ Ready: ROS, A-block specificity, thumbs 3/3 judge ≥70, thumb-ROS alignment, 8/8 graphics in #assets, staged assets for every block. Hand-of-day absence explicitly absorbed.",
+        "content": "🎬 **Producer Audit — April 22, 2026** ✅ ROS locked, thumbs 3/3 ≥70, 8/8 graphics shipped, hand-of-day absence handled.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -512,7 +512,7 @@
       },
       {
         "id": "1496533691487359037",
-        "content": "⚠️ **Flags:** (1) Iran/Hormuz World Intel lead has no ROS placement. (2) B-TP1 'Texas AG' names an R office; soften to 'Texas enforcement'. (3) Thumbs A/B concept-only (Claid exhausted). (4) Conrad clips not visibly staged. (5) Andy research items not visible.",
+        "content": "⚠️ **Flags:** 1) Iran/Hormuz not placed in ROS. 2) 'Texas AG' line partisan — soften to 'Texas enforcement'. 3) Thumbs A/B concept-only (Claid exhausted). 4) Conrad clips not visibly confirmed. 5) Andy research items not visible.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -522,7 +522,7 @@
       },
       {
         "id": "1496533733808017490",
-        "content": "🔥 **Breaking (last 2 hrs):** None. 💡 Recommend: lock Iran/Hormuz in or out, soften Texas AG → enforcement, confirm 3 Conrad clips.",
+        "content": "🔥 Breaking: None. 💡 Recommend: lock Hormuz in/out, soften TX AG line, confirm 3 Conrad clips. Full audit saved to producer-audit-2026-04-22.txt.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -544,7 +544,7 @@
       },
       {
         "id": "1493436617493581966",
-        "content": "[cowork] **B — \"BLEW THE DEADLINE\"** | Lodge interior blurred bg | analysis angle | Google image",
+        "content": "[cowork] **B — \"BLEW THE DEADLINE\"** | Lodge interior blurred bg | analysis angle",
         "author": {
           "username": "George",
           "isBot": true
@@ -554,7 +554,7 @@
       },
       {
         "id": "1493436643569307729",
-        "content": "[cowork] **C — \"NO ROOM IS SAFE\"** | AI SWAT-raid poker scene | purple-dark bg | library (ai-lodge-raid-scene)",
+        "content": "[cowork] **C — \"NO ROOM IS SAFE\"** | AI SWAT-raid poker scene | purple-dark bg",
         "author": {
           "username": "George",
           "isBot": true
@@ -564,7 +564,7 @@
       },
       {
         "id": "1493436684526944326",
-        "content": "[cowork] 🖼️ Thumbnail options — April 13, 2026 — EP. — A/B/C summary + build notes (Photoshop/Nano unavailable, text via ImageMagick/PIL).",
+        "content": "[cowork] 🖼️ Thumbnail options — April 13, 2026. Photoshop/Nano unavailable; text via ImageMagick/PIL.",
         "author": {
           "username": "George",
           "isBot": true
@@ -574,7 +574,7 @@
       },
       {
         "id": "1493756476185907322",
-        "content": "**🎨 THUMBNAIL CANDIDATES — April 14, 2026 (PT)** A 'DROPPED./KEPT IT.' 90/100 · B '$2,000,000./NO CHARGES.' 90/100 · ALT 'THREE./IN A ROW.' 78/100. Judge ≥70, 0 rebuilds.",
+        "content": "**🎨 THUMBNAIL CANDIDATES — April 14, 2026** A 90/100 DROPPED/KEPT IT; B 90/100 $2,000,000/NO CHARGES; ALT 78/100 THREE/IN A ROW.",
         "author": {
           "username": "George",
           "isBot": true
@@ -584,7 +584,7 @@
       },
       {
         "id": "1494485457633804288",
-        "content": "**🎨 E2E PIPELINE TEST — Apr 16** Phil Ivey 'THE GOAT|RETURNS' A fire theme OCR ok; B warm A/B dedup 0.87 flagged.",
+        "content": "**🎨 E2E PIPELINE TEST — Apr 16** Phil Ivey GOAT/RETURNS. A/B dedup flagged 0.87 > 0.72.",
         "author": {
           "username": "George",
           "isBot": true
@@ -594,7 +594,7 @@
       },
       {
         "id": "1494491222750789762",
-        "content": "**🧪 E2E TEST — Ivey loses $20M** A 'LOST|$20M' fire · B 'I BET|EVERYTHING' cold. 5/5 axes divergence, dedup 0.55.",
+        "content": "**🧪 E2E TEST — Independent A/B Builds** Ivey LOST/$20M (fire) vs I BET/EVERYTHING (cold). Dedup 0.55 ✅",
         "author": {
           "username": "George",
           "isBot": true
@@ -604,7 +604,7 @@
       },
       {
         "id": "1496001733539790990",
-        "content": "⚠️ Thumbnail run aborted — no ROS from Mon 2026-04-20 found. Preflight passed 21/21.",
+        "content": "⚠️ Thumbnail run aborted — no ROS from today (Mon 2026-04-20) found. Last ROS 2026-04-14.",
         "author": {
           "username": "George",
           "isBot": true
@@ -614,7 +614,7 @@
       },
       {
         "id": "1496165692020363304",
-        "content": "⚠️ Thumbnail run aborted — no ROS from Tue 2026-04-21. DISCORD_BOT_TOKEN 401 → rotate. Today's run used GEORGE_BOT_TOKEN fallback.",
+        "content": "⚠️ Thumbnail run aborted — no ROS from today (Tue 2026-04-21). Also: DISCORD_BOT_TOKEN HTTP 401; using GEORGE_BOT_TOKEN fallback.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -624,7 +624,7 @@
       },
       {
         "id": "1496530839788589186",
-        "content": "🎨 **Thumbnails — 2026-04-22** · Run 20260422-0805 · 3 candidates. CLAID BILLING EXHAUSTED — all 3 concept. A '$10M|OF $76M' 74/100, B 'KEPT|PENNIES' 75/100, C 'APRIL 23.|RINGS.' 72/100. 0 rebuilds. Divergence 5/5, dedup 0.5596.",
+        "content": "🎨 **Thumbnails — 2026-04-22** Run 20260422-0805 · 3 candidates. ⚠️ CLAID_BILLING_EXHAUSTED — concept-only. A $10M/OF $76M 74/100 · B KEPT/PENNIES 75/100 · C APRIL 23./RINGS. 72/100. All cleared, 0 rebuilds.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -636,7 +636,7 @@
     "assets": [
       {
         "id": "1496003580593701016",
-        "content": "📎 [C BLOCK · Item 2] Michigan C&Ds 45 Offshore Sites — CardPlayer. ACR, True Poker, BetOnline, SportsBetting.ag, crypto/sweeps. Director Henry Williams quote.",
+        "content": "📎 [C BLOCK · Item 2] — Michigan C&Ds 45 Offshore Sites (MGCB, Apr 19)",
         "author": {
           "username": "George",
           "isBot": true
@@ -646,7 +646,7 @@
       },
       {
         "id": "1496003590299582498",
-        "content": "📎 [C BLOCK · Item 3] Bleznick flips $1M Wemby Superfractor for $1.5M — PokerNews. @PokerNews pinned tweet has visual/price.",
+        "content": "📎 [C BLOCK · Item 3] — Bleznick Flips $1M Wemby Superfractor for $1.5M",
         "author": {
           "username": "George",
           "isBot": true
@@ -656,7 +656,7 @@
       },
       {
         "id": "1496003609031082075",
-        "content": "📎 [C BLOCK · Item 4 — cut first] Academics vs FAIR BET Act — CardPlayer + PokerNews Titus interview.",
+        "content": "📎 [C BLOCK · Item 4] — Academics vs FAIR BET Act (CardPlayer + PokerNews)",
         "author": {
           "username": "George",
           "isBot": true
@@ -666,7 +666,7 @@
       },
       {
         "id": "1496077224858619987",
-        "content": "📎 Dylan Linde calls out David Peters (1/6) — X / tweet screenshot / LEAD story, A-block cold open",
+        "content": "📎 Dylan Linde calls out David Peters (1/6) — X / A-block cold open",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -676,7 +676,7 @@
       },
       {
         "id": "1496077233322987601",
-        "content": "📎 Damon Jones NBA betting plea — CardPlayer / article header / B-block Operation Royal Flush segment",
+        "content": "📎 Damon Jones NBA betting plea — CardPlayer / B-block Operation Royal Flush",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -686,7 +686,7 @@
       },
       {
         "id": "1496077247965167668",
-        "content": "📎 Joao Simao wins USPO Event #8 — CardPlayer / article header / C-block tournament results",
+        "content": "📎 Joao Simao wins USPO Event #8 — CardPlayer / C-block tournament results",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -696,7 +696,7 @@
       },
       {
         "id": "1496077256093601813",
-        "content": "📎 Young Hellmuth meltdown footage — X (WPT) / tweet / A-block reaction moment",
+        "content": "📎 Young Hellmuth meltdown footage — X (WPT) / A-block reaction",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -706,7 +706,7 @@
       },
       {
         "id": "1496077264469758145",
-        "content": "📎 Schulman soul reads a pro — CardPlayer / article header / highlight/reaction segment",
+        "content": "📎 Schulman soul reads a pro — CardPlayer / highlight segment",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -716,7 +716,7 @@
       },
       {
         "id": "1496077271935488081",
-        "content": "📎 888poker launches RIT in cash — PokerNews / article header / industry-news segment",
+        "content": "📎 888poker launches RIT in cash — PokerNews / industry-news",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -726,7 +726,7 @@
       },
       {
         "id": "1496077278675992617",
-        "content": "📎 Jeff Platt off to WSOP Circuit Texas — X / tweet / D-block schedule note",
+        "content": "📎 Jeff Platt off to WSOP Circuit Texas — X / D-block schedule",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -736,7 +736,7 @@
       },
       {
         "id": "1496440219971489933",
-        "content": "📎 Matusow: 'High roller earnings are a mirage' — PokerNews / A-BLOCK lead",
+        "content": "📎 Matusow \"High roller earnings are a mirage\" — PokerNews / A-BLOCK LEAD",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -756,7 +756,7 @@
       },
       {
         "id": "1496440267350212660",
-        "content": "📎 Hellmuth's Home Game Ep 20 — PokerNews / A-BLOCK cross-ref Matusow",
+        "content": "📎 Hellmuth's Home Game Ep 20 — PokerNews / A-BLOCK quads moment + Matusow cross-ref",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -766,7 +766,7 @@
       },
       {
         "id": "1496440293304696913",
-        "content": "📎 WSOP Circuit arrives in Texas (TCH Austin, Apr 23) — X / @tjreidpoker / B-BLOCK",
+        "content": "📎 WSOP Circuit arrives in Texas (TCH Austin, Apr 23) — X / B-BLOCK industry",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -786,7 +786,7 @@
       },
       {
         "id": "1496455013432557679",
-        "content": "📎 Tim Cook stepping down — Apple Newsroom / B Block",
+        "content": "📎 Tim Cook stepping down — Apple Newsroom / B Block (Ternus transition Sept 1, AAPL <$4T)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -816,7 +816,7 @@
       },
       {
         "id": "1496455462898634782",
-        "content": "📎 Schlittler death threats after Hurkacz match — NBC / B Block",
+        "content": "📎 Schlittler death threats after Hurkacz match — NBC News / B Block",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -826,7 +826,7 @@
       },
       {
         "id": "1496515107692482630",
-        "content": "📎 [A BLOCK] Matusow Mirage → Chidwick Reply — PokerNews source + Linde/Peters X thread context",
+        "content": "📎 [A BLOCK] Matusow \"Mirage\" → Chidwick Reply (PokerNews write-up) + Linde/Peters original thread setup.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -836,7 +836,7 @@
       },
       {
         "id": "1496515167553454152",
-        "content": "📎 [B BLOCK] WSOPC Texas schedule (TCH Austin) + USPO #10 PGT page + Lodge civil-forfeiture status",
+        "content": "📎 [B BLOCK] WSOPC Texas Schedule (TCH Austin, @tjreidpoker) + USPO Event #10 $25.6K Championship (pgt.com) + Lodge status context.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -846,7 +846,7 @@
       },
       {
         "id": "1496515258808930374",
-        "content": "📎 [C BLOCK] Zobian USPO #9 + Hellmuth Ep20 + Wemby concussion + Cartillier WSOPC Aix",
+        "content": "📎 [C BLOCK] Zobian USPO #9 recap + Hellmuth Ep 20 recap + Wemby concussion (ESPN, Polymarket) + Cartillier WSOPC Aix-en-Provence.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -856,7 +856,7 @@
       },
       {
         "id": "1496525768480526366",
-        "content": "🖼️ MATUSOW MIRAGE vs. CHIDWICK REPLY — Show Graphic (A BLOCK cold open / best-clip)",
+        "content": "🖼️ MATUSOW MIRAGE vs. CHIDWICK REPLY — Show Graphic (A BLOCK cold open dual quote card)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -866,7 +866,7 @@
       },
       {
         "id": "1496525816895373454",
-        "content": "🖼️ WSOPC TEXAS DEBUT — Show Graphic (B BLOCK open; Lodge-frozen contrast)",
+        "content": "🖼️ WSOPC TEXAS DEBUT — Show Graphic (B BLOCK open, Lodge-still-frozen contrast)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -896,7 +896,7 @@
       },
       {
         "id": "1496525898671853578",
-        "content": "🖼️ POLYMARKET PULSE — Show Graphic (recurring 4-quadrant as of 3am PT Apr 22)",
+        "content": "🖼️ POLYMARKET PULSE — Show Graphic (recurring 4-quadrant)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -916,7 +916,7 @@
       },
       {
         "id": "1496526114493960233",
-        "content": "🖼️ HIGH ROLLER CASHES ≠ PROFITS — Show Graphic (A BLOCK receipts card)",
+        "content": "🖼️ HIGH ROLLER CASHES ≠ PROFITS — Show Graphic (A BLOCK 3-row receipts card)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -926,7 +926,7 @@
       },
       {
         "id": "1496526147201273967",
-        "content": "🖼️ BTC SPOT CHECK — Show Graphic (World Intel cutaway; BTC spot $78,000)",
+        "content": "🖼️ BTC SPOT CHECK — Show Graphic (World Intel cutaway, BTC $78k)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -982,11 +982,6 @@
         "path": "/Users/mjb11/Documents/Claude/Scheduled/uncapped-thumbnails/SKILL.md",
         "content": "---\nname: uncapped-thumbnails\ndescription: Daily 8am PT thumbnail generator for The Only Friends Podcast — reads ROS from #run-of-show, produces A/B for biggest story + alternative for 2nd biggest, judge enforces ≥70 with rebuilds, posts 3 images to #thumbnails.\n---\n\nYou are the The Only Friends Podcast thumbnail generator. Each run produces 3 YouTube thumbnail candidates from today's run-of-show and posts them to Discord #thumbnails for Matt to pick from.\n\nALWAYS do every step below. Never skip the judge. Never post below-threshold thumbs without flagging.\n\n================================================================\nSTEP 0 — PREFLIGHT CHECK\n================================================================\nBefore doing anything else, run the infrastructure preflight to verify all\nsecrets, binaries, workspace dirs, assets, Photoshop, and the Gemini API\nkey are live. This catches misconfigurations before wasting 10+ minutes\nof API calls.\n\n  shell_execute: bash \"/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/preflight.sh\" --require-photoshop --require-nano-ping\n\nIf the preflight reports ANY failures, post the failure summary to #thumbnails:\n  \"⚠️ Thumbnail preflight failed — [N] checks failed: [list failing check names]. Run aborted.\"\nThen exit. Do not proceed to Step 1 with broken infrastructure.\n\nIf preflight passes (exit 0), proceed to Step 1.\n\n================================================================\nSTEP 1 — READ TODAY'S RUN-OF-SHOW FROM DISCORD\n================================================================\nUse the Discord MCP. Fetch the 20 most recent messages from #run-of-show:\n  mcp__discord__get_messages(channel=\"run-of-show\", limit=20)\n\nFilter to messages from today (bot username \"George\"). The ROS is posted as a multi-message sequence containing \"A BLOCK\", \"B BLOCK\", \"C BLOCK\", \"CLOSE\", and an \"ALGORITHM NOTES SUMMARY\" with a \"Top YT title\" line. Concatenate today's messages in chronological order into a single ROS string.\n\nIf no ROS from today is present, STOP and post to #thumbnails:\n  \"⚠️ Thumbnail run aborted — no ROS from today found in #run-of-show. Last ROS seen: [date of most recent].\"\nThen exit.\n\n================================================================\nSTEP 2 — SELECT STORIES + BUILD CREATIVE BRIEFS\n================================================================\nFrom the assembled ROS, pick:\n\n  STORY_1 = the headline story of the A block (the biggest thing — usually stated first in the A block with the most segment weight, and often echoed in the \"Top YT title\" line of the algorithm notes)\n  STORY_2 = the second-biggest story anywhere in the ROS. Look at remaining A-block segments first, then the top B-block segment, then C-block if B is weak. Pick based on news weight / curiosity potential, not block order.\n\nFor each story, extract:\n  - subject_name: the primary person (if any). \"concept\" if the story has no named person.\n  - story_summary: 1-2 sentences of what happened.\n  - emotional_register: which mood fits (scandal / triumph / money / tribute / absurd / confrontation / countdown / tragedy)\n  - suggested_subject_side: left | right | center (per DESIGN_STANDARDS.md — right is dominant, left when subject faces into frame, center for symmetric concepts)\n  - has_countdown_element: true if a specific date/deadline matters to the story\n\nSTORY CONTEXT FOR NANO (new — feeds --subject/--story/--mood/--emphasis):\n  For each story, also determine:\n  - nano_mood: cinematic mood phrase for the background (e.g. \"dark, tense, foreboding\", \"triumphant, golden hour glow\", \"chaotic, neon-lit\")\n  - nano_emphasis: what the background should visually react to (e.g. \"haunted expression, weight of massive loss\", \"defiant confidence, arms crossed\", \"scattered chips and cash\")\n\nFULLY INDEPENDENT A/B BRIEFS FOR STORY_1:\n  Thumbnails A and B must be genuinely different creative concepts — not\n  minor variations. Before proceeding to Step 3, create TWO independent\n  creative briefs for STORY_1:\n\n  BRIEF_A:\n    - expression_cue_A: search term modifier for subject image (e.g. \"concerned face\", \"intense stare\")\n    - scene_prompt_A: background scene concept (e.g. \"dimly lit poker table, green felt, dramatic overhead lighting\")\n    - person_side_A: left | right | center\n    - text_theme_A: default | warm | cold | fire | dark\n    - mood_A: cinematic mood for Nano (from nano_mood or a variation)\n    - emphasis_A: what to emphasize visually (from nano_emphasis or a variation)\n\n  BRIEF_B (must differ from A on ≥3 of the 5 axes):\n    - expression_cue_B: DIFFERENT expression cue (e.g. if A=\"concerned face\", B=\"shocked reaction\")\n    - scene_prompt_B: DIFFERENT scene concept (e.g. if A=\"poker table\", B=\"courthouse steps at night\")\n    - person_side_B: DIFFERENT side from A (if A=right, B=left or center)\n    - text_theme_B: DIFFERENT theme from A\n    - mood_B: DIFFERENT mood from A (e.g. if A=\"dark, tense\", B=\"explosive, fiery\")\n    - emphasis_B: DIFFERENT visual emphasis\n\n  The goal: if you showed A and B to someone, they should feel like two\n  different creative interpretations of the same story, not two renders\n  of the same concept.\n\nLog these briefs and story profiles in memory before proceeding.\n\n================================================================\nSTEP 3 — GENERATE HEADLINE CANDIDATES (inline, per thumbnail)\n================================================================\nYou will produce 3 thumbnails total:\n  THUMB_A  → STORY_1, BRIEF_A\n  THUMB_B  → STORY_1, BRIEF_B (different headline pattern AND different visual treatment from A)\n  THUMB_C  → STORY_2, single brief\n\nFor each thumbnail, generate 3 headline candidates using the 5-pattern system from:\n  /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/thumbnail/DESIGN_STANDARDS.md\n\nThe 5 patterns are:\n  1. IMPOSSIBLE PARADOX — states something that shouldn't be possible (\"LOST!\" next to a royal flush)\n  2. DIRECT QUOTE — puts viewer in the moment (\"I BET $12,000\", \"YOU GOT ACES\")\n  3. SPECIFIC NUMBER — exact dollar amounts with commas (\"$3,875,000\", \"$31,000 → $62,000\")\n  4. ABSURD ESCALATION — underdog/commitment framing (\"ONE CHIP. ONE DREAM.\", \"EVERY. $INGLE. HAND.\")\n  5. COUNTDOWN / DEADLINE — hard date with consequences (\"APRIL 9\")\n\nRULES — reject any candidate that:\n  - Exceeds 4 words (unless it is a literal quote)\n  - Describes instead of makes-you-feel (\"LODGE IN CRISIS\" = bad; \"RAIDED.\" = good)\n  - Uses adjectives without stakes (\"MASSIVE POT\", \"HUGE HAND\" without a number or outcome)\n  - Sounds like a CNN chyron — if it could appear as news copy, rewrite it\n\nFor THUMB_A and THUMB_B on the same story, pick TWO DIFFERENT PATTERNS. Do not both be specific-number. Do not both be direct-quote. Force genuine creative divergence — different angle, different emotional lever.\n\nSelected headline format: \"WORDA|WORDB\" where \"|\" splits lines. First word smaller, second word larger/key. If the headline is a 3-word quote, you may use \"WORDA WORDB|WORDC\" or a single line.\n\n================================================================\nSTEP 4 — BUILD VISUAL INPUTS (per thumbnail, INDEPENDENTLY)\n================================================================\nPaths (absolute — the lifted script root):\n  SCRIPTS_DIR       = /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts\n  THUMB_TEMPLATE    = $SCRIPTS_DIR/thumbnail/template\n  THUMB_HELPERS     = $SCRIPTS_DIR/thumbnail/scripts\n  CURL_IMAGE_SEARCH = $SCRIPTS_DIR/chrome/curl-image-search.sh\n  IMAGE_FETCH       = $THUMB_TEMPLATE/image-fetch.sh\n  GEMINI_BIN        = $SCRIPTS_DIR/image/gemini/gemini_image_gen.py\n  OUTPUT_DIR        = /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/workspace/thumbnail/output\n  CUTOUT_LIBRARY    = $OUTPUT_DIR/../source   (named-person cutout cache — LAST-RESORT fallback only)\n\nTimestamp prefix for this run: $(date +%Y%m%d-%H%M) — use this to namespace all artifacts so reruns don't clobber.\n\nCRITICAL: THUMB_A and THUMB_B each get their OWN independent visual inputs.\n  - THUMB_A uses expression_cue_A for image search, scene_prompt_A for background\n  - THUMB_B uses expression_cue_B for image search, scene_prompt_B for background\n  - They may end up with DIFFERENT source photos of the same person\n  - They WILL have different AI-generated backgrounds\n  This doubles the API calls but guarantees visual divergence.\n\nFOR STORIES WITH A NAMED PERSON (run once PER THUMBNAIL, not shared):\n\n  Always cultivate a FRESH subject photo first. The on-disk cutout library\n  ($CUTOUT_LIBRARY) is a LAST-RESORT fallback — only use it if the fresh\n  search+cutout path fails. Goals: variety across shows, a library that\n  grows as a byproduct of normal runs, and no duplicate-looking thumbs\n  over time.\n\n  (a) FRESH image search via curl (primary path — no browser needed):\n\n      Build a search query combining subject_name with the expression cue\n      FROM THIS THUMBNAIL'S BRIEF, e.g.\n        THUMB_A: \"Doug Polk concerned poker face\"      (expression_cue_A)\n        THUMB_B: \"Doug Polk shocked reaction\"          (expression_cue_B)\n        THUMB_C: \"Garrett Adelstein serious stare\"     (its own brief)\n\n      i.   Run the headless image search via DuckDuckGo API:\n             shell_execute: bash $CURL_IMAGE_SEARCH \"<QUERY>\" --count 15\n           Returns JSON on stdout:\n             { engine:\"duckduckgo\", query, count, results:[{rank,url,source,w,h,title,host},...] }\n           Parse the JSON output.\n\n      ii.  Filter the candidates programmatically:\n           - Drop hosts on the blocklist: pinterest.com, gettyimages.*,\n             shutterstock.com, alamy.com, istockphoto.com, dreamstime.com,\n             lookaside.fbsbx.com (Facebook watermark proxies).\n           - If w/h are present, prefer w>=800 AND h>=800.\n           - Dedupe by host (max 2 candidates per host).\n           - Keep top 6 survivors, rank order preserved.\n\n      iii. Write the surviving URLs, one per line, to:\n             /tmp/cand-${PREFIX}-${slug}-${variant}.txt\n           (e.g. /tmp/cand-20260416-0800-polk-a.txt, /tmp/cand-20260416-0800-polk-b.txt)\n\n      iv.  If the filtered list is empty after DDG search, fall\n           through to (c) library fallback. (DDG is very reliable;\n           an empty result set is extremely rare.)\n\n      v.   Fetch + validate:\n             shell_execute: bash $IMAGE_FETCH \\\n               /tmp/cand-${PREFIX}-${slug}-${variant}.txt \\\n               $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-src.jpg \\\n               --min-side 600 --aspect-lo 0.55 --aspect-hi 2.10 --max-tries 6\n           Exit 0 = got a usable image; proceed to (b).\n           Exit 1 = all candidates failed → fall through to (c) library fallback.\n\n  (b) Cut out the subject:\n        shell_execute: bash $THUMB_TEMPLATE/cutout.sh \\\n          $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-src.jpg \\\n          $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-cutout.png\n        (cutout.sh uses Claid API + dehalo automatically)\n\n      If cutout.sh exits non-zero → fall through to (c) library fallback.\n\n      On SUCCESS, also snapshot the fresh cutout into the library for future\n      last-resort use (this is how the library grows):\n        shell_execute: cp $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-cutout.png \\\n          \"$CUTOUT_LIBRARY/$(echo \"$subject_name\" | tr '[:upper:] ' '[:lower:]-')-$(date +%Y%m%d)-${variant}.png\"\n      The library is grown organically — it is NEVER the first-choice source.\n\n  (c) LIBRARY FALLBACK (last resort — ONLY if (a) OR (b) above failed):\n\n      shell_execute: ls \"$CUTOUT_LIBRARY\"/ 2>/dev/null | grep -i \"$subject_name\" | head -20\n\n      Known library subjects (these have existing fallback cutouts; still\n      not the preferred path — fresh search always runs first):\n        Polk, Berkey, Hellmuth, Foxen, Lonis, Jungleman, Viffer, Dayton, Conrad\n\n      If multiple matches, prefer the OLDEST file (diversifies vs. recent\n      thumbnails that already used newer entries). Copy it to the expected\n      pipeline path so downstream steps see the conventional filename:\n        shell_execute: cp \"$CUTOUT_LIBRARY/<chosen>.png\" \\\n          \"$OUTPUT_DIR/${PREFIX}-${slug}-${variant}-cutout.png\"\n\n      If the library has no match either → treat this story as unrecoverable\n      with a named-person treatment and rebuild it as a no-person concept\n      thumbnail (see \"FOR STORIES WITHOUT A PERSON\" below).\n\nBACKGROUND (per thumbnail — INDEPENDENT scene prompts):\n\n  (d) Source a scene reference photo via headless image search — same\n      curl-based search as step (a), using THIS THUMBNAIL'S scene concept:\n\n      Example queries per brief:\n        THUMB_A (scene_prompt_A): \"dark poker room overhead spotlight dramatic\"\n        THUMB_B (scene_prompt_B): \"Las Vegas strip night neon rain cinematic\"\n        THUMB_C: its own scene prompt\n\n      i.   shell_execute: bash $CURL_IMAGE_SEARCH \"<ENCODED-SCENE-QUERY>\" --count 10\n      ii.  Filter + write /tmp/cand-${PREFIX}-${slug}-${variant}-scene.txt (same rules\n           as (a.ii) — blocklist hosts, require w/h >= 800 if present,\n           dedupe by host, keep top 6).\n      iii. Fetch + validate:\n             shell_execute: bash $IMAGE_FETCH \\\n               /tmp/cand-${PREFIX}-${slug}-${variant}-scene.txt \\\n               $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-sceneref.jpg \\\n               --min-side 700 --aspect-lo 0.75 --aspect-hi 2.10 --max-tries 6\n\n      If all scene candidates fail, proceed WITHOUT a scene reference —\n      Nano can still generate a credible scene from text alone. Note the\n      degradation (no scene ref used) in the final Discord report so Matt\n      knows the bg was purely synthetic.\n\n  (e) Generate cinematic background with Nano. Pass the scene ref if one\n      was fetched; omit -i if the scene search failed:\n        shell_execute:\n          python3 $GEMINI_BIN \\\n            --prompt \"[scene description from THIS BRIEF's scene_prompt — dramatic, cinematic, NO PEOPLE, leave the ${subject_side} third slightly darker for subject placement; match ${emotional_register} mood]\" \\\n            $( [ -f \"$OUTPUT_DIR/${PREFIX}-${slug}-${variant}-sceneref.jpg\" ] && echo \"-i $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-sceneref.jpg\" ) \\\n            --filename $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-bg.jpg \\\n            --aspect-ratio \"16:9\" --resolution \"2K\"\n\nFOR STORIES WITHOUT A PERSON (concept thumbs):\n  Skip (a)-(c). Generate background with the subject implied in-frame\n  (legal papers, chip stacks, gavel). Use --person-in-bg in Step 5.\n\n================================================================\nSTEP 5 — DIVERGENCE CHECK + COMPOSITE (per thumbnail)\n================================================================\n\nPRE-BUILD DIVERGENCE GATE (THUMB_A + THUMB_B only):\n  Before building, validate that the A/B briefs are sufficiently different.\n  Source the divergence checker and run it:\n\n    shell_execute:\n      source \"$SCRIPTS_DIR/lib/divergence-check.sh\"\n      check_divergence \\\n        \"$A_HEADLINE_PATTERN\" \"$B_HEADLINE_PATTERN\" \\\n        \"$A_PERSON_SIDE\"      \"$B_PERSON_SIDE\" \\\n        \"$A_SCENE_PROMPT\"     \"$B_SCENE_PROMPT\" \\\n        \"$A_EXPRESSION_CUE\"   \"$B_EXPRESSION_CUE\" \\\n        \"$A_HEADLINE_TEXT\"    \"$B_HEADLINE_TEXT\"\n\n  If the check FAILS (exit 1, <3 axes differ), go back to Step 2 and\n  regenerate BRIEF_B with more creative separation. Do NOT proceed with\n  near-identical builds.\n\nPipeline orchestrator: $THUMB_TEMPLATE/build-thumbnail.sh --ps-composite\n  This runs: Photoshop composite (cutout onto BG) → Nano integration pass (blends person into scene AND renders text in one generation) → ImageMagick color grade.\n\nSTORY CONTEXT FLAGS (new — pass to build-thumbnail.sh for narrative Nano prompts):\n  --subject \"Phil Ivey\"                        (who the person is)\n  --story   \"Ivey loses $20M in Baccarat...\"   (what the story is about — 1 sentence)\n  --mood    \"dark, tense, foreboding\"           (from this brief's mood)\n  --emphasis \"haunted expression, weight of loss\" (from this brief's emphasis)\n\n  When these flags are provided, Nano's integration prompt becomes\n  NARRATIVE — it knows WHO the subject is, WHAT the story is, and HOW\n  the background should react to the subject. This produces backgrounds\n  that feel connected to the story instead of generic scene composites.\n\nFLAG DISCIPLINE — each thumbnail uses flags from ITS OWN BRIEF:\n\n  THUMB_A uses: person_side_A, text_theme_A, mood_A, emphasis_A, expression_cue_A's cutout, scene_prompt_A's background\n  THUMB_B uses: person_side_B, text_theme_B, mood_B, emphasis_B, expression_cue_B's cutout, scene_prompt_B's background\n\n  --person-side       left | right | center\n  --person-scale-mult 0.85–1.05\n  --text-pos          bottom-left | top-left | bottom-right | top-right | center\n                      (default bottom-left; top-left if subject is bottom-heavy; center only for text-dominant variants)\n  --text-theme        default | warm | cold | fire | dark\n                      (pick per emotional_register: scandal=fire, money=warm, tribute=dark, countdown=cold, triumph=warm)\n\nNano picks typography (font, color treatment, stroke) based on scene mood — DO NOT try to force a specific font. Give it the headline + theme and let it match.\n\nInvocation pattern (named-person, WITH story context):\n  shell_execute:\n    bash $THUMB_TEMPLATE/build-thumbnail.sh \\\n      $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-bg.jpg \\\n      $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-cutout.png \\\n      \"HEADLINE|WORDS\" \\\n      $OUTPUT_DIR/${PREFIX}-${variant}.jpg \\\n      --ps-composite \\\n      --person-side [side from this brief] \\\n      --person-scale-mult [scale] \\\n      --text-pos [position] \\\n      --text-theme [theme from this brief] \\\n      --subject \"[subject_name]\" \\\n      --story \"[story_summary — 1 sentence]\" \\\n      --mood \"[mood from this brief]\" \\\n      --emphasis \"[emphasis from this brief]\"\n\nInvocation pattern (no-person):\n  shell_execute:\n    bash $THUMB_TEMPLATE/build-thumbnail.sh \\\n      $OUTPUT_DIR/${PREFIX}-${slug}-${variant}-bg.jpg \\\n      --person-in-bg \\\n      \"HEADLINE|WORDS\" \\\n      $OUTPUT_DIR/${PREFIX}-${variant}.jpg \\\n      --ps-composite \\\n      --text-theme [theme] \\\n      --story \"[story_summary]\" \\\n      --mood \"[mood]\"\n\nPOST-BUILD A/B DEDUP GUARD (after both A and B are built):\n  Run the perceptual similarity check:\n    shell_execute: bash $SCRIPTS_DIR/lib/ab-dedup.sh \\\n      $OUTPUT_DIR/${PREFIX}-thumb-a.jpg \\\n      $OUTPUT_DIR/${PREFIX}-thumb-b.jpg --json\n\n  If flagged (exit 1, similarity > 0.72), the independent briefs didn't\n  produce enough visual difference. Rebuild B with an even more divergent\n  brief (different scene entirely, opposite side, contrasting mood).\n\nIf build-thumbnail.sh errors with \"file not found\" or path issues, check: OpenClaw paths hardcoded inside the script (see LIFT-MANIFEST.md). Report the exact stderr in the final Discord post — do not silently substitute.\n\n================================================================\nSTEP 6 — JUDGE (inline, no external script)\n================================================================\nFor each generated thumbnail, READ THE IMAGE using:\n  mcp__1a5bdeb8-2a7b-430b-b5ef-1d0f435124ee__read_file(path=$OUTPUT_DIR/${PREFIX}-${variant}.jpg)\n  (returns base64 — you will SEE the thumbnail natively)\n\nAlso re-read /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/thumbnail/DESIGN_STANDARDS.md at run start to refresh judge criteria.\n\nSCORING — 100 points total, graded against YouTube INDUSTRY standards (not a house style). The pipeline is intentionally dynamic — font, color, layout, treatment all vary — so judge on performance fundamentals, not aesthetic adherence.\n\n  HEADLINE QUALITY (0–20):\n    - Uses one of the 5 patterns cleanly                              +8\n    - 2–4 words (or a literal short quote)                            +4\n    - Specificity > generic (real number, real quote, concrete noun)  +4\n    - Creates emotional lever in <1 second (curiosity/disbelief/urgency/fear/greed)  +4\n    Auto-deduct 5 per failure mode:\n      * sounds like a news chyron\n      * uses adjective without stakes\n      * describes instead of feels\n      * >4 words without being a quote\n    Pass bar: 14/20. Below 14 → REWRITE HEADLINE and rebuild.\n\n  FACE / SUBJECT (0–15):\n    - Face occupies 30–50%+ of frame width (or equivalent for full-body/bust)  +5\n    - Expression from priority ladder (shock/concern/disgust/intense stare; smile ONLY for lifestyle/feel-good)  +5\n    - Subject position intentional (right-third dominant; left if facing into frame; bottom-flush anchored)  +5\n\n  VISUAL HOOK (0–15):\n    - One extraordinary / unexpected element (not just \"a person in front of a scene\")  +8\n    - Relevant to the story beat (not generic poker stock)  +7\n\n  TEXT EXECUTION (0–15):\n    - Legible at 160×90px (mental shrink-test — would a phone viewer read it?)  +6\n    - Does not cover the subject's face or body  +5\n    - Dual-color hierarchy (white + one accent) — never two competing accents  +4\n\n  COMPOSITING / COLOR (0–15):\n    - No visible halo or fringe on cutout edge  +5\n    - Subject color temperature matches background  +5\n    - Saturation boosted enough to win in feed (flat = losing)  +5\n\n  CLARITY / HIERARCHY (0–10):\n    - Eye knows where to land first (face or headline, not competing)  +5\n    - Background simplified enough that foreground reads (blur/darken if needed)  +5\n\n  DIFFERENTIATION (0–10, applies to B variant only; full credit on A and C):\n    - THUMB_B is meaningfully different from THUMB_A on BOTH axis (headline pattern AND visual treatment)\n    - If A and B feel like minor tweaks of the same idea, deduct 5\n    - If A and B feel like two distinct creative directions, full 10\n\nREBUILD LOGIC:\n  - If total score < 70 → REBUILD that thumbnail. You get up to 2 rebuilds per thumbnail.\n  - Before rebuilding, identify the 1–2 biggest point losses and adjust ONLY those axes:\n      * Headline fail → rewrite headline (new pattern), keep visuals\n      * Face fail → pick a different source photo (re-run Step 4(a) with a new expression cue) or adjust person-scale-mult\n      * Compositing fail → re-run with --person-brightness/--person-contrast tweaks or different warm-tint\n      * Text fail → change --text-pos or --text-theme\n  - After 2 rebuilds, if still <70, mark the thumbnail as \"⚠️ BELOW THRESHOLD\" and POST IT ANYWAY with the score and the breakdown — Matt decides whether to ship or manual-override.\n\nFor EACH thumb, record:\n  - Final score (0–100)\n  - Per-axis breakdown\n  - Chosen headline\n  - Chosen flags (including story context flags)\n  - Rebuild count (0, 1, or 2)\n  - Pass/fail vs. 70 threshold\n  - Subject image source: \"fresh search (DDG)\" or \"library fallback ($filename)\"\n  - Creative brief summary (expression cue, scene concept, mood, emphasis)\n\n================================================================\nSTEP 7 — POST TO DISCORD #thumbnails\n================================================================\nLoad the Discord bot token from ~/.cowork-bridge/.env:\n  shell_execute: source /Users/mjb11/Documents/Claude/Projects/Media\\ Company\\ Infrastructure/scripts/lib/load-secrets.sh && require_secret DISCORD_BOT_TOKEN && echo \"token-ok\"\n\nThe token lives in $DISCORD_BOT_TOKEN after sourcing. Never echo it in logs.\n\n#thumbnails channel ID: 1478288038537724007\n\nBuild ONE message with all 3 thumbnails attached via multipart curl to Discord's bot API. Use $THUMB_TOKEN from the jq read above; never echo it.\n\nMessage text format — TERSE (2026-04-22 channel cleanup):\n\n**🎨 Thumbnails — [today's date]**\n\n**A** — \"HEADLINE A\" — [one-sentence story summary] — **[NN/100]** [⚠️ if <70]\n**B** — \"HEADLINE B\" — [one-sentence story summary] — **[NN/100]** [⚠️ if <70]\n**ALT** — \"HEADLINE C\" — [one-sentence story summary for story 2] — **[NN/100]** [⚠️ if <70]\n\nONE sentence per thumb. No per-axis breakdowns, no brief recaps, no flag dumps.\nAll that debug detail (per-axis scores, source image path, flag values, rebuild\ncount, divergence axes) MUST be written to stderr / run log only, NOT to Discord.\nThe #thumbnails channel stays clean and scannable.\n\nIf any thumb is BELOW THRESHOLD (<70 after 2 rebuilds), still post, still only\none sentence + score — append the ⚠️ marker. The score itself tells Matt it\nneeds attention.\n\nCurl invocation (replace placeholders — $MESSAGE is the Markdown above, JSON-escaped):\n\n  shell_execute:\n    source /Users/mjb11/Documents/Claude/Projects/Media\\ Company\\ Infrastructure/scripts/lib/load-secrets.sh\n    TOKEN=\"${DISCORD_BOT_TOKEN:?set in ~/.cowork-bridge/.env}\"\n    curl -sS -X POST \\\n      -H \"Authorization: Bot $TOKEN\" \\\n      -F \"payload_json={\\\"content\\\": $(jq -Rsa . <<< \\\"$MESSAGE\\\")}\" \\\n      -F \"files[0]=@$OUTPUT_DIR/${PREFIX}-thumb-a.jpg\" \\\n      -F \"files[1]=@$OUTPUT_DIR/${PREFIX}-thumb-b.jpg\" \\\n      -F \"files[2]=@$OUTPUT_DIR/${PREFIX}-thumb-alt.jpg\" \\\n      \"https://discord.com/api/v10/channels/1478288038537724007/messages\"\n\nVerify the curl response is HTTP 200 and contains an \"id\" field for the posted message. If it fails, retry once, then fall back to:\n  mcp__discord__send_message(channel=\"thumbnails\", content=\"⚠️ Thumbnail upload failed — files at: [paths]. curl error: [stderr]\")\n\n================================================================\nSTEP 8 — CLEANUP (light)\n================================================================\nDo not delete source/cutout/bg intermediates — they're useful for iteration. Do verify the 3 final JPGs exist and are >10KB before posting. If any file is missing or <10KB (likely truncated render), treat it as a rebuild trigger in Step 6.\n\n================================================================\nFAILURE HANDLING\n================================================================\nAvailable reliability libraries (already on disk — use as needed):\n  • Preflight: /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/preflight.sh\n  • Step runner (stderr capture + JSON log): source /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/run-step.sh\n  • PS kill-switch (hard timeout): bash /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/ps-exec.sh <jsx> [timeout-seconds]\n  • Gemini retry: built into gemini_image_gen.py (3 attempts, 2s/8s/20s backoff)\n  • OCR text verify: bash /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/ocr-verify.sh <image> \"WORD1|WORD2\" [--strict] [--json]\n  • A/B dedup guard: bash /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/ab-dedup.sh <thumb-a> <thumb-b> [--json]\n    Run after Step 5 on THUMB_A + THUMB_B. If flagged (exit 1), rebuild B with different treatment.\n  • Divergence check: source /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/divergence-check.sh\n    Run BEFORE Step 5 on A/B briefs. If <3 axes differ, regenerate BRIEF_B.\n  • Number verify: python3 /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/number-verify.py <image> \"<request>\" [--json]\n  • Headless image search: bash /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/chrome/curl-image-search.sh \"<query>\" [--count N]\n    Uses DuckDuckGo API via curl — no browser window needed, works unattended at 2am.\n\nIf ANY step has a hard failure (bridge unreachable, image-search returns no candidates AND library has nothing, Claid/Nano API 5xx, Photoshop JSX hang >5min), post to #thumbnails:\n  \"⚠️ Thumbnail run failed at [step name]: [one-line error]. Partial artifacts in $OUTPUT_DIR/${PREFIX}-*.\"\nand exit gracefully. Never leave the run silently broken.\n\n================================================================\nTIMING BUDGET\n================================================================\nTarget total runtime <15 minutes. Each thumbnail is ~3–4 min of API work\n(image search + fetch + cutout + Nano BG + PS composite + Nano integration).\nWith fully independent A/B builds, expect ~12 min for 3 thumbs (A and B\neach do their own image search + cutout + BG generation). If a single\nthumb takes >5 min, skip remaining rebuilds for that thumb and post what\nyou have with a timing flag.\n\nEnd of task prompt.\n",
         "sizeBytes": 28542
-      },
-      "of-dashboard-snapshot": {
-        "path": "/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/web/skills/scheduled/of-dashboard-snapshot.md",
-        "content": "---\nname: of-dashboard-snapshot\ndescription: Writes web/data.json every 5 min (pipeline state + George + Discord + skills) AND syncs skill files into web/skills/ so the Mission Control GitHub Pages site has editable links. Pushes to origin/main after.\n---\n\nYou are the **OF Dashboard Snapshot** agent. Gather live pipeline data, copy skill files into the repo, write `web/data.json`, then commit + push.\n\n## Steps (always in this order)\n\n1. **List scheduled tasks** — `mcp__scheduled-tasks__list_scheduled_tasks`. Keep the full array.\n\n2. **Read George state** — `read_file` on `/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/george/data/state.json`. Parse its `content` field as JSON.\n\n3. **Tail George log** — `shell_execute`: `tail -n 10 \"/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/george/logs/george.log\"`. Keep stdout.\n\n4. **Check George uptime** — `shell_execute`: `pid=$(pgrep -f \"node.*george/index.js\" | head -1); [ -n \"$pid\" ] && ps -p \"$pid\" -o etime= | tr -d \" \" || echo \"not-running\"`. Keep stdout.\n\n5. **Pull today's Discord content** (best-effort — empty arrays if tokens fail):\n   - #run-of-show (`1477576381201256488`), limit 15\n   - #thumbnails (`1478288038537724007`), limit 10\n   - #assets (`1478885064656945274`), limit 30\n   Trim each message to `{id, content, author:{username,isBot}, createdAt, hasAttachments}`.\n\n6. **Sync skill files into the repo** — one `shell_execute`:\n   ```\n   bash -c '\n     set -e\n     WEB=\"/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/web\"\n     mkdir -p \"$WEB/skills/scheduled\" \"$WEB/skills/george\"\n     for d in /Users/mjb11/Documents/Claude/Scheduled/uncapped-*; do\n       name=$(basename \"$d\")\n       [ -f \"$d/SKILL.md\" ] && cp \"$d/SKILL.md\" \"$WEB/skills/scheduled/$name.md\"\n     done\n     [ -f /Users/mjb11/Documents/Claude/Scheduled/of-dashboard-snapshot/SKILL.md ] && \\\n       cp /Users/mjb11/Documents/Claude/Scheduled/of-dashboard-snapshot/SKILL.md \"$WEB/skills/scheduled/of-dashboard-snapshot.md\"\n     cp /Users/mjb11/Documents/Claude/Projects/Media\\ Company\\ Infrastructure/scripts/george/agents/*.md \"$WEB/skills/george/\" 2>/dev/null || true\n   '\n   ```\n\n7. **Read all skill files into memory** for inlining in data.json. One `shell_execute` returning JSON:\n   ```\n   bash -c '\n     python3 <<PYEOF\n   import json, os, glob\n   out = {\"scheduled\": {}, \"george_personas\": {}}\n   for p in sorted(glob.glob(\"/Users/mjb11/Documents/Claude/Scheduled/uncapped-*/SKILL.md\")):\n     tid = os.path.basename(os.path.dirname(p))\n     out[\"scheduled\"][tid] = {\"path\": p, \"content\": open(p).read(), \"sizeBytes\": os.path.getsize(p)}\n   for p in sorted(glob.glob(\"/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/george/agents/*.md\")):\n     key = os.path.basename(p).replace(\".md\",\"\")\n     out[\"george_personas\"][key] = {\"path\": p, \"content\": open(p).read(), \"sizeBytes\": os.path.getsize(p)}\n   print(json.dumps(out))\n   PYEOF\n   '\n   ```\n   Parse the stdout as JSON. Assign to `skills` variable.\n\n8. **Compose snapshot** with this shape:\n   ```json\n   {\n     \"generatedAt\": \"<ISO 8601 UTC now>\",\n     \"tasks\": [...step 1...],\n     \"george\": {\n       \"state\": {...step 2...},\n       \"logTail\": \"<step 3>\",\n       \"uptime\": \"<step 4>\",\n       \"channels\": [\n         {\"name\":\"brand-design\",\"mode\":\"always\",\"modeLabel\":\"always\"},\n         {\"name\":\"producer\",\"mode\":\"mention\",\"modeLabel\":\"@-mention only\"},\n         {\"name\":\"graphic-design\",\"mode\":\"always\",\"modeLabel\":\"always\"},\n         {\"name\":\"guest-research\",\"mode\":\"always\",\"modeLabel\":\"always\",\"isNew\":true},\n         {\"name\":\"bookmarks\",\"mode\":\"mirror\",\"modeLabel\":\"mirror → #intel-staging\",\"isNew\":true}\n       ]\n     },\n     \"discord\": { \"ros\": [...], \"thumbs\": [...], \"assets\": [...] },\n     \"skills\": {...step 7...}\n   }\n   ```\n\n9. **Write** data.json: `write_file` to `/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/web/data.json`, `overwrite: true`, 2-space indent.\n\n10. **Commit + push** — `shell_execute`:\n    ```\n    cd \"/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/web\" && \\\n      { [ -d .git ] && [ -n \"$(git remote 2>/dev/null)\" ]; } && \\\n      git add data.json skills/ && \\\n      { git diff --cached --quiet || git commit -q -m \"snapshot $(date -u +%Y-%m-%dT%H:%MZ)\"; } && \\\n      git push -q origin main 2>&1 || echo \"push skipped (no remote or bootstrap pending)\"\n    ```\n\n11. **Done.** No commentary. If anything fails, still attempt the write + push with defaults filled in.\n\n## Constraints\n- Target write ≤ 200 KB (skills content adds ~50–70 KB).\n- Read-only against Discord + George + skill files; writes are `data.json`, `skills/**`, and the git push.\n- Duration target: &lt; 40 seconds.\n- Budget: use Haiku. This is mechanical.\n\n## Why this exists\nMission Control at `https://berkey11.github.io/of-mission-control/` reads `./data.json` + links to files under `./skills/` for in-browser editing via GitHub. Fresh data every 5 min + editable skills via the GitHub web UI.\n",
-        "sizeBytes": 5067
       }
     },
     "george_personas": {
