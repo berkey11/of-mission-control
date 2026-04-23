@@ -345,6 +345,8 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
     <button class="tab" data-pane="crons">Crons</button>
     <button class="tab" data-pane="channels">Channels</button>
     <button class="tab" data-pane="skills">Skills</button>
+    <button class="tab" data-pane="tools">Tools</button>
+    <button class="tab" data-pane="soul">Soul</button>
     <button class="tab" data-pane="content">Content</button>
   </div>
 
@@ -674,6 +676,60 @@ Editing: to avoid a backend, edits are one of two paths.
   </div>
 
   <!-- ========================================================================
+       TOOLS PANE — MCP tool inventory per agent, grouped by server
+  ========================================================================= -->
+  <div class="pane" id="pane-tools">
+    <div class="skills-layout">
+      <aside class="skills-list panel">
+        <h4>Agents</h4>
+        <div id="tools-list-body" style="font-size:12px">loading…</div>
+      </aside>
+      <main class="skills-viewer panel">
+        <div class="sv-head">
+          <div class="sv-title" id="tools-title">Select an agent to see its tool inventory</div>
+        </div>
+        <div class="sv-meta" id="tools-meta"></div>
+        <div id="tools-body">
+          <p style="color:var(--muted);line-height:1.6;font-size:12px">Tools shown here are parsed from each agent's SKILL.md — any <code>mcp__server__tool</code> reference counts. These are what the agent actually invokes during its run.
+
+Grouping is by MCP server. Bold count = how many distinct tools from that server the agent touches.
+
+Editing tool access is wired through Cowork's permissions layer, not this file — use the admin panel (coming soon) to grant/revoke.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SOUL PANE — agent soul.md (voice/values/guardrails) viewer
+  ========================================================================= -->
+  <div class="pane" id="pane-soul">
+    <div class="skills-layout">
+      <aside class="skills-list panel" id="souls-list">
+        <h4>Agents</h4>
+        <div id="souls-list-body" style="font-size:12px">loading…</div>
+      </aside>
+      <main class="skills-viewer panel">
+        <div class="sv-head">
+          <div class="sv-title" id="souls-title">Select an agent to view its soul.md</div>
+          <div class="sv-actions" id="souls-actions" style="display:none">
+            <button class="terminal-btn" onclick="copySoul()">COPY</button>
+            <a class="terminal-btn" id="souls-edit-link" href="#" target="_blank" rel="noopener">EDIT ON GITHUB</a>
+          </div>
+        </div>
+        <div class="sv-meta" id="souls-meta"></div>
+        <pre class="sv-body" id="souls-body">The why. The voice. The guardrails.
+
+<strong>soul.md</strong> defines who an agent <em>is</em> — tone, values, editorial POV, ethical red lines. SKILL.md defines what it <em>does</em> (the protocol). Together they decide how the output actually reads.
+
+Each scheduled agent has a template soul.md ready to fill in — Matt edits them via the admin panel tomorrow, or directly on GitHub now via the EDIT button.
+
+George's personas (brand-designer, graphic-designer, producer, guest-research, etc.) already are soul files — they're the voice that shapes every message that channel produces.</pre>
+      </main>
+    </div>
+  </div>
+
+  <!-- ========================================================================
        CONTENT PANE (today's outputs)
   ========================================================================= -->
   <div class="pane" id="pane-content">
@@ -776,6 +832,132 @@ function escapeHtml(s) {
 // =============================================================
 
 
+
+
+// =============================================================
+//  Render Tools pane — MCP tool inventory per agent
+// =============================================================
+function renderToolsPane(snapshot) {
+  const tools = snapshot.tools || {};
+  const listEl = document.getElementById('tools-list-body');
+  if (!listEl) return;
+  const entries = Object.entries(tools).sort((a,b) => {
+    const am = AGENTS.find(x => x.id === a[0]), bm = AGENTS.find(x => x.id === b[0]);
+    return (am ? am.cron : 'z').localeCompare(bm ? bm.cron : 'z');
+  });
+  listEl.innerHTML = '<div class="skills-group"><div class="skills-group-title">Scheduled Agents · ' + entries.length + '</div>' +
+    entries.map(([id, arr]) => {
+      const meta = AGENTS.find(a => a.id === id);
+      const label = meta ? meta.short : id.replace('uncapped-','');
+      return '<div class="skill-item" data-key="tools::' + id + '" onclick="selectTool(\'' + id + '\')">' +
+        '<span>' + escapeHtml(label) + '</span><span class="size">' + arr.length + ' tools</span></div>';
+    }).join('') + '</div>';
+}
+function selectTool(agentId) {
+  const tools = (window.__lastSnap.tools || {})[agentId] || [];
+  const meta = AGENTS.find(a => a.id === agentId);
+  document.querySelectorAll('#tools-list-body .skill-item').forEach(e =>
+    e.classList.toggle('active', e.dataset.key === 'tools::' + agentId));
+  document.getElementById('tools-title').textContent = meta ? meta.short.toUpperCase() : agentId;
+  document.getElementById('tools-meta').textContent =
+    (meta ? meta.full + ' · ' + meta.cron : agentId) + ' · ' + tools.length + ' distinct MCP tools invoked';
+  // Group by server name between mcp__ and the next __
+  const byServer = {};
+  for (const t of tools) {
+    const m = t.match(/^mcp__([^_]+(?:_[^_]+)*?)__(.+)$/);
+    if (!m) { (byServer._unknown = byServer._unknown || []).push(t); continue; }
+    const server = m[1], tool = m[2];
+    (byServer[server] = byServer[server] || []).push(tool);
+  }
+  const SERVER_LABELS = {
+    'scheduled-tasks': '🗓 Scheduled Tasks',
+    'discord': '💬 Discord',
+    'cowork': '🛰 Cowork',
+    '1a5bdeb8-2a7b-430b-b5ef-1d0f435124ee': '🌉 Cowork Mac Bridge',
+    'visualize': '📊 Visualize',
+    'df858934-0598-44d0-9879-f10c0f58dc6d': '📧 Gmail',
+  };
+  const html = Object.entries(byServer).sort((a,b) => a[0].localeCompare(b[0])).map(([server, ts]) => {
+    const lbl = SERVER_LABELS[server] || ('mcp · ' + server);
+    return '<div style="margin-bottom:16px">' +
+      '<div style="color:var(--cyan);font:700 11px/1 inherit;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px">' +
+        escapeHtml(lbl) + ' <span style="color:var(--muted);font-weight:400">(' + ts.length + ')</span></div>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:5px">' +
+        ts.sort().map(t =>
+          '<span style="background:var(--bg-2);border:1px solid var(--line);color:var(--ink);padding:4px 8px;border-radius:4px;font:500 11px/1 ui-monospace,Menlo,monospace">' +
+          escapeHtml(t) + '</span>'
+        ).join('') +
+      '</div></div>';
+  }).join('');
+  document.getElementById('tools-body').innerHTML = html || '<p style="color:var(--muted)">no tools detected in this agent\'s SKILL.md</p>';
+}
+
+// =============================================================
+//  Render Soul pane — soul.md viewer per agent
+// =============================================================
+let SOULS_INDEX = {};
+function renderSoulPane(snapshot) {
+  const s = snapshot.souls || {};
+  SOULS_INDEX = {};
+  const list = document.getElementById('souls-list-body');
+  if (!list) return;
+
+  const sched = s.scheduled || {};
+  const personas = s.george_personas || {};
+  const schedEntries = Object.entries(sched).sort((a,b) => {
+    const am = AGENTS.find(x => x.id === a[0]), bm = AGENTS.find(x => x.id === b[0]);
+    return (am ? am.cron : 'z').localeCompare(bm ? bm.cron : 'z');
+  });
+  const personaOrder = ['george-orchestrator','brand-designer','graphic-designer','graphic','producer','guest-research'];
+  const personaEntries = personaOrder.filter(k => personas[k]).map(k => [k, personas[k]]);
+
+  let html = '';
+  if (schedEntries.length) {
+    html += '<div class="skills-group"><div class="skills-group-title">Scheduled Agents · ' + schedEntries.length + '</div>';
+    html += schedEntries.map(([id, data]) => {
+      const meta = AGENTS.find(a => a.id === id);
+      const label = meta ? meta.short : id.replace('uncapped-','');
+      const key = 'sched::' + id;
+      SOULS_INDEX[key] = { ...data, displayName: label.toUpperCase(), type: 'Scheduled · ' + (meta ? meta.full : id), agentId: id };
+      const needsFill = (data.content || '').includes('[TODO');
+      const tag = needsFill ? '<span style="color:var(--warn);font-size:10px;margin-left:6px">TEMPLATE</span>' : '';
+      return '<div class="skill-item" data-key="' + key + '" onclick="selectSoul(\'' + key + '\')">' +
+        '<span>' + escapeHtml(label) + tag + '</span><span class="size">' + fmtSize(data.sizeBytes) + '</span></div>';
+    }).join('');
+    html += '</div>';
+  }
+  if (personaEntries.length) {
+    html += '<div class="skills-group"><div class="skills-group-title">George Personas · ' + personaEntries.length + '</div>';
+    html += personaEntries.map(([id, data]) => {
+      const key = 'persona::' + id;
+      SOULS_INDEX[key] = { ...data, displayName: id.toUpperCase(), type: 'George Persona · ' + id, agentId: id };
+      return '<div class="skill-item" data-key="' + key + '" onclick="selectSoul(\'' + key + '\')">' +
+        '<span>' + escapeHtml(id) + '</span><span class="size">' + fmtSize(data.sizeBytes) + '</span></div>';
+    }).join('');
+    html += '</div>';
+  }
+  if (!html) html = '<div style="color:var(--muted);padding:8px 0">Souls not in snapshot yet — next cron fire populates.</div>';
+  list.innerHTML = html;
+}
+function selectSoul(key) {
+  const data = SOULS_INDEX[key];
+  if (!data) return;
+  document.querySelectorAll('#souls-list-body .skill-item').forEach(e => e.classList.toggle('active', e.dataset.key === key));
+  document.getElementById('souls-title').textContent = data.displayName;
+  document.getElementById('souls-meta').textContent = data.type + (data.path ? ' · ' + data.path.replace('/Users/mjb11/','~/') : '') + (data.sizeBytes ? ' · ' + fmtSize(data.sizeBytes) : '');
+  document.getElementById('souls-body').textContent = data.content || '(empty)';
+  const act = document.getElementById('souls-actions');
+  act.style.display = 'flex';
+  const filename = key.startsWith('sched::')
+    ? 'souls/scheduled/' + key.slice(8) + '.md'
+    : 'souls/george/' + key.slice(9) + '.md';
+  document.getElementById('souls-edit-link').href = 'https://github.com/berkey11/of-mission-control/edit/main/' + filename;
+  window.__currentSoul = data;
+}
+function copySoul() {
+  if (!window.__currentSoul) return;
+  navigator.clipboard.writeText(window.__currentSoul.content || '').then(() => showToast('soul copied to clipboard'));
+}
 
 // =============================================================
 //  Pipeline flow clicks → jump to Skills tab for agent,
@@ -1435,6 +1617,8 @@ async function loadAndRender() {
   renderChannelsPane(snap);
   renderContentPane(snap);
   renderSkillsPane(snap);
+  renderToolsPane(snap);
+  renderSoulPane(snap);
   flowWireStatic();
 
   document.getElementById('fetched-at').textContent =
