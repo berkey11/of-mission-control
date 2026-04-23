@@ -1,68 +1,104 @@
 {
-  "generatedAt": "2026-04-23T06:07:08.235018+00:00",
+  "generatedAt": "2026-04-23T06:15:16.209509+00:00",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
+      "description": "Daily 2am PT poker intel briefing for The Only Friends Podcast, posted to Discord #intel-staging",
+      "schedule": "At 02:03 AM, Monday through Friday",
       "cronExpression": "0 2 * * 1-5",
       "enabled": true,
+      "nextRunAt": "2026-04-23T09:02:40.000Z",
       "lastRunAt": "2026-04-22T09:02:54.993Z",
-      "nextRunAt": "2026-04-23T09:02:40.000Z"
+      "jitterSeconds": 160
     },
     {
       "taskId": "uncapped-research-world",
+      "description": "Daily 3am PT world news & trends briefing for The Only Friends Podcast, posted to Discord #intel-staging",
+      "schedule": "At 03:07 AM, Monday through Friday",
       "cronExpression": "0 3 * * 1-5",
       "enabled": true,
+      "nextRunAt": "2026-04-23T10:07:18.000Z",
       "lastRunAt": "2026-04-22T10:07:33.025Z",
-      "nextRunAt": "2026-04-23T10:07:18.000Z"
+      "jitterSeconds": 438
     },
     {
       "taskId": "uncapped-research-memes",
+      "description": "Daily 4am PT memes & culture drop for The Only Friends Podcast, posted to Discord #intel-staging",
+      "schedule": "At 04:06 AM, Monday through Friday",
       "cronExpression": "0 4 * * 1-5",
       "enabled": true,
+      "nextRunAt": "2026-04-23T11:06:28.000Z",
       "lastRunAt": "2026-04-22T11:06:43.254Z",
-      "nextRunAt": "2026-04-23T11:06:28.000Z"
-    },
-    {
-      "taskId": "uncapped-hand-analysis",
-      "cronExpression": "0 5 * * 1-5",
-      "enabled": true,
-      "lastRunAt": null,
-      "nextRunAt": "2026-04-23T12:06:07.000Z"
+      "jitterSeconds": 388
     },
     {
       "taskId": "uncapped-run-of-show",
+      "description": "Daily 7am PT run-of-show for The Only Friends Podcast. Posts a condensed single-page brief to #run-of-show and the full detailed ROS to #intel-staging.",
+      "schedule": "At 07:08 AM, Monday through Friday",
       "cronExpression": "0 7 * * 1-5",
       "enabled": true,
+      "nextRunAt": "2026-04-23T14:07:46.000Z",
       "lastRunAt": "2026-04-22T14:08:01.525Z",
-      "nextRunAt": "2026-04-23T14:07:46.000Z"
-    },
-    {
-      "taskId": "uncapped-graphic-design",
-      "cronExpression": "30 7 * * 1-5",
-      "enabled": true,
-      "lastRunAt": "2026-04-22T14:38:01.621Z",
-      "nextRunAt": "2026-04-23T14:37:46.000Z"
+      "jitterSeconds": 466
     },
     {
       "taskId": "uncapped-thumbnails",
+      "description": "Daily 8am PT thumbnail generator for The Only Friends Podcast \u2014 reads ROS from #run-of-show, produces A/B for biggest story + alternative for 2nd biggest, judge enforces \u226570 with rebuilds, posts 3 images to #thumbnails.",
+      "schedule": "At 08:04 AM, Monday through Friday",
       "cronExpression": "0 8 * * 1-5",
       "enabled": true,
+      "nextRunAt": "2026-04-23T15:03:46.000Z",
       "lastRunAt": "2026-04-22T15:04:01.732Z",
-      "nextRunAt": "2026-04-23T15:03:46.000Z"
-    },
-    {
-      "taskId": "uncapped-graphic-design-late",
-      "cronExpression": "5 8 * * 1-5",
-      "enabled": true,
-      "lastRunAt": "2026-04-22T15:12:30.657Z",
-      "nextRunAt": "2026-04-23T15:12:15.000Z"
+      "jitterSeconds": 226
     },
     {
       "taskId": "uncapped-producer",
+      "description": "Daily 8:15am PT producer audit before 8:30 pre-production for The Only Friends Podcast. Audits #intel-staging / ROS / thumbnails, promotes assets + design requests out of #intel-staging, and acts on Matt's manual notes in #producer.",
+      "schedule": "At 08:20 AM, Monday through Friday",
       "cronExpression": "15 8 * * 1-5",
       "enabled": true,
+      "nextRunAt": "2026-04-23T15:20:28.000Z",
       "lastRunAt": "2026-04-22T15:20:43.739Z",
-      "nextRunAt": "2026-04-23T15:20:28.000Z"
+      "jitterSeconds": 328
+    },
+    {
+      "taskId": "uncapped-graphic-design",
+      "description": "Primary 7:30am PT show-graphics sweep for The Only Friends Podcast \u2014 reads #graphic-design requests, generates tone-driven 1280\u00d7720 graphics via Nano Banana Pro, posts to #assets",
+      "schedule": "At 07:38 AM, Monday through Friday",
+      "cronExpression": "30 7 * * 1-5",
+      "enabled": true,
+      "nextRunAt": "2026-04-23T14:37:46.000Z",
+      "lastRunAt": "2026-04-22T14:38:01.621Z",
+      "jitterSeconds": 466
+    },
+    {
+      "taskId": "uncapped-graphic-design-late",
+      "description": "Late 8:05am PT show-graphics sweep for The Only Friends Podcast \u2014 catches late adds and any graphics flagged by thumbnails, finishes before 8:15 producer audit",
+      "schedule": "At 08:12 AM, Monday through Friday",
+      "cronExpression": "5 8 * * 1-5",
+      "enabled": true,
+      "nextRunAt": "2026-04-23T15:12:15.000Z",
+      "lastRunAt": "2026-04-22T15:12:30.657Z",
+      "jitterSeconds": 435
+    },
+    {
+      "taskId": "uncapped-hand-analysis",
+      "description": "Daily 5am PT viral-hand research cron for The Only Friends Podcast. Summary of ranked hands \u2192 #intel-staging; clip link \u2192 #assets. Feeds the B block.",
+      "schedule": "At 05:06 AM, Monday through Friday",
+      "cronExpression": "0 5 * * 1-5",
+      "enabled": true,
+      "nextRunAt": "2026-04-23T12:06:07.000Z",
+      "jitterSeconds": 367
+    },
+    {
+      "taskId": "of-dashboard-snapshot",
+      "description": "Writes /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/web/data.json every 5 minutes so the Mission Control static site has fresh data.",
+      "schedule": "Every 5 minutes, every hour, every day",
+      "cronExpression": "*/5 * * * *",
+      "enabled": true,
+      "nextRunAt": "2026-04-23T06:16:18.000Z",
+      "lastRunAt": "2026-04-23T06:11:39.997Z",
+      "jitterSeconds": 78
     }
   ],
   "george": {
@@ -311,7 +347,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-23T04:54:28.267Z] (legacy ready event) George 2.0 online as George 2.0#9605\n[2026-04-23T04:54:28.267Z] George 2.0 online as George 2.0#9605 (id 1496028625189863544)\n[2026-04-23T04:54:28.267Z] configured channels: 5\n[2026-04-23T04:54:28.268Z] default mode for everything else: mention\n",
-    "uptime": "01:12:43",
+    "uptime": "01:20:51",
     "channels": [
       {
         "name": "brand-design",
@@ -343,8 +379,561 @@
     ]
   },
   "discord": {
-    "ros": [],
-    "thumbs": [],
-    "assets": []
+    "ros": [
+      {
+        "id": "1496514066057789441",
+        "content": "\ud83d\udccb **Run of Show \u2014 Wednesday, April 22, 2026 \u2014 EP. \u2014**\n\n**A BLOCK:** Matusow Says High-Roller Earnings Are a Mirage \u2014 Chidwick Admits $5\u201310M on $76M Lifetime\n**B BLOCK:** WSOP Rings Debut in Texas Tomorrow (While The Lodge Sits Frozen) | USPO Championship Tonight\n**C BLOCK:** Zobian's USPO #9 + Children's Nonprofit / Hellmuth Home Game Ep 20 \"Quads\" Moment / Wemby Concussion Tanks Spurs Futures / Cartillier's Cinderella WSOPC Win\n\n\ud83d\udcfa **Top YT title:** \"Stephen Chidwick Just Admitted He's Only Kept $10M of His $76M in Lifetime Poker Cashes\"\n\ud83c\udfac **Best clip:** A Block ~0:14:00\u20130:17:00 \u2014 Matusow's \"mirage\" quote + Chidwick's $5\u201310M / $76M reply + Matt's \"what did you keep\" line\n\n*[cowork] Run-of-Show Agent \u00b7 April 22, 2026 \u00b7 7:25 AM PT*\n\n---",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:12:37.235Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514122890612767",
+        "content": "**\ud83c\udfaf COLD OPEN (~2 min)** \u2014 Matusow mirage \u2192 Chidwick $76M/$10M number frame + alt number-forward open",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:12:50.785Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514251437772881",
+        "content": "**\ud83d\udd34 A BLOCK (~40 min)** \u2014 Matusow calls HR earnings a mirage; Davies 50%, Chidwick $5\u201310M/$76M, Deeb hints Peters non-poker, Arieh defends MTT pros",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:13:21.433Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514345000243251",
+        "content": "**A BLOCK \u2014 Talking Points** \u2014 Matusow right real number worse, Hendon Mob lie, Davies 50% flex, Deeb hint, does transparency kill or grow HR content",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:13:43.740Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514380928647408",
+        "content": "**A BLOCK \u2014 Counterpoint + Tangents + Seed Line** \u2014 Matusow-as-bit steelman, Hellmuth Home Game cross-ref, Linde/Peters staking norms, Matt seed: 'what did you keep?'",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:13:52.306Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514466253115432",
+        "content": "**\ud83d\udfe0 B BLOCK (~30 min)** \u2014 WSOPC Texas opens at TCH Austin Apr 23\u2013May 4 while Lodge remains frozen; selective enforcement lens",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:14:12.649Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514538806444193",
+        "content": "**B BLOCK \u2014 Segment 2** \u2014 USPO $25.6K Championship tonight, Wilson points leader; Hand-of-Day 5th straight no-find flagged",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:14:29.947Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514642942628063",
+        "content": "**\ud83d\ude02 C BLOCK (~15 min)** \u2014 Zobian USPO #9 + Natna Foundation, Hellmuth quads moment, Wemby concussion degens corner",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:14:54.775Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514723360018495",
+        "content": "**C BLOCK continued \u2014 Items 3 & 4** \u2014 Wemby fall / Spurs futures / OKC favorite; Cartillier 3rd cash = gold ring (cut first). No memes drop today.",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:15:13.948Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514815701684395",
+        "content": "**\ud83d\udd1a CLOSE** + Algorithm notes: best clip, 3 YT title options, trending angle (money-reveal)",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:15:35.964Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496514912971653273",
+        "content": "**\ud83d\udea9 ALL PREP FLAGS** \u2014 Conrad graphics/clips, Andy research items, Matt seed line, staleness check",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:15:59.155Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496533530677608520",
+        "content": "\u26a0\ufe0f **Producer audit blocked from #producer \u2014 rerouted here** \u2014 main DISCORD_BOT_TOKEN 401, GEORGE_BOT_TOKEN fallback 401, Claude_Bridge lacks send in #producer",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T15:29:57.962Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496533599770644673",
+        "content": "\ud83c\udfac **Producer Audit \u2014 April 22, 2026** \u2014 \u2705 READY: ROS locked, thumbnails 3/3 \u226570, 8/8 graphics shipped, every block has staged asset + graphic, Hand-of-Day absence handled",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T15:30:14.435Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496533691487359037",
+        "content": "\u26a0\ufe0f **Flags:** 1) Iran/Hormuz lead has no ROS placement; 2) 'Texas AG' partisan-adjacent \u2192 swap to 'Texas enforcement'; 3) Thumbs concept-only (Claid exhausted); 4) Conrad clips not visibly confirmed in #assets; 5) Andy research items not dropped publicly",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T15:30:36.302Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496533733808017490",
+        "content": "\ud83d\udd25 Breaking last 2hrs: None. \ud83d\udca1 Recommend: lock Iran/Hormuz in/out, soften B-block TP#1, confirm Conrad's 3 clips.",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T15:30:46.392Z",
+        "hasAttachments": false
+      }
+    ],
+    "thumbs": [
+      {
+        "id": "1493436599256744035",
+        "content": "[cowork] **A \u2014 \"THEY KEPT IT\"** | Doug Polk intense/contempt | red gradient | Google library",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-14T02:23:51.973Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1493436617493581966",
+        "content": "[cowork] **B \u2014 \"BLEW THE DEADLINE\"** | Lodge interior blurred bg | analysis angle | Google image",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-14T02:23:56.321Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1493436643569307729",
+        "content": "[cowork] **C \u2014 \"NO ROOM IS SAFE\"** | AI SWAT-raid poker scene | purple-dark bg | library (ai-lodge-raid-scene)",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-14T02:24:02.538Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1493436684526944326",
+        "content": "[cowork] \ud83d\uddbc\ufe0f Thumbnail options \u2014 April 13, 2026 \u2014 A/B/C summary + build notes (Photoshop/Nano unavailable, fallback PIL)",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-14T02:24:12.303Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1493756476185907322",
+        "content": "**\ud83c\udfa8 THUMBNAIL CANDIDATES \u2014 April 14** \u2014 A DROPPED./KEPT IT. 90, B $2,000,000./NO CHARGES. 90, ALT THREE./IN A ROW. 78",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-14T23:34:56.576Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1494485457633804288",
+        "content": "**\ud83c\udfa8 E2E PIPELINE TEST \u2014 Apr 16** \u2014 Phil Ivey 'THE GOAT | RETURNS' A fire right 0.95x, B warm dedup 0.87 > threshold",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-16T23:51:39.297Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1494491222750789762",
+        "content": "**\ud83e\uddea E2E TEST \u2014 Independent A/B Builds + Story Context** \u2014 Phil Ivey $20M baccarat loss; divergence 5/5 \u2705 dedup 0.55 \u2705",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-17T00:14:33.808Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496001733539790990",
+        "content": "\u26a0\ufe0f Thumbnail run aborted \u2014 no ROS from Mon 2026-04-20 found. Preflight 21/21 passed.",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T04:16:47.644Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496165692020363304",
+        "content": "\u26a0\ufe0f Thumbnail run aborted Tue 2026-04-21 \u2014 also DISCORD_BOT_TOKEN 401, using GEORGE_BOT_TOKEN fallback. Rotate main token.",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T15:08:18.392Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496530839788589186",
+        "content": "\ud83c\udfa8 **Thumbnails \u2014 2026-04-22** \u00b7 3 candidates \u00b7 Claid billing exhausted \u2192 concept treatment \u00b7 A $10M|OF $76M 74 \u00b7 B KEPT|PENNIES 75 \u00b7 C APRIL 23.|RINGS. 72 \u00b7 all cleared 70 \u00b7 0 rebuilds",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T15:19:16.404Z",
+        "hasAttachments": true
+      }
+    ],
+    "assets": [
+      {
+        "id": "1496003580593701016",
+        "content": "\ud83d\udcce [C BLOCK \u00b7 Item 2] Michigan C&Ds 45 offshore sites \u2014 MGCB order Apr 19, ACR/BetOnline/SportsBetting named",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T04:24:08.016Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496003590299582498",
+        "content": "\ud83d\udcce [C BLOCK \u00b7 Item 3] Bleznick flips $1M Wemby superfractor for $1.5M",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T04:24:10.330Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496003609031082075",
+        "content": "\ud83d\udcce [C BLOCK \u00b7 Item 4 cut first] Academics vs FAIR BET Act / Titus quote",
+        "author": {
+          "username": "George",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T04:24:14.796Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496077224858619987",
+        "content": "\ud83d\udcce Dylan Linde calls out David Peters (1/6) \u2014 X screenshot / A-block setup",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T09:16:46.177Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496077233322987601",
+        "content": "\ud83d\udcce Damon Jones NBA betting plea \u2014 CardPlayer hero / B-block",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T09:16:48.195Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496077247965167668",
+        "content": "\ud83d\udcce Joao Simao wins USPO Event #8 \u2014 CardPlayer hero / C-block results",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T09:16:51.686Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496077256093601813",
+        "content": "\ud83d\udcce Young Hellmuth meltdown footage \u2014 WPT tweet / A-block reaction",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T09:16:53.624Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496077264469758145",
+        "content": "\ud83d\udcce Schulman soul reads a pro \u2014 CardPlayer hero",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T09:16:55.621Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496077271935488081",
+        "content": "\ud83d\udcce 888poker launches RIT in cash \u2014 industry-news segment",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T09:16:57.401Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496077278675992617",
+        "content": "\ud83d\udcce Jeff Platt off to WSOPC Texas \u2014 X tweet / D-block schedule note",
+        "author": {
+          "username": "George 2.0",
+          "isBot": true
+        },
+        "createdAt": "2026-04-21T09:16:59.008Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496440219971489933",
+        "content": "\ud83d\udcce Matusow 'High roller earnings are a mirage' \u2014 PokerNews hero / A-BLOCK lead",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T09:19:10.956Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496440242851414096",
+        "content": "\ud83d\udcce Zobian wins USPO Event #9 ($292,800) \u2014 PokerNews hero / B-BLOCK human-interest",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T09:19:16.411Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496440267350212660",
+        "content": "\ud83d\udcce Hellmuth's Home Game Ep 20 \u2014 PokerNews hero / A-BLOCK quads + Matusow cross-ref",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T09:19:22.252Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496440293304696913",
+        "content": "\ud83d\udcce WSOP Circuit arrives in Texas (TCH Austin, Apr 23) \u2014 @tjreidpoker tweet / B-BLOCK",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T09:19:28.440Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496440319334547507",
+        "content": "\ud83d\udcce Cartillier wins WSOPC Aix-en-Provence (\u20ac150K) \u2014 PokerNews hero / C-BLOCK Cinderella",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T09:19:34.646Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496455013432557679",
+        "content": "\ud83d\udcce Tim Cook stepping down \u2014 Apple Newsroom / B Block (Cook \u2192 Ternus Sept 1)",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T10:17:57.992Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496455036840968207",
+        "content": "\ud83d\udcce Wemby concussion Game 2 \u2014 ESPN / B Block (face-first fall, series 1-1)",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T10:18:03.573Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496455456426561546",
+        "content": "\ud83d\udcce NFL Draft tomorrow in Pittsburgh \u2014 ESPN / A Block",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T10:19:43.610Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496455462898634782",
+        "content": "\ud83d\udcce Schlittler death threats after Hurkacz match \u2014 NBC News / B Block",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T10:19:45.153Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496515107692482630",
+        "content": "\ud83d\udcce [A BLOCK] Matusow 'Mirage' \u2192 Chidwick Reply \u2014 PokerNews source + Linde/Peters context",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:16:45.580Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496515167553454152",
+        "content": "\ud83d\udcce [B BLOCK] WSOPC Texas Schedule (TCH Austin) + USPO Event #10 PGT page + Lodge civil-forfeiture status",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:16:59.852Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496515258808930374",
+        "content": "\ud83d\udcce [C BLOCK] Zobian USPO #9, Hellmuth Ep 20 quads, Wemby concussion + Polymarket, Cartillier WSOPC",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:17:21.609Z",
+        "hasAttachments": false
+      },
+      {
+        "id": "1496525768480526366",
+        "content": "\ud83d\uddbc\ufe0f MATUSOW MIRAGE vs. CHIDWICK REPLY \u2014 show graphic / A BLOCK dual quote card",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:59:07.310Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496525816895373454",
+        "content": "\ud83d\uddbc\ufe0f WSOPC TEXAS DEBUT \u2014 show graphic / B BLOCK open, Lodge-frozen contrast",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:59:18.853Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496525846033469492",
+        "content": "\ud83d\uddbc\ufe0f ZOBIAN USPO EVENT #9 \u2014 show graphic / C BLOCK Item 1",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:59:25.800Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496525868930039858",
+        "content": "\ud83d\uddbc\ufe0f NATNA FOUNDATION \u2014 show graphic / C BLOCK Item 1 sub-card",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:59:31.259Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496525898671853578",
+        "content": "\ud83d\uddbc\ufe0f POLYMARKET PULSE \u2014 show graphic / 4-quadrant recurring card",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:59:38.350Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496525923191623690",
+        "content": "\ud83d\uddbc\ufe0f COOK HANDS OFF APPLE \u2014 show graphic / World Intel cutaway ($4T + Ternus succession)",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T14:59:44.196Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496526114493960233",
+        "content": "\ud83d\uddbc\ufe0f HIGH ROLLER CASHES \u2260 PROFITS \u2014 show graphic / A BLOCK 3-row receipts (Chidwick, Peters, Davies)",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T15:00:29.806Z",
+        "hasAttachments": true
+      },
+      {
+        "id": "1496526147201273967",
+        "content": "\ud83d\uddbc\ufe0f BTC SPOT CHECK \u2014 show graphic / World Intel cutaway, BTC $78,000",
+        "author": {
+          "username": "Claude_Bridge",
+          "isBot": true
+        },
+        "createdAt": "2026-04-22T15:00:37.604Z",
+        "hasAttachments": true
+      }
+    ]
   }
 }
