@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Only Friends · Mission Control</title>
+<meta name="description" content="Mission control for The Only Friends Podcast.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='80' font-size='80'%3E%F0%9F%9B%B0%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+/* ---------- Mission Control theme ---------- */
+:root {
+  color-scheme: dark;
+  --bg:        #030812;
+  --bg-2:      #081220;
+  --panel:     #0a1628;
+  --panel-2:   #0d1c33;
+  --line:      #0f2844;
+  --line-2:    #17406b;
+  --ink:       #cfe6ff;
+  --ink-2:     #6b8cb0;
+  --muted:     #456687;
+  --cyan:      #5af2ea;
+  --cyan-dim:  #1e6b67;
+  --mag:       #f857c4;
+  --mag-dim:   #6a1f52;
+  --gold:      #fbbf24;
+  --ok:        #34d399;
+  --warn:      #f59e0b;
+  --danger:    #ef4444;
+  --tier1:     #60a5fa;
+  --tier2:     #fb923c;
+  --tier3:     #c084fc;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font: 13px/1.5 "JetBrains Mono", "Fira Code", Menlo, Monaco, "Courier New", ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+/* subtle scan-line texture */
+body::before {
+  content:""; position: fixed; inset:0; pointer-events:none; z-index:1;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(90,242,234,0.06), transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(248,87,196,0.05), transparent 55%),
+    repeating-linear-gradient(0deg, transparent 0 2px, rgba(255,255,255,0.012) 2px 3px);
+}
+.wrap { position: relative; z-index: 2; max-width: 1440px; margin: 0 auto; padding: 14px 20px 40px; }
+
+/* ---------- Top bar ---------- */
+.topbar { display:flex; align-items:center; justify-content:space-between; padding: 6px 0 14px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+.brand { display:flex; align-items:baseline; gap: 14px; }
+.brand h1 {
+  margin:0; font-size: 22px; font-weight: 500; letter-spacing: 0.04em;
+  color: var(--cyan); text-shadow: 0 0 14px rgba(90,242,234,0.35);
+}
+.brand .title-sub { color: var(--muted); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
+.brand .of { color: var(--gold); }
+.topbar-right { display:flex; gap: 10px; align-items:center; }
+.pill-live {
+  display:inline-flex; align-items:center; gap: 6px; padding: 5px 10px; border-radius: 999px;
+  font: 600 11px/1 inherit; color: var(--ok); border: 1px solid var(--ok); background: rgba(52,211,153,0.05);
+  letter-spacing: 0.1em;
+}
+.pill-live::before {
+  content:""; width:7px; height:7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 8px var(--ok);
+  animation: blink 1.4s infinite ease-in-out;
+}
+.pill-live.red { color: var(--danger); border-color: var(--danger); background: rgba(239,68,68,0.05); }
+.pill-live.red::before { background: var(--danger); box-shadow: 0 0 10px var(--danger); }
+.pill-live.blue { color: var(--cyan); border-color: var(--cyan-dim); background: rgba(90,242,234,0.05);}
+.pill-live.blue::before { background: var(--cyan); box-shadow: 0 0 10px var(--cyan);}
+@keyframes blink { 0%, 60% { opacity: 1; } 80% { opacity: 0.3; } 100% { opacity: 1; } }
+
+.terminal-btn {
+  background: transparent; border: 1px solid var(--line-2);
+  color: var(--ink); padding: 6px 12px; border-radius: 6px;
+  font: 600 11px/1 inherit; letter-spacing: 0.12em; cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.terminal-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+/* ---------- Tab nav ---------- */
+.tabs { display:flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.tab {
+  background: transparent; border: 1px solid var(--line-2);
+  color: var(--ink-2); padding: 7px 14px; border-radius: 6px;
+  font: 500 12px/1 inherit; letter-spacing: 0.06em; cursor: pointer;
+  transition: all .15s;
+}
+.tab:hover { color: var(--ink); border-color: var(--line-2); }
+.tab.active { color: var(--cyan); border-color: var(--cyan); background: rgba(90,242,234,0.06); box-shadow: 0 0 16px rgba(90,242,234,0.12) inset; }
+
+/* ---------- What Needs You ---------- */
+.needs { margin-bottom: 20px; }
+.needs h3, .panel h3, .section h2 {
+  margin: 0 0 10px; color: var(--cyan); font: 500 14px/1 inherit;
+  letter-spacing: 0.03em;
+}
+.needs-list { display: flex; flex-direction: column; gap: 8px; }
+.alert {
+  border: 1px solid var(--mag); background: rgba(248,87,196,0.04);
+  border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: var(--ink);
+  display: flex; gap: 10px; align-items: baseline;
+}
+.alert .tag { color: var(--mag); font-weight: 700; letter-spacing: 0.15em; font-size: 10.5px; text-transform: uppercase; min-width: 42px; }
+.alert.info { border-color: var(--cyan-dim); background: rgba(90,242,234,0.04); }
+.alert.info .tag { color: var(--cyan); }
+.alert.ok { border-color: rgba(52,211,153,0.4); background: rgba(52,211,153,0.04); }
+.alert.ok .tag { color: var(--ok); }
+
+/* ---------- Layout grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) 300px minmax(0, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1200px) { .grid { grid-template-columns: 1fr 1fr; } .pane-feed { grid-column: 1 / -1; } }
+@media (max-width: 800px)  { .grid { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 10px; padding: 16px; position: relative;
+}
+.panel.plot { background: radial-gradient(ellipse at 50% 55%, var(--panel-2) 0%, var(--panel) 65%); overflow: hidden; padding-bottom: 22px; }
+.panel h4 { margin: 0 0 10px; color: var(--cyan); font: 500 13px/1 inherit; letter-spacing: 0.03em; }
+.panel-mid { display:flex; flex-direction: column; gap: 16px; }
+
+/* ---------- Orbital agent table ---------- */
+.orbit-wrap { position: relative; aspect-ratio: 1 / 0.85; min-height: 440px; }
+.orbit-wrap svg { width: 100%; height: 100%; display:block; }
+.orbit-label {
+  position: absolute; left: 14px; bottom: 10px; color: var(--muted);
+  font: 600 10px/1 inherit; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.orbit-legend {
+  position: absolute; right: 14px; top: 12px;
+  display:flex; flex-direction: column; gap: 4px;
+  font: 500 10px/1.5 inherit; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase;
+}
+.orbit-legend .leg { display:flex; align-items:center; gap: 6px; }
+.orbit-legend .dot { width: 8px; height: 8px; border-radius:50%; display:inline-block; }
+
+/* ---------- Middle panels: Score / Quick / Glance / Timeline ---------- */
+.kv { display:flex; justify-content: space-between; align-items: baseline; padding: 4px 0; font-size: 12.5px; }
+.kv .label { color: var(--ink-2); letter-spacing: 0.02em; }
+.kv .val { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.score-big { font-size: 42px; color: var(--cyan); font-weight: 500; line-height: 1; margin: 4px 0 10px; text-shadow: 0 0 12px rgba(90,242,234,0.35); font-variant-numeric: tabular-nums;}
+.glance .row {
+  display:flex; justify-content: space-between; align-items: baseline;
+  padding: 6px 0; border-bottom: 1px dashed var(--line);
+}
+.glance .row:last-child { border-bottom: none; }
+.glance .name { color: var(--ink); font-size: 12.5px; }
+.glance .st { font-size: 11px; letter-spacing: 0.06em; }
+.st-clean, .st-ok, .st-recent, .st-running { color: var(--ok); }
+.st-running { color: var(--cyan); }
+.st-stale, .st-dirty { color: var(--mag); }
+.st-idle { color: var(--muted); }
+.st-never { color: var(--warn); }
+
+.quick-actions { display:flex; flex-direction: column; gap: 6px; }
+.quick-actions button {
+  text-align: left; background: transparent; color: var(--ink);
+  border: 1px solid var(--line-2); border-radius: 6px; padding: 8px 12px;
+  font: 500 12px/1 inherit; letter-spacing: 0.02em; cursor: pointer;
+  transition: all .15s;
+}
+.quick-actions button:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.timeline-list { display:flex; flex-direction: column; gap: 8px; }
+.tl-row { display: grid; grid-template-columns: 1fr auto; gap: 6px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: 12px; }
+.tl-row:last-child { border-bottom: none; }
+.tl-name { color: var(--ink); }
+.tl-when { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.tl-state { font-size: 10.5px; letter-spacing: 0.06em; grid-column: 1 / -1; }
+
+/* ---------- Feed panel ---------- */
+.pane-feed { display:flex; flex-direction: column; }
+.feed-head { display:flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
+.feed-head h3 { margin:0; }
+.feed-head .meta { color: var(--muted); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;}
+.feed {
+  flex: 1; overflow-y: auto; min-height: 360px; max-height: 760px;
+  display: flex; flex-direction: column; gap: 12px;
+  padding-right: 4px;
+}
+.feed::-webkit-scrollbar { width: 6px; }
+.feed::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+.msg { border-left: 2px solid var(--line-2); padding: 6px 0 6px 12px; }
+.msg .who { color: var(--cyan); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.msg.agent-george .who, .msg.agent-ros .who { color: var(--cyan); }
+.msg.agent-producer .who { color: var(--mag); }
+.msg.agent-thumbs .who { color: var(--gold); }
+.msg.agent-research .who { color: var(--tier1); }
+.msg.agent-design .who { color: var(--tier2); }
+.msg.agent-audit .who { color: var(--tier3); }
+.msg .time { color: var(--muted); font-size: 10.5px; margin-left: 8px; letter-spacing: 0.04em; }
+.msg .body { margin-top: 4px; color: var(--ink); font-size: 12.5px; line-height: 1.5; white-space: pre-wrap;}
+
+.feed-input {
+  margin-top: 12px; display: grid; grid-template-columns: 1fr auto; gap: 8px;
+}
+.feed-input input {
+  background: var(--bg-2); border: 1px solid var(--line-2); border-radius: 6px;
+  padding: 8px 12px; color: var(--ink); font: 500 12px/1 inherit; letter-spacing: 0.02em; outline: none;
+}
+.feed-input input:focus { border-color: var(--cyan); }
+.feed-input button { background: var(--cyan); color: #031018; border: none; border-radius: 6px; padding: 0 16px; font: 700 12px/1 inherit; letter-spacing: 0.06em; cursor: pointer; }
+.feed-input button:hover { background: #9ff7f1; }
+.feed-input .hint { grid-column: 1 / -1; color: var(--muted); font-size: 10.5px; letter-spacing: 0.04em; margin-top: 2px;}
+
+/* ---------- Footer ---------- */
+footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: center; letter-spacing: 0.1em; text-transform: uppercase;}
+
+/* ---------- Hidden tab panes ---------- */
+.pane { display: none; }
+.pane.visible { display: block; }
+.command-view { display: grid; grid-template-columns: minmax(0, 1.6fr) 300px minmax(0, 1fr); gap: 18px; }
+@media (max-width: 1200px) { .command-view { grid-template-columns: 1fr 1fr; } .command-view .pane-feed { grid-column: 1 / -1; } }
+@media (max-width: 800px)  { .command-view { grid-template-columns: 1fr; } }
+
+/* Agents/Crons/Channels alternative views */
+.list-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.list-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 14px; display:flex; flex-direction:column; gap: 6px;
+}
+.list-card .lc-name { color: var(--cyan); font-weight: 700; letter-spacing: 0.04em; }
+.list-card .lc-meta { color: var(--muted); font-size: 11px; letter-spacing: 0.04em; }
+.list-card .lc-state { font-size: 11px; }
+
+.timeline-strip {
+  position: relative; height: 80px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 10px; padding: 12px 16px; margin-bottom: 14px;
+}
+.timeline-strip .trk { position: absolute; top: 50%; left: 3%; right: 3%; height: 2px; background: var(--line-2); transform: translateY(-50%);}
+.timeline-strip .ev { position: absolute; top: 50%; width: 12px; height: 12px; border-radius: 50%; transform: translate(-50%,-50%); border: 2px solid var(--bg); box-shadow: 0 0 0 1px var(--line-2);}
+.timeline-strip .ev.t1 { background: var(--tier1);} .timeline-strip .ev.t2 { background: var(--tier2);} .timeline-strip .ev.t3 { background: var(--tier3);}
+.timeline-strip .ev.run { background: var(--ok); box-shadow: 0 0 12px var(--ok); animation: pulseG 1.6s infinite;}
+.timeline-strip .lbl { position: absolute; top: 8px; font: 500 10px/1 inherit; color: var(--muted); transform: translateX(-50%); letter-spacing: 0.06em; }
+.timeline-strip .hr { position: absolute; bottom: 8px; font: 500 10px/1 inherit; color: var(--muted); transform: translateX(-50%);}
+.timeline-strip .now { position: absolute; top: 8px; bottom: 8px; width: 2px; background: var(--danger); transform: translateX(-50%);}
+
+@keyframes pulseG { 0%,100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.6);} 50% { box-shadow: 0 0 0 8px rgba(52,211,153,0);} }
+
+/* ---------- Channel grid ---------- */
+.ch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px;}
+.ch-cat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;}
+.ch-cat h5 { margin: 0 0 8px; color: var(--ink-2); font: 600 11px/1 inherit; letter-spacing: 0.14em; text-transform: uppercase;}
+.ch-cat ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 5px;}
+.ch-cat li { font: 500 11px/1 inherit; padding: 5px 8px; border-radius: 4px; background: var(--bg-2); border: 1px solid var(--line); color: var(--ink-2);}
+.ch-cat li.hot { color: var(--cyan); border-color: var(--cyan-dim); background: rgba(90,242,234,0.05);}
+.ch-cat li.new { color: var(--gold); border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.06);}
+
+/* toast */
+.toast { position: fixed; bottom: 20px; right: 20px; background: var(--panel-2); border: 1px solid var(--cyan); color: var(--cyan);
+  padding: 10px 14px; border-radius: 8px; font-size: 12px; z-index: 20; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; transform: translateY(10px);}
+.toast.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- ================== TOP BAR ================== -->
+  <div class="topbar">
+    <div class="brand">
+      <h1>ONLY FRIENDS · <span class="of">MISSION CONTROL</span></h1>
+      <span class="title-sub" id="clock">— PT</span>
+    </div>
+    <div class="topbar-right">
+      <span class="pill-live blue" id="status-pill">INITIALIZING</span>
+      <button class="terminal-btn" onclick="sendPrompt && sendPrompt('open terminal')">TERMINAL</button>
+    </div>
+  </div>
+
+  <!-- ================== TABS ================== -->
+  <div class="tabs">
+    <button class="tab active" data-pane="command">Command</button>
+    <button class="tab" data-pane="agents">Agents</button>
+    <button class="tab" data-pane="crons">Crons</button>
+    <button class="tab" data-pane="channels">Channels</button>
+    <button class="tab" data-pane="content">Content</button>
+  </div>
+
+  <!-- ================== WHAT NEEDS YOU ================== -->
+  <div class="needs">
+    <h3>What Needs You Now</h3>
+    <div class="needs-list" id="needs-list">
+      <div class="alert info"><span class="tag">info</span><span>loading pipeline status…</span></div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       COMMAND PANE (default)
+  ========================================================================= -->
+  <div class="pane command visible" id="pane-command">
+    <div class="command-view">
+
+      <!-- =========== ORBITAL AGENT TABLE =========== -->
+      <div class="panel plot">
+        <h4>Agent Table</h4>
+        <div class="orbit-wrap">
+          <svg viewBox="0 0 520 440" id="orbit-svg" xmlns="http://www.w3.org/2000/svg" aria-label="Agent orbital map">
+            <defs>
+              <radialGradient id="centerGlow" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#5af2ea" stop-opacity="0.38"/>
+                <stop offset="50%" stop-color="#5af2ea" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#5af2ea" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="mattGlow" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.35"/>
+                <stop offset="70%" stop-color="#fbbf24" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="pulse" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4"/>
+              </filter>
+            </defs>
+
+            <!-- orbit rings -->
+            <circle cx="260" cy="220" r="180" fill="none" stroke="#1e6b67" stroke-width="1" stroke-dasharray="4 6" opacity="0.35"/>
+            <circle cx="260" cy="220" r="130" fill="none" stroke="#6a1f52" stroke-width="1" stroke-dasharray="3 5" opacity="0.35"/>
+            <circle cx="260" cy="220" r="185" fill="url(#centerGlow)" opacity="0.5"/>
+
+            <!-- Matt node (principal, floats above) -->
+            <g id="node-matt" transform="translate(260, 40)">
+              <circle r="34" fill="url(#mattGlow)"/>
+              <circle r="22" fill="#0a1628" stroke="#fbbf24" stroke-width="1.5"/>
+              <text y="-40" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="700" letter-spacing="1.4">PRINCIPAL</text>
+              <text y="4" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="600">MATT</text>
+            </g>
+            <!-- line matt → george -->
+            <line x1="260" y1="62" x2="260" y2="196" stroke="#17406b" stroke-width="1" stroke-dasharray="2 4"/>
+
+            <!-- Center: George (Mission Lead) -->
+            <g id="node-george" transform="translate(260, 220)">
+              <circle r="52" fill="url(#centerGlow)"/>
+              <circle r="38" fill="#0a1628" stroke="#5af2ea" stroke-width="1.5"/>
+              <text y="-4" text-anchor="middle" fill="#5af2ea" font-size="12" font-weight="700" letter-spacing="1">GEORGE</text>
+              <text y="14" text-anchor="middle" fill="#6b8cb0" font-size="10" letter-spacing="1.2">MISSION LEAD</text>
+            </g>
+
+            <!-- Agent nodes (filled dynamically) -->
+            <g id="orbit-nodes"></g>
+            <g id="orbit-lines"></g>
+
+            <!-- SHOW status: bottom -->
+            <g transform="translate(260, 405)">
+              <rect x="-75" y="-14" width="150" height="26" rx="13" fill="#0a1628" stroke="#17406b"/>
+              <text id="show-text" text-anchor="middle" y="4" fill="#6b8cb0" font-size="11" font-weight="600" letter-spacing="1.8">— TO AIR</text>
+            </g>
+          </svg>
+          <div class="orbit-label">agent_table.v1 · 9 scheduled + 1 realtime</div>
+          <div class="orbit-legend">
+            <div class="leg"><span class="dot" style="background:var(--tier1)"></span>research</div>
+            <div class="leg"><span class="dot" style="background:var(--tier2)"></span>production</div>
+            <div class="leg"><span class="dot" style="background:var(--tier3)"></span>audit</div>
+            <div class="leg"><span class="dot" style="background:var(--ok)"></span>running</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========== MIDDLE COLUMN =========== -->
+      <div class="panel-mid">
+        <div class="panel">
+          <h4>Daily Score</h4>
+          <div class="score-big" id="daily-score">—</div>
+          <div class="kv"><span class="label">Agents</span><span class="val" id="ct-agents">—</span></div>
+          <div class="kv"><span class="label">Running</span><span class="val" id="ct-running">—</span></div>
+          <div class="kv"><span class="label">Stale</span><span class="val" id="ct-stale">—</span></div>
+          <div class="kv"><span class="label">Cron %</span><span class="val" id="ct-cron">—</span></div>
+        </div>
+
+        <div class="panel">
+          <h4>Quick Actions</h4>
+          <div class="quick-actions">
+            <button onclick="go('#agents')">Open Agent Roster</button>
+            <button onclick="go('#crons')">View Cron Timeline</button>
+            <button onclick="go('#content')">Today's Outputs</button>
+            <button onclick="copyToClipboard('morning-brief-url')">Copy Morning-Brief Link</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h4>At a Glance</h4>
+          <div class="glance" id="glance-body">
+            <div class="row"><span class="name">loading…</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h4>Timeline</h4>
+          <div class="timeline-list" id="timeline-body">
+            <div class="tl-row"><span class="tl-name">loading…</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========== LIVE FEED =========== -->
+      <div class="panel pane-feed">
+        <div class="feed-head">
+          <h3>Live Feed</h3>
+          <span class="meta" id="feed-meta">—</span>
+        </div>
+        <div class="feed" id="feed-body">
+          <div class="msg"><div class="who">system</div><div class="body">loading recent pipeline activity…</div></div>
+        </div>
+        <div class="feed-input">
+          <input id="feed-input-el" placeholder="Note to self (local only — not sent to agents)…" autocomplete="off">
+          <button onclick="saveNote()">Log</button>
+          <div class="hint">Notes stay in this browser. To talk to agents, post in #producer and George will pick it up at 8:15a PT.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       AGENTS PANE
+  ========================================================================= -->
+  <div class="pane" id="pane-agents">
+    <div class="panel" style="margin-bottom: 14px;">
+      <h4>Agent Roster · live state</h4>
+      <div class="list-view" id="agents-list">loading…</div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CRONS PANE
+  ========================================================================= -->
+  <div class="pane" id="pane-crons">
+    <div class="timeline-strip" id="big-timeline"></div>
+    <div class="panel">
+      <h4>Scheduled Tasks</h4>
+      <div id="crons-detail">loading…</div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CHANNELS PANE
+  ========================================================================= -->
+  <div class="pane" id="pane-channels">
+    <div class="panel" style="margin-bottom: 14px;">
+      <h4>George Listening Map</h4>
+      <div id="george-channels-view" style="font-size:12.5px">loading…</div>
+    </div>
+    <div class="ch-grid">
+      <div class="ch-cat"><h5>🔬 Research &amp; Intel</h5><ul>
+        <li class="hot">#intel-staging</li><li class="new">#bookmarks</li><li class="new">#guest-research</li>
+        <li>#hand-analysis</li><li>#poker-history</li>
+      </ul></div>
+      <div class="ch-cat"><h5>🎬 Production</h5><ul>
+        <li class="hot">#run-of-show</li><li class="hot">#thumbnails</li><li class="hot">#assets</li>
+        <li>#graphic-design</li><li>#video-briefs</li>
+      </ul></div>
+      <div class="ch-cat"><h5>🎙️ Command Center</h5><ul>
+        <li class="hot">#producer</li><li>#approvals</li><li>#dev</li>
+      </ul></div>
+      <div class="ch-cat"><h5>💬 General</h5><ul>
+        <li>#announcements</li><li>#general</li><li>#brand-design</li><li>#ideas</li>
+      </ul></div>
+      <div class="ch-cat"><h5>🎬 Video Editor</h5><ul>
+        <li>#shorts</li><li>#clips</li><li>#edits</li><li>#lower-thirds</li>
+      </ul></div>
+      <div class="ch-cat"><h5>📈 Growth</h5><ul>
+        <li>#growth-ops</li><li>#analytics</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CONTENT PANE (today's outputs)
+  ========================================================================= -->
+  <div class="pane" id="pane-content">
+    <div class="panel">
+      <h4>Today's Outputs</h4>
+      <div id="content-body">loading…</div>
+    </div>
+  </div>
+
+  <footer>
+    <span id="fetched-at">data: snapshot pending</span>
+    &nbsp;·&nbsp;
+    <span>only_friends_mission_control.v1</span>
+  </footer>
+</div>
+
+<div class="toast" id="toast">—</div>
+
+<script>
+// =============================================================
+//  Agent metadata (position on orbit + display info)
+// =============================================================
+const AGENTS = [
+  // tier 1 — research — outer ring
+  { id:'uncapped-research-poker',      tier:1, ring:'outer', angle:-130, short:'poker',    full:'Research · Poker',    cron:'2:03a' },
+  { id:'uncapped-research-world',      tier:1, ring:'outer', angle:-95,  short:'world',    full:'Research · World',    cron:'3:07a' },
+  { id:'uncapped-research-memes',      tier:1, ring:'outer', angle:-60,  short:'memes',    full:'Research · Memes',    cron:'4:06a' },
+  { id:'uncapped-hand-analysis',       tier:1, ring:'outer', angle:-25,  short:'hand',     full:'Research · Hands',    cron:'5:06a' },
+  // tier 2 — production — inner ring
+  { id:'uncapped-run-of-show',         tier:2, ring:'inner', angle:205,  short:'ROS',      full:'Production · ROS',        cron:'7:08a' },
+  { id:'uncapped-graphic-design',      tier:2, ring:'inner', angle:245,  short:'graphics', full:'Production · Graphics',   cron:'7:38a' },
+  { id:'uncapped-thumbnails',          tier:2, ring:'inner', angle:285,  short:'thumbs',   full:'Production · Thumbnails', cron:'8:04a' },
+  { id:'uncapped-graphic-design-late', tier:2, ring:'inner', angle:325,  short:'gd-late',  full:'Production · GD Late',    cron:'8:12a' },
+  // tier 3 — audit
+  { id:'uncapped-producer',            tier:3, ring:'inner', angle:180,  short:'producer', full:'Audit · Producer',        cron:'8:20a' },
+];
+
+const CENTER = { x: 260, y: 220 };
+const RINGS = { outer: 180, inner: 130 };
+function polar(cx, cy, angle, r) {
+  const a = angle * Math.PI / 180;
+  return { x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r };
+}
+
+function ptNow() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })); }
+function fmtClock() {
+  const d = ptNow();
+  const h12 = ((d.getHours()+11)%12)+1;
+  return h12 + ':' + String(d.getMinutes()).padStart(2,'0') + ' ' +
+         (d.getHours()<12?'am':'pm') + ' PT · ' +
+         d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'America/Los_Angeles'}).toUpperCase();
+}
+function refreshClock() {
+  document.getElementById('clock').textContent = fmtClock();
+  const d = ptNow();
+  const mins = d.getHours()*60 + d.getMinutes();
+  const pill = document.getElementById('status-pill');
+  let label, cls;
+  if (mins < 10*60) {
+    const left = 10*60 - mins;
+    label = 'T−' + Math.floor(left/60) + ':' + String(left%60).padStart(2,'0') + ' TO AIR';
+    cls = 'pill-live blue';
+  } else if (mins < 12*60) { label = '● LIVE ON AIR'; cls = 'pill-live red'; }
+  else { label = '● POST-SHOW'; cls = 'pill-live'; }
+  pill.className = cls; pill.textContent = label;
+  // SHOW text on orbit
+  const st = document.getElementById('show-text');
+  if (st) {
+    if (mins < 10*60) { st.textContent = 'T−' + Math.floor((10*60-mins)/60) + 'h ' + ((10*60-mins)%60) + 'm TO AIR'; st.setAttribute('fill', '#6b8cb0');}
+    else if (mins < 12*60) { st.textContent = '● LIVE 10–12 PT'; st.setAttribute('fill', '#ef4444');}
+    else { st.textContent = 'SHOW COMPLETE'; st.setAttribute('fill', '#6b8cb0');}
+  }
+}
+
+function fmtRel(iso) {
+  if (!iso) return '—';
+  const diff = new Date(iso).getTime() - Date.now();
+  const past = diff < 0;
+  const mins = Math.round(Math.abs(diff)/60000);
+  const hrs = Math.floor(mins/60), days = Math.floor(hrs/24);
+  let s;
+  if (mins < 1) s = 'now';
+  else if (mins < 60) s = mins + 'm';
+  else if (hrs < 48) s = hrs + 'h' + (mins%60 ? ' '+(mins%60)+'m' : '');
+  else s = days + 'd';
+  if (s === 'now') return 'running';
+  return past ? (s + ' ago') : ('in ' + s);
+}
+
+function stateFor(task) {
+  if (!task || !task.enabled) return { cls: 'state-idle', label: 'disabled' };
+  if (!task.lastRunAt) return { cls: 'state-never', label: 'never run' };
+  const since = (Date.now() - new Date(task.lastRunAt).getTime())/60000;
+  if (since < 3) return { cls: 'state-running', label: 'running' };
+  if (since < 60) return { cls: 'state-recent', label: 'recent' };
+  if (since > 36*60) return { cls: 'state-stale', label: 'stale' };
+  return { cls: 'state-idle', label: 'idle' };
+}
+
+function escapeHtml(s) {
+  return String(s==null?'':s).replace(/[&<>"']/g,
+    c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// =============================================================
+//  Render orbit
+// =============================================================
+function renderOrbit(taskMap) {
+  const nodesEl = document.getElementById('orbit-nodes');
+  const linesEl = document.getElementById('orbit-lines');
+  if (!nodesEl) return;
+  nodesEl.innerHTML = '';
+  linesEl.innerHTML = '';
+  const TIER_COLOR = { 1: '#60a5fa', 2: '#fb923c', 3: '#c084fc' };
+  let runningCount = 0;
+
+  for (const a of AGENTS) {
+    const t = taskMap[a.id];
+    const st = t ? stateFor(t) : { cls: 'state-never', label: 'not registered' };
+    const r = RINGS[a.ring];
+    const p = polar(CENTER.x, CENTER.y, a.angle, r);
+
+    const isRunning = st.cls === 'state-running';
+    const isRecent  = st.cls === 'state-recent';
+    const isStale   = st.cls === 'state-stale';
+    if (isRunning) runningCount++;
+
+    const color = isRunning ? '#34d399' : isStale ? '#ef4444' : TIER_COLOR[a.tier];
+    const alpha = isRunning ? 1 : isRecent ? 0.95 : isStale ? 1 : 0.55;
+
+    // line from center to node
+    const ln = document.createElementNS('http://www.w3.org/2000/svg','line');
+    ln.setAttribute('x1', CENTER.x); ln.setAttribute('y1', CENTER.y);
+    ln.setAttribute('x2', p.x); ln.setAttribute('y2', p.y);
+    ln.setAttribute('stroke', isRunning ? '#34d399' : '#17406b');
+    ln.setAttribute('stroke-width', isRunning ? 1.4 : 0.7);
+    ln.setAttribute('stroke-dasharray', '2 5');
+    ln.setAttribute('opacity', isRunning ? 0.7 : 0.35);
+    linesEl.appendChild(ln);
+
+    // node group
+    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ')');
+    g.setAttribute('data-agent', a.id);
+    g.style.cursor = 'pointer';
+    g.addEventListener('click', () => { go('#agents'); });
+
+    if (isRunning) {
+      const glow = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      glow.setAttribute('r', 28); glow.setAttribute('fill', 'none');
+      glow.setAttribute('stroke', '#34d399'); glow.setAttribute('stroke-width', 1);
+      glow.setAttribute('opacity', 0.6);
+      glow.innerHTML = '<animate attributeName="r" from="20" to="34" dur="1.6s" repeatCount="indefinite"/>' +
+                       '<animate attributeName="opacity" from="0.6" to="0" dur="1.6s" repeatCount="indefinite"/>';
+      g.appendChild(glow);
+    }
+    const ring = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    ring.setAttribute('r', 20);
+    ring.setAttribute('fill', '#0a1628');
+    ring.setAttribute('stroke', color);
+    ring.setAttribute('stroke-width', isRunning ? 1.8 : 1);
+    ring.setAttribute('opacity', alpha);
+    g.appendChild(ring);
+
+    // label below
+    const labelY = 34; // below circle
+    const lbl1 = document.createElementNS('http://www.w3.org/2000/svg','text');
+    lbl1.setAttribute('y', labelY);
+    lbl1.setAttribute('text-anchor', 'middle');
+    lbl1.setAttribute('fill', color);
+    lbl1.setAttribute('opacity', alpha);
+    lbl1.setAttribute('font-size', 10);
+    lbl1.setAttribute('font-weight', 700);
+    lbl1.setAttribute('letter-spacing', 1);
+    lbl1.textContent = a.short.toUpperCase();
+    g.appendChild(lbl1);
+    const lbl2 = document.createElementNS('http://www.w3.org/2000/svg','text');
+    lbl2.setAttribute('y', labelY + 12);
+    lbl2.setAttribute('text-anchor', 'middle');
+    lbl2.setAttribute('fill', '#6b8cb0');
+    lbl2.setAttribute('font-size', 9);
+    lbl2.setAttribute('letter-spacing', 0.8);
+    lbl2.textContent = a.cron;
+    g.appendChild(lbl2);
+
+    // title for tooltip
+    const title = document.createElementNS('http://www.w3.org/2000/svg','title');
+    title.textContent = a.full + ' · ' + a.cron + ' · ' + st.label;
+    g.appendChild(title);
+
+    nodesEl.appendChild(g);
+  }
+  return runningCount;
+}
+
+// =============================================================
+//  Render At-a-Glance + Timeline
+// =============================================================
+function renderGlanceAndTimeline(tasks) {
+  // sort tasks by cron time asc
+  const sorted = tasks.slice().sort((a,b) => {
+    const pa = (a.cronExpression||'').split(/\s+/);
+    const pb = (b.cronExpression||'').split(/\s+/);
+    return (parseInt(pa[1]||'0',10)*60+parseInt(pa[0]||'0',10))
+         - (parseInt(pb[1]||'0',10)*60+parseInt(pb[0]||'0',10));
+  });
+  // glance
+  const glance = document.getElementById('glance-body');
+  glance.innerHTML = sorted.map(t => {
+    const st = stateFor(t);
+    const meta = AGENTS.find(a => a.id === t.taskId);
+    const label = meta ? meta.short : t.taskId;
+    const klass = 'st-' + st.cls.replace('state-','');
+    return '<div class="row"><span class="name">' + escapeHtml(label) + '</span>' +
+           '<span class="st ' + klass + '">' + st.label + '</span></div>';
+  }).join('') || '<div class="row"><span class="name">no tasks</span></div>';
+
+  // timeline (recent runs, most recent first)
+  const withLast = sorted.filter(t => t.lastRunAt).slice().sort((a,b) => new Date(b.lastRunAt) - new Date(a.lastRunAt));
+  const tl = document.getElementById('timeline-body');
+  tl.innerHTML = withLast.slice(0, 6).map(t => {
+    const meta = AGENTS.find(a => a.id === t.taskId);
+    const label = meta ? meta.short : t.taskId;
+    return '<div class="tl-row"><span class="tl-name">' + escapeHtml(label) +
+           ' <span style="color:var(--muted)">status:</span> ' + stateFor(t).label + '</span>' +
+           '<span class="tl-when">' + fmtRel(t.lastRunAt) + '</span></div>';
+  }).join('') || '<div class="tl-row"><span class="tl-name">no runs yet</span></div>';
+}
+
+// =============================================================
+//  Render live feed from George log + Discord/George state
+// =============================================================
+function renderFeed(snapshot) {
+  const feed = document.getElementById('feed-body');
+  const meta = document.getElementById('feed-meta');
+  const events = [];
+
+  // George log lines
+  const logLines = ((snapshot.george && snapshot.george.logTail) || '').split('\n').filter(Boolean);
+  for (const L of logLines) {
+    const m = L.match(/^\[([^\]]+)\]\s*(.*)$/);
+    if (!m) continue;
+    events.push({ who: 'george', cls: 'agent-george', ts: new Date(m[1]), body: m[2] });
+  }
+
+  // agent completions from tasks
+  const tasks = snapshot.tasks || [];
+  for (const t of tasks) {
+    if (!t.lastRunAt) continue;
+    const meta = AGENTS.find(a => a.id === t.taskId);
+    if (!meta) continue;
+    const cls = meta.tier === 1 ? 'agent-research' : meta.tier === 2 ? 'agent-design' : 'agent-audit';
+    events.push({
+      who: meta.short, cls,
+      ts: new Date(t.lastRunAt),
+      body: 'Completed run · ' + meta.full.toLowerCase() + ' · scheduled ' + meta.cron
+    });
+  }
+
+  // sort desc by ts and take top ~20
+  events.sort((a,b) => b.ts - a.ts);
+  const top = events.slice(0, 25);
+  meta.textContent = top.length + ' events · last ' + (top[0] ? fmtRel(top[0].ts.toISOString()) : '—');
+
+  feed.innerHTML = top.map(e =>
+    '<div class="msg ' + e.cls + '"><div class="who">' + escapeHtml(e.who) +
+    ' <span class="time">' + fmtRel(e.ts.toISOString()) + '</span></div>' +
+    '<div class="body">' + escapeHtml(e.body) + '</div></div>'
+  ).join('') || '<div class="msg"><div class="who">system</div><div class="body">no recent activity</div></div>';
+
+  // append locally-saved notes
+  const notes = JSON.parse(localStorage.getItem('of_notes') || '[]');
+  for (const n of notes.slice(-5).reverse()) {
+    const div = document.createElement('div');
+    div.className = 'msg';
+    div.innerHTML = '<div class="who" style="color:var(--gold)">you ' +
+                    '<span class="time">' + fmtRel(new Date(n.ts).toISOString()) + '</span></div>' +
+                    '<div class="body">' + escapeHtml(n.text) + '</div>';
+    feed.prepend(div);
+  }
+}
+
+// =============================================================
+//  Render "What needs you now"
+// =============================================================
+function renderNeeds(snapshot) {
+  const el = document.getElementById('needs-list');
+  const tasks = snapshot.tasks || [];
+  const needs = [];
+
+  // Stale tasks
+  const stale = tasks.filter(t => {
+    if (!t.enabled || !t.lastRunAt) return false;
+    return (Date.now() - new Date(t.lastRunAt).getTime())/60000 > 36*60;
+  });
+  if (stale.length) {
+    needs.push({ cls: '', tag: 'warn', text: stale.length + ' agent(s) haven\'t run in >36h: ' + stale.map(t=>t.taskId.replace('uncapped-','')).join(', ') });
+  }
+
+  // Never-run tasks
+  const never = tasks.filter(t => t.enabled && !t.lastRunAt);
+  if (never.length) {
+    needs.push({ cls: 'info', tag: 'info', text: never.length + ' agent(s) are registered but haven\'t fired yet: ' + never.map(t=>t.taskId.replace('uncapped-','')).join(', ') });
+  }
+
+  // George budget
+  const b = snapshot.george && snapshot.george.state && snapshot.george.state.budget;
+  if (b && b.spentUSD >= 18) {
+    needs.push({ cls: '', tag: 'warn', text: 'George spend at $' + b.spentUSD.toFixed(2) + ' / $20 cap — throttling soon' });
+  }
+
+  // Show readiness
+  const now = ptNow();
+  const mins = now.getHours()*60 + now.getMinutes();
+  const isShowPrep = mins > 8*60 + 30 && mins < 10*60;
+  if (isShowPrep) {
+    const producer = tasks.find(t => t.taskId === 'uncapped-producer');
+    const ran = producer && producer.lastRunAt && isToday(producer.lastRunAt);
+    if (!ran) needs.push({ cls: '', tag: 'warn', text: 'Producer audit hasn\'t fired today · show is <90 min away' });
+  }
+
+  if (!needs.length) {
+    needs.push({ cls: 'ok', tag: 'ok', text: 'all pipelines healthy · nothing requires attention' });
+  }
+
+  el.innerHTML = needs.map(n =>
+    '<div class="alert ' + n.cls + '"><span class="tag">' + n.tag + '</span><span>' + escapeHtml(n.text) + '</span></div>'
+  ).join('');
+}
+
+function isToday(iso) {
+  try {
+    const ptD = new Date(iso).toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});
+    const ptT = new Date().toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});
+    return ptD === ptT;
+  } catch { return false; }
+}
+
+// =============================================================
+//  Score calc
+// =============================================================
+function computeScore(snapshot) {
+  const tasks = snapshot.tasks || [];
+  let pts = 0, max = 0;
+  for (const t of tasks) {
+    max += 10;
+    const st = stateFor(t);
+    if (st.cls === 'state-running' || st.cls === 'state-recent' || st.cls === 'state-idle') pts += 10;
+    else if (st.cls === 'state-never') pts += 4;
+    // stale = 0
+  }
+  // George bonus
+  const b = snapshot.george && snapshot.george.state && snapshot.george.state.budget;
+  if (b) { max += 10; pts += (b.spentUSD < 18 ? 10 : 5); }
+  return max ? Math.round((pts/max)*100) : 0;
+}
+
+// =============================================================
+//  Render Agents pane (roster)
+// =============================================================
+function renderAgentsPane(tasks) {
+  const el = document.getElementById('agents-list');
+  const rows = AGENTS.map(a => {
+    const t = tasks.find(x => x.taskId === a.id);
+    const st = t ? stateFor(t) : { cls: 'state-never', label: 'not registered' };
+    const cls = 'st-' + st.cls.replace('state-','');
+    return '<div class="list-card">' +
+      '<div class="lc-name">' + escapeHtml(a.short.toUpperCase()) + '</div>' +
+      '<div class="lc-meta">' + escapeHtml(a.full) + ' · ' + escapeHtml(a.cron) + '</div>' +
+      '<div class="lc-state ' + cls + '">● ' + st.label + (t && t.lastRunAt ? ' · ran ' + fmtRel(t.lastRunAt) : '') + '</div>' +
+      '<div class="lc-meta">next: ' + (t && t.nextRunAt ? fmtRel(t.nextRunAt) : '—') + '</div>' +
+    '</div>';
+  }).join('');
+  // George
+  const g = '<div class="list-card" style="border-color:var(--cyan)">' +
+    '<div class="lc-name" style="color:var(--cyan)">GEORGE 2.0</div>' +
+    '<div class="lc-meta">Realtime · always listening on 5 channels</div>' +
+    '<div class="lc-state st-ok">● online</div>' +
+    '<div class="lc-meta">sub-agents: brand-designer · graphic-designer</div>' +
+  '</div>';
+  el.innerHTML = g + rows;
+}
+
+// =============================================================
+//  Render Crons pane (big timeline)
+// =============================================================
+function renderCronsPane(tasks) {
+  const strip = document.getElementById('big-timeline');
+  strip.innerHTML = '<div class="trk"></div><div class="now" id="big-now" style="display:none"></div>';
+  const START = 1, END = 13, total = (END-START)*60;
+  const pct = m => ((m - START*60) / total) * 100;
+  // hour labels
+  for (let h = START; h <= END; h += 2) {
+    const lp = document.createElement('div'); lp.className='hr';
+    lp.style.left = pct(h*60) + '%';
+    lp.textContent = (((h+11)%12)+1) + (h<12?'a':'p');
+    strip.appendChild(lp);
+  }
+  // events
+  for (const t of tasks) {
+    const meta = AGENTS.find(a => a.id === t.taskId); if (!meta) continue;
+    const p = (t.cronExpression||'').split(/\s+/);
+    const h = parseInt(p[1]||'0',10), m = parseInt(p[0]||'0',10);
+    if (isNaN(h)||isNaN(m)) continue;
+    const lp = pct(h*60 + m);
+    const st = stateFor(t);
+    const ev = document.createElement('div');
+    ev.className = 'ev t' + meta.tier + (st.cls === 'state-running' ? ' run' : '');
+    ev.style.left = lp + '%';
+    ev.title = meta.short + ' · ' + meta.cron + ' · ' + st.label;
+    strip.appendChild(ev);
+    const lbl = document.createElement('div'); lbl.className='lbl'; lbl.style.left = lp + '%'; lbl.textContent = meta.short;
+    strip.appendChild(lbl);
+  }
+  // now
+  const now = ptNow();
+  const nowMins = now.getHours()*60 + now.getMinutes();
+  if (nowMins >= START*60 && nowMins <= END*60) {
+    const nowEl = document.getElementById('big-now');
+    nowEl.style.left = pct(nowMins) + '%';
+    nowEl.style.display = 'block';
+  }
+
+  // detail table
+  const detail = document.getElementById('crons-detail');
+  const byTier = {1:[],2:[],3:[]};
+  for (const t of tasks) { const m = AGENTS.find(a => a.id === t.taskId); if (m) byTier[m.tier].push({t, m}); }
+  const renderTier = (n, label) => {
+    const rows = byTier[n].sort((a,b) => a.m.cron.localeCompare(b.m.cron)).map(({t,m}) => {
+      const st = stateFor(t);
+      const cls = 'st-' + st.cls.replace('state-','');
+      return '<div class="row" style="display:grid;grid-template-columns:1fr 100px 120px 100px;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:12.5px">' +
+        '<span>' + escapeHtml(m.short.toUpperCase()) + ' <span style="color:var(--muted)">' + escapeHtml(m.full) + '</span></span>' +
+        '<span style="color:var(--muted)">' + m.cron + '</span>' +
+        '<span style="color:var(--muted)">last ' + fmtRel(t.lastRunAt) + '</span>' +
+        '<span class="' + cls + '">● ' + st.label + '</span>' +
+      '</div>';
+    }).join('');
+    return '<div style="margin-bottom:14px"><div style="color:var(--ink-2);text-transform:uppercase;letter-spacing:0.14em;font-size:11px;margin-bottom:6px">Tier ' + n + ' — ' + label + '</div>' + rows + '</div>';
+  };
+  detail.innerHTML = renderTier(1, 'Research') + renderTier(2, 'Production') + renderTier(3, 'Audit');
+}
+
+// =============================================================
+//  Render Channels pane extra
+// =============================================================
+function renderChannelsPane(snapshot) {
+  const g = snapshot.george || {};
+  const chList = g.channels || [
+    { name:'brand-design', mode:'always', modeLabel:'always' },
+    { name:'producer', mode:'mention', modeLabel:'@-only' },
+    { name:'graphic-design', mode:'always', modeLabel:'always' },
+    { name:'guest-research', mode:'always', modeLabel:'always', isNew:true },
+    { name:'bookmarks', mode:'mirror', modeLabel:'mirror (pre-hook → #intel-staging)', isNew:true },
+  ];
+  document.getElementById('george-channels-view').innerHTML = chList.map(c =>
+    '<div class="row" style="display:grid;grid-template-columns:260px 120px 1fr;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line)">' +
+      '<span style="color:var(--cyan)">#' + escapeHtml(c.name) + (c.isNew ? ' <span style="color:var(--gold);font-size:10px">NEW</span>' : '') + '</span>' +
+      '<span style="color:var(--muted)">' + escapeHtml(c.mode) + '</span>' +
+      '<span style="color:var(--ink)">' + escapeHtml(c.modeLabel) + '</span>' +
+    '</div>'
+  ).join('');
+}
+
+// =============================================================
+//  Render Content pane (today's outputs)
+// =============================================================
+function renderContentPane(snapshot) {
+  const el = document.getElementById('content-body');
+  const dc = snapshot.discord || {};
+  const ros = (dc.ros || []).find(m => isToday(m.createdAt) && /^📋\s*\*\*Run of Show/.test(m.content||''));
+  const thumbs = (dc.thumbs || []).find(m => isToday(m.createdAt) && /🎨\s*\*\*Thumbnails/.test(m.content||''));
+  const assets = (dc.assets || []).filter(m => isToday(m.createdAt));
+  const parts = [];
+
+  if (ros) {
+    parts.push('<div style="margin-bottom:14px"><div style="color:var(--cyan);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px">Condensed Run of Show</div>' +
+      '<pre style="white-space:pre-wrap;margin:0;font:12.5px/1.5 inherit;color:var(--ink);background:var(--bg-2);padding:12px;border-radius:6px;border:1px solid var(--line)">' + escapeHtml(ros.content) + '</pre></div>');
+  } else {
+    parts.push('<div style="color:var(--muted);margin-bottom:14px">No ROS posted yet today.</div>');
+  }
+
+  if (thumbs) {
+    parts.push('<div style="margin-bottom:14px"><div style="color:var(--cyan);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px">Thumbnails</div>' +
+      '<pre style="white-space:pre-wrap;margin:0;font:12.5px/1.5 inherit;color:var(--ink);background:var(--bg-2);padding:12px;border-radius:6px;border:1px solid var(--line)">' + escapeHtml(thumbs.content) + '</pre></div>');
+  }
+
+  if (assets.length) {
+    parts.push('<div><div style="color:var(--cyan);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px">Assets (' + assets.length + ' posted today)</div>' +
+      assets.map(a => '<div style="padding:6px 0;border-bottom:1px dashed var(--line);font-size:12px;color:var(--ink-2)">' +
+        '<span style="color:var(--ink)">' + escapeHtml((a.content||'').split('\n')[0].slice(0,140)) + '</span></div>').join('') + '</div>');
+  }
+
+  el.innerHTML = parts.join('') || '<div style="color:var(--muted)">No outputs yet today.</div>';
+}
+
+// =============================================================
+//  Tabs + actions + notes
+// =============================================================
+function go(hash) {
+  const target = hash.replace('#','');
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.pane === target));
+  document.querySelectorAll('.pane').forEach(p => p.classList.toggle('visible', p.id === 'pane-' + target));
+  history.replaceState(null, '', '#' + target);
+}
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => go('#' + b.dataset.pane)));
+if (location.hash) go(location.hash);
+
+function saveNote() {
+  const el = document.getElementById('feed-input-el');
+  const txt = el.value.trim(); if (!txt) return;
+  const notes = JSON.parse(localStorage.getItem('of_notes') || '[]');
+  notes.push({ ts: Date.now(), text: txt });
+  localStorage.setItem('of_notes', JSON.stringify(notes.slice(-50)));
+  el.value = '';
+  showToast('note logged locally');
+  // re-render feed
+  if (window.__lastSnap) renderFeed(window.__lastSnap);
+}
+
+function copyToClipboard(what) {
+  const url = location.href;
+  if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => showToast('dashboard URL copied'));
+  else showToast('clipboard unavailable');
+}
+
+function showToast(t) {
+  const el = document.getElementById('toast');
+  el.textContent = t; el.classList.add('show');
+  clearTimeout(window.__toastT);
+  window.__toastT = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+// =============================================================
+//  Main loader
+// =============================================================
+async function loadAndRender() {
+  let snap;
+  try {
+    const resp = await fetch('./data.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    snap = await resp.json();
+  } catch (err) {
+    document.getElementById('needs-list').innerHTML =
+      '<div class="alert"><span class="tag">err</span><span>snapshot unavailable — ' + escapeHtml(err.message) + '. The snapshot cron writes data.json every ~5 min.</span></div>';
+    document.getElementById('fetched-at').textContent = 'data: unavailable';
+    return;
+  }
+  window.__lastSnap = snap;
+  const tasks = snap.tasks || [];
+  const taskMap = Object.fromEntries(tasks.map(t => [t.taskId, t]));
+
+  const running = renderOrbit(taskMap) || 0;
+  renderGlanceAndTimeline(tasks);
+  renderFeed(snap);
+  renderNeeds(snap);
+
+  // Score & counters
+  document.getElementById('daily-score').textContent = computeScore(snap);
+  document.getElementById('ct-agents').textContent = tasks.length;
+  document.getElementById('ct-running').textContent = running;
+  const stale = tasks.filter(t => {
+    if (!t.enabled || !t.lastRunAt) return false;
+    return (Date.now() - new Date(t.lastRunAt).getTime())/60000 > 36*60;
+  }).length;
+  document.getElementById('ct-stale').textContent = stale;
+  const ranToday = tasks.filter(t => t.lastRunAt && isToday(t.lastRunAt)).length;
+  const expectedByNow = expectedByNowCount();
+  document.getElementById('ct-cron').textContent = expectedByNow ? Math.round((ranToday / expectedByNow) * 100) + '%' : '—';
+
+  // Populate other panes
+  renderAgentsPane(tasks);
+  renderCronsPane(tasks);
+  renderChannelsPane(snap);
+  renderContentPane(snap);
+
+  document.getElementById('fetched-at').textContent =
+    'snapshot ' + new Date(snap.generatedAt).toLocaleString('en-US', { timeZone:'America/Los_Angeles', month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}) + ' PT';
+}
+
+function expectedByNowCount() {
+  const d = ptNow();
+  const mins = d.getHours()*60 + d.getMinutes();
+  // count AGENTS whose cron hour is <= now
+  return AGENTS.filter(a => {
+    const p = a.cron.match(/^(\d+):(\d+)([ap])/);
+    if (!p) return false;
+    let h = parseInt(p[1],10); if (p[3] === 'p' && h !== 12) h += 12;
+    const m = parseInt(p[2],10);
+    return (h*60 + m) <= mins;
+  }).length;
+}
+
+refreshClock(); setInterval(refreshClock, 30000);
+loadAndRender();
+setInterval(() => loadAndRender().catch(()=>{}), 90000);
+
+// expose sendPrompt shim so the TERMINAL button is at least a nop (real terminal = deep link to Discord if desired)
+window.sendPrompt = () => showToast('Terminal = open Discord in your browser');
+</script>
+</body>
+</html>
