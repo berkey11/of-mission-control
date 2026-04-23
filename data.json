@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-23T19:54:57Z",
+  "generatedAt": "2026-04-23T20:00:22Z",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,13 +97,22 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-23T19:56:18.000Z",
-      "lastRunAt": "2026-04-23T19:51:23.537Z",
+      "nextRunAt": "2026-04-23T20:01:18.000Z",
+      "lastRunAt": "2026-04-23T19:56:41.425Z",
       "jitterSeconds": 78
     }
   ],
   "george": {
-    "statePath": "/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/george/data/state.json",
+    "logTail": "Asset: Data card / …\n[2026-04-23T14:11:23.063Z]   -> cost $0.0092, files=0, capped=false\n[2026-04-23T14:24:23.642Z]   -> cost $0.3873, files=4, capped=false\n[2026-04-23T14:28:59.098Z]   -> cost $0.5204, files=4, capped=false\n[2026-04-23T14:53:02.112Z] [graphic-design] Claude_Bridge: 🎨 **Graphics run — audit.** 3 requests processed · 3 shipped · 0 blocked · 0 fell back to data-card…\n[2026-04-23T14:53:05.104Z]   -> cost $0.0090, files=0, capped=false\n[2026-04-23T15:13:44.389Z] [graphic-design] Claude_Bridge: 🎨 **Graphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-23T15:13:46.243Z]   -> cost $0.0087, files=0, capped=false\naphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-23T15:13:46.241Z]   -> cost $0.0087, files=0, capped=false",
+    "uptime": "15:02:39",
+    "channels": [
+      "brand-design",
+      "producer",
+      "graphic-design",
+      "guest-research",
+      "bookmarks"
+    ],
+    "stateFile": "/Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/george/data/state.json",
     "state": {
       "budget": {
         "date": "2026-04-23",
@@ -347,22 +356,13 @@
         ]
       },
       "paused": {}
-    },
-    "logTail": "Asset: Data card / …\n[2026-04-23T14:11:23.063Z]   -> cost $0.0092, files=0, capped=false\n[2026-04-23T14:24:23.642Z]   -> cost $0.3873, files=4, capped=false\n[2026-04-23T14:28:59.098Z]   -> cost $0.5204, files=4, capped=false\n[2026-04-23T14:53:02.112Z] [graphic-design] Claude_Bridge: 🎨 **Graphics run — audit.** 3 requests processed · 3 shipped · 0 blocked · 0 fell back to data-card…\n[2026-04-23T14:53:05.104Z]   -> cost $0.0090, files=0, capped=false\n[2026-04-23T15:13:44.389Z] [graphic-design] Claude_Bridge: 🎨 **Graphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-23T15:13:46.243Z]   -> cost $0.0087, files=0, capped=false\naphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-23T15:13:46.241Z]   -> cost $0.0087, files=0, capped=false\n",
-    "uptime": "14:57:21",
-    "channels": {
-      "brand-design": "#brand-design",
-      "producer": "#producer",
-      "graphic-design": "#graphic-design",
-      "guest-research": "#guest-research",
-      "bookmarks": "#bookmarks"
     }
   },
   "discord": {
     "ros": [
       {
         "id": "1496514466253115432",
-        "content": "**🟠 B BLOCK (~30 min) — WSOP Rings Cross the Texas Border (While The Lodge Is Frozen) + USPO Finale Tonight**\n\n**Segment 1 (~18 min): First-Ever WSOP Circuit in Texas Opens Tomorrow — at TCH Austin, Not The Lodge**\n\n@tjreidpoker posted the full 12-day schedule for the first-ever WSOP Circuit in the state of Texas. **Thursday Apr 23 – May 4** at **Texas Card House Austin.**\n• **$600 Mini Main, $500K GTD (Apr 23–27)**\n• **$400 Ladies (Apr 26)**\n• **$400 Monster (Apr 27–30)**\n• Full mixed slate: Big O, 8-Game, HORSE, 2-7 SD, PLO\n• Jeff Platt confirms he's on the ground\n\n**Why this matters:** The Lodge — Texas' biggest room, Doug Polk's flagship — has been **shuttered under civil forfeiture** since the TABC raid. While The Lodge sits frozen, the WSOP is handing out **gold rings at a competitor** down the road. Selective enforcement isn't a theory anymore; it's a series calendar.",
+        "content": "**🟠 B BLOCK (~30 min) — WSOP Rings Cross the Texas Border (While The Lodge Is Frozen) + USPO Finale Tonight** — Segment 1 (~18 min): First-Ever WSOP Circuit in Texas Opens Tomorrow at TCH Austin (not The Lodge). Full 12-day schedule Apr 23–May 4. $600 Mini Main / $500K GTD. Selective-enforcement angle.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -372,7 +372,7 @@
       },
       {
         "id": "1496514538806444193",
-        "content": "**B BLOCK — Segment 2: USPO Championship Event #10 Tonight**",
+        "content": "**B BLOCK — Segment 2: USPO Championship Event #10 Tonight** — $25.6K Championship. Wilson enters as USPO points leader; 7 winners through 9 events. 5th consecutive hand-of-day no-find; protocol review flagged.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -382,7 +382,7 @@
       },
       {
         "id": "1496514642942628063",
-        "content": "**😂 C BLOCK (~15 min) — Light, Clip-Ready, + Wemby for the Degens**",
+        "content": "**😂 C BLOCK (~15 min) — Light, Clip-Ready, + Wemby for the Degens** — Zobian wins USPO #9 / Hellmuth quads moment / culture-research bridge failed today (Chrome-session issue same as Apr 20).",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -392,7 +392,7 @@
       },
       {
         "id": "1496514723360018495",
-        "content": "**C BLOCK continued — Items 3 & 4**",
+        "content": "**C BLOCK continued — Items 3 & 4** — Wemby face-plant, Cartillier WSOPC €150K.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -402,7 +402,7 @@
       },
       {
         "id": "1496514815701684395",
-        "content": "**🔚 CLOSE (~3 min)**",
+        "content": "**🔚 CLOSE (~3 min)** — USPO Championship + WSOPC Texas opening night. NFL Draft tease. Sign-off: 'Hendon Mob says seventy-six million. Chidwick says ten.'",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -412,7 +412,7 @@
       },
       {
         "id": "1496514912971653273",
-        "content": "**🚩 ALL PREP FLAGS** + algorithm notes summary (Apr 22 ROS)",
+        "content": "**🚩 ALL PREP FLAGS** — Conrad/Andy prep queue (Matusow vs Chidwick graphic, Lodge/TCH split-screen, Hellmuth quads clip, Zobian HU card, Wemby clip, Wilson PGT pace chart). Staleness check clean.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -422,7 +422,7 @@
       },
       {
         "id": "1496533530677608520",
-        "content": "⚠️ **Producer audit blocked from #producer — rerouted here** (Apr 22) — main DISCORD_BOT_TOKEN 401, GEORGE_BOT_TOKEN fallback also 401, Claude_Bridge no send permission in #producer. Action: rotate DISCORD_BOT_TOKEN + add Claude_Bridge to #producer overwrites.",
+        "content": "⚠️ Producer audit blocked from #producer — rerouted here. Main DISCORD_BOT_TOKEN still 401; GEORGE_BOT_TOKEN fallback also 401; Claude_Bridge has no send perm in #producer. Token rotation + overwrite still needed.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -432,7 +432,7 @@
       },
       {
         "id": "1496533599770644673",
-        "content": "🎬 **Producer Audit — April 22, 2026** — ROS posted, A/B/C locked, thumbs 3/3 ≥70, 8/8 graphics shipped.",
+        "content": "🎬 Producer Audit — April 22, 2026 — Ready section (ROS, thumbs 3/3 ≥70, 8/8 show graphics, thumb↔ROS alignment clean).",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -442,7 +442,7 @@
       },
       {
         "id": "1496533691487359037",
-        "content": "⚠️ **Flags (Apr 22 audit):** Iran/Hormuz no ROS placement; B block TP#1 names Texas AG (partisan flag); thumbs A+B concept-only (Claid exhausted); Conrad clips not visibly confirmed; Andy research items not visible.",
+        "content": "⚠️ Flags: Iran/Hormuz has no ROS placement; B Block TP#1 partisan-adjacent (\"Texas AG\"); thumbs A+B concept-only (Claid billing exhausted); clips not confirmed in #assets; Andy prep not visible.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -452,7 +452,7 @@
       },
       {
         "id": "1496533733808017490",
-        "content": "🔥 **Breaking (last 2 hrs, Apr 22):** None. Recommend: lock Iran/Hormuz, soften 'Texas AG' → 'Texas enforcement', confirm Conrad's three clips.",
+        "content": "🔥 Breaking (last 2 hrs): None. Recommend: lock Iran/Hormuz in or out, soften Texas AG → Texas enforcement, confirm Conrad's three clips.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -462,7 +462,7 @@
       },
       {
         "id": "1496875953861689607",
-        "content": "📋 **Run of Show — Thursday, April 23, 2026** — Cold Open: \"She didn't say nothin… she just had that look\" — A: Foxen doubleheader, B: Kalshi suspends 3 candidates + Polymarket Pulse, C: Hellmuth quads / DeBoer / Wemby / AITA gym, Close: NFL Draft Pittsburgh.",
+        "content": "📋 **Run of Show — Thursday, April 23, 2026** — Cold Open \"She didn't say nothin… she just had that look\". A: Kristen Foxen's April Doubleheader (USPO $25K finale). B: Kalshi suspends 3 congressional candidates + Polymarket Pulse. C: Hellmuth quads / DeBoer 7yr $87.5M / Wemby concussion / AITA gym rail-coach. Close: NFL Draft Pittsburgh.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -472,7 +472,7 @@
       },
       {
         "id": "1496894460942880838",
-        "content": "⚠️ **Producer audit blocked from #producer — rerouted here (Apr 23, same issue as Apr 22)** — Claude_Bridge still has no send permission in #producer. Action still pending: rotate DISCORD_BOT_TOKEN + add Claude_Bridge to #producer channel overwrites.",
+        "content": "⚠️ Producer audit blocked from #producer — rerouted (same issue Apr 22). Claude_Bridge still has no send perm in #producer. Token rotation + overwrite still pending.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -482,7 +482,7 @@
       },
       {
         "id": "1496894474427564103",
-        "content": "🎬 **Producer Audit — April 23, 2026** — ROS posted 7:10a PT, thumbs 3/3 ≥70 (A 82, B 76, ALT 72), 3/3 block-lead graphics shipped (FOXEN'S APRIL, KALSHI, DeBOER), 7 source assets promoted, no Matt notes since Apr 22.",
+        "content": "🎬 Producer Audit — April 23, 2026 — Ready section. ROS posted 7:10a PT. Thumbs 3/3 ≥70 (A 82, B 76, ALT 72). 3/3 block-lead graphics shipped. 7 source assets promoted staging→#assets. No #producer notes to action.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -491,30 +491,20 @@
         "hasAttachments": false
       },
       {
-        "id": "1496894500365402155",
-        "content": "⚠️ **Flags (Apr 23 audit):** C Block Hellmuth quads is repeat from Apr 22; Tesla Q1 + Musk autonomy admission no ROS placement; Apple $2.5–3.3B tariff refunds unclaimed not in ROS; B block political trip-wire on Kalshi candidates; Andy prep items not visible; Claid status unclear.",
+        "id": "1496894517377237094",
+        "content": "⚠️ Flags (Apr 23): C Block Hellmuth quads is a repeat (same as Apr 22 C Item 2) — tighten to 90s callback OR swap to USPO Main Day 1. Tesla/Musk autonomy admission has no placement. Apple tariff refunds $2.5–3.3B aside. Avoid partisan naming on Kalshi 3. Andy prep not visible. Claid status unclear.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
         },
         "createdAt": "2026-04-23T15:24:19.842Z",
         "hasAttachments": false
-      },
-      {
-        "id": "1496894517377237094",
-        "content": "🔥 **Breaking (Apr 23, last 2 hrs):** None material. Recommend: shrink Hellmuth quads to 90-sec callback, slot Tesla/Musk between Polymarket Pulse and Wemby, scrub B block for partisan name-checks.",
-        "author": {
-          "username": "Claude_Bridge",
-          "isBot": true
-        },
-        "createdAt": "2026-04-23T15:24:23.898Z",
-        "hasAttachments": false
       }
     ],
     "thumbs": [
       {
         "id": "1493436617493581966",
-        "content": "[cowork] **B — \"BLEW THE DEADLINE\"** | Lodge interior blurred bg | analysis angle | Google image",
+        "content": "[cowork] **B — BLEW THE DEADLINE** | Lodge interior blurred bg | analysis angle | Google image",
         "author": {
           "username": "George",
           "isBot": true
@@ -524,7 +514,7 @@
       },
       {
         "id": "1493436643569307729",
-        "content": "[cowork] **C — \"NO ROOM IS SAFE\"** | AI SWAT-raid poker scene | purple-dark bg | library",
+        "content": "[cowork] **C — NO ROOM IS SAFE** | AI SWAT-raid poker scene | purple-dark bg | library (ai-lodge-raid-scene)",
         "author": {
           "username": "George",
           "isBot": true
@@ -534,7 +524,7 @@
       },
       {
         "id": "1493436684526944326",
-        "content": "[cowork] 🖼️ Thumbnail options — April 13, 2026",
+        "content": "[cowork] 🖼️ Thumbnail options — April 13, 2026. A: THEY KEPT IT, B: BLEW THE DEADLINE, C: NO ROOM IS SAFE. Photoshop/Nano unavailable; text via ImageMagick/PIL.",
         "author": {
           "username": "George",
           "isBot": true
@@ -544,7 +534,7 @@
       },
       {
         "id": "1493756476185907322",
-        "content": "**🎨 THUMBNAIL CANDIDATES — April 14, 2026 (PT)** — A 'DROPPED./KEPT IT.' 90/100, B '$2,000,000./NO CHARGES.' 90/100, ALT 'THREE./IN A ROW.' 78/100",
+        "content": "🎨 THUMBNAIL CANDIDATES — April 14, 2026. A: DROPPED./KEPT IT. 90/100. B: $2,000,000./NO CHARGES. 90/100. ALT (Brock Wilson): THREE./IN A ROW. 78/100.",
         "author": {
           "username": "George",
           "isBot": true
@@ -554,7 +544,7 @@
       },
       {
         "id": "1494485457633804288",
-        "content": "**🎨 E2E PIPELINE TEST — Apr 16** Phil Ivey GOAT/RETURNS",
+        "content": "🎨 E2E PIPELINE TEST — Apr 16. Phil Ivey \"THE GOAT|RETURNS\" full pipeline (DDG→image-fetch→Claid cutout→PS composite→Nano). A/B dedup flagged.",
         "author": {
           "username": "George",
           "isBot": true
@@ -564,7 +554,7 @@
       },
       {
         "id": "1494491222750789762",
-        "content": "**🧪 E2E TEST — Independent A/B Builds + Story Context** Phil Ivey LOST $20M",
+        "content": "🧪 E2E TEST — Apr 17. Ivey loses $20M. A: LOST|$20M fire. B: I BET|EVERYTHING cold. Divergence 5/5, dedup 0.55 (threshold 0.72).",
         "author": {
           "username": "George",
           "isBot": true
@@ -574,7 +564,7 @@
       },
       {
         "id": "1496001733539790990",
-        "content": "⚠️ Thumbnail run aborted — no ROS from today (Mon 2026-04-20) found.",
+        "content": "⚠️ Thumbnail run aborted 2026-04-20 — no ROS from today found. Last ROS 2026-04-14.",
         "author": {
           "username": "George",
           "isBot": true
@@ -584,7 +574,7 @@
       },
       {
         "id": "1496165692020363304",
-        "content": "⚠️ **Thumbnail run aborted (Tue 2026-04-21)** + DISCORD_BOT_TOKEN 401 flag, posted via GEORGE_BOT_TOKEN fallback.",
+        "content": "⚠️ Thumbnail run aborted 2026-04-21 — no ROS from today. DISCORD_BOT_TOKEN 401; ran via GEORGE_BOT_TOKEN fallback. Rotate the main bot token.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -594,7 +584,7 @@
       },
       {
         "id": "1496530839788589186",
-        "content": "🎨 **Thumbnails — 2026-04-22** · 3 candidates, all concept (Claid billing exhausted) — A '$10M | OF $76M' 74, B 'KEPT | PENNIES' 75, C 'APRIL 23. | RINGS.' 72. All ≥70, 0 rebuilds.",
+        "content": "🎨 Thumbnails 2026-04-22 run `20260422-0805`. CLAID BILLING EXHAUSTED — 3 concept thumbs. A $10M|OF $76M 74, B KEPT|PENNIES 75, C APRIL 23.|RINGS. 72. All ≥70, 0 rebuilds.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -604,7 +594,7 @@
       },
       {
         "id": "1496892232660418600",
-        "content": "**🎨 Thumbnails — Thursday, April 23, 2026** — A '$1.2M | BLUFF' 82/100, B 'TRIP QUEENS | FOLDED' 76/100, ALT 'KALSHI | PULLS 3' 72/100",
+        "content": "🎨 Thumbnails — Thursday, April 23, 2026. A $1.2M|BLUFF (Foxen filthy A8) 82. B TRIP QUEENS|FOLDED (Foxen folds trips) 76. ALT KALSHI|PULLS 3 72.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -616,7 +606,7 @@
     "assets": [
       {
         "id": "1496440319334547507",
-        "content": "📎 Cartillier wins WSOPC Aix-en-Provence (€150K) — C-BLOCK",
+        "content": "📎 Cartillier wins WSOPC Aix-en-Provence (€150K) — C BLOCK",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -666,7 +656,7 @@
       },
       {
         "id": "1496515107692482630",
-        "content": "📎 [A BLOCK] Matusow Mirage → Chidwick Reply (PokerNews + Linde/Peters thread)",
+        "content": "📎 [A BLOCK] Matusow Mirage → Chidwick reply (PokerNews)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -676,7 +666,7 @@
       },
       {
         "id": "1496515167553454152",
-        "content": "📎 [B BLOCK] WSOPC Texas TCH Austin schedule + USPO Event #10 + Lodge context",
+        "content": "📎 [B BLOCK] WSOPC Texas schedule (TCH Austin) / USPO #10 / Lodge context",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -686,7 +676,7 @@
       },
       {
         "id": "1496515258808930374",
-        "content": "📎 [C BLOCK] Zobian USPO #9 + Hellmuth Ep20 + Wemby concussion + Cartillier WSOPC",
+        "content": "📎 [C BLOCK] Zobian USPO #9 / Hellmuth quads CBS / Wemby ESPN+Polymarket / Cartillier WSOPC",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -696,7 +686,7 @@
       },
       {
         "id": "1496525768480526366",
-        "content": "🖼️ MATUSOW MIRAGE vs. CHIDWICK REPLY — Show Graphic",
+        "content": "🖼️ MATUSOW MIRAGE vs. CHIDWICK REPLY — Show Graphic (A BLOCK dual-quote)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -706,7 +696,7 @@
       },
       {
         "id": "1496525816895373454",
-        "content": "🖼️ WSOPC TEXAS DEBUT — Show Graphic",
+        "content": "🖼️ WSOPC TEXAS DEBUT — Show Graphic (B BLOCK open)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -716,7 +706,7 @@
       },
       {
         "id": "1496525846033469492",
-        "content": "🖼️ ZOBIAN USPO EVENT #9 — Show Graphic",
+        "content": "🖼️ ZOBIAN USPO #9 — Show Graphic (C BLOCK Item 1)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -726,7 +716,7 @@
       },
       {
         "id": "1496525868930039858",
-        "content": "🖼️ NATNA FOUNDATION — Show Graphic",
+        "content": "🖼️ NATNA FOUNDATION — Show Graphic (C BLOCK sub-card)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -736,7 +726,7 @@
       },
       {
         "id": "1496525898671853578",
-        "content": "🖼️ POLYMARKET PULSE — Show Graphic",
+        "content": "🖼️ POLYMARKET PULSE — Show Graphic (recurring)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -746,7 +736,7 @@
       },
       {
         "id": "1496525923191623690",
-        "content": "🖼️ COOK HANDS OFF APPLE — Show Graphic",
+        "content": "🖼️ COOK HANDS OFF APPLE — Show Graphic (A Block cutaway)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -756,7 +746,7 @@
       },
       {
         "id": "1496526114493960233",
-        "content": "🖼️ HIGH ROLLER CASHES ≠ PROFITS — Show Graphic",
+        "content": "🖼️ HIGH ROLLER CASHES ≠ PROFITS — Show Graphic (A BLOCK 3-row receipts)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -776,7 +766,7 @@
       },
       {
         "id": "1496847955250909289",
-        "content": "🃏 Foxen USPO Doubleheader — B Block",
+        "content": "🃏 Foxen USPO Doubleheader (Filthy Bluff + Trip Queens Fold) — B Block — pokernews.com/news/2026/04/david-coleman-wins-uspo-finale-51096.htm",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -786,7 +776,7 @@
       },
       {
         "id": "1496847969792557129",
-        "content": "🃏 Foxen 'Absolutely Filthy' Bluff — B Block",
+        "content": "🃏 Foxen Absolutely Filthy Bluff — B Block — poker.org",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -796,7 +786,7 @@
       },
       {
         "id": "1496847985945083915",
-        "content": "🃏 Foxen Kings-Fold Callback (Doug Polk analysis) — B Block",
+        "content": "🃏 Foxen Kings-Fold Callback (Triton Jeju, Polk analysis) — B Block — spadepoker.com",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -806,7 +796,7 @@
       },
       {
         "id": "1496848001992228995",
-        "content": "🃏 Hellmuth Quad 8s — B Block",
+        "content": "🃏 Hellmuth Quad 8s (\"When you're the greatest, you make quads\") — B Block",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -816,7 +806,7 @@
       },
       {
         "id": "1496886436593668226",
-        "content": "🖼️ KALSHI SUSPENDS 3 CONGRESSIONAL CANDIDATES — Show Graphic — B BLOCK",
+        "content": "🖼️ KALSHI SUSPENDS 3 CONGRESSIONAL CANDIDATES — Show Graphic (B BLOCK open)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -826,7 +816,7 @@
       },
       {
         "id": "1496886466591199401",
-        "content": "🖼️ DeBOER · 7 YEARS · $87.5M — Show Graphic — C BLOCK",
+        "content": "🖼️ DeBOER · 7 YEARS · $87.5M — Show Graphic (C BLOCK lead)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -836,7 +826,7 @@
       },
       {
         "id": "1496886502872060045",
-        "content": "🖼️ KRISTEN FOXEN'S APRIL — Show Graphic — A BLOCK lead, dual hand",
+        "content": "🖼️ KRISTEN FOXEN'S APRIL — Show Graphic (A BLOCK dual-hand)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -846,7 +836,7 @@
       },
       {
         "id": "1496894143237066895",
-        "content": "📎 COLD OPEN — 'She didn't say nothin... she just had that look.' r/rareinsults",
+        "content": "📎 COLD OPEN — r/rareinsults \"She didn't say nothin… she just had that look.\"",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -856,7 +846,7 @@
       },
       {
         "id": "1496894144100958369",
-        "content": "📎 [B BLOCK] Kalshi suspends 3 congressional candidates — CNBC",
+        "content": "📎 [B BLOCK] Kalshi suspends 3 candidates — CNBC",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -866,7 +856,7 @@
       },
       {
         "id": "1496894145246003220",
-        "content": "📎 [B BLOCK] Polymarket trending — Apr 23 open",
+        "content": "📎 [B BLOCK] Polymarket Apr 23 — Friday boards + Silver >$65",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -876,7 +866,7 @@
       },
       {
         "id": "1496894145829146695",
-        "content": "📎 [C BLOCK] NBA playoffs / Wemby update — ESPN bracket",
+        "content": "📎 [C BLOCK] NBA playoffs — Thunder 2-0, Pistons-Magic 1-1, Wemby",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -896,13 +886,13 @@
       },
       {
         "id": "1496894162241589369",
-        "content": "📎 [C BLOCK] AITA gym rail-coach = poker table rail-coach",
+        "content": "📎 [C BLOCK] AITA — Stop coaching my friend at the gym (rail-coach analogy)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
         },
         "createdAt": "2026-04-23T15:22:59.227Z",
-        "hasAttachments": true
+        "hasAttachments": false
       },
       {
         "id": "1496894167802974371",
