@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-23T20:59:56Z",
+  "generatedAt": "2026-04-23T21:05:24Z",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-23T20:56:18.000Z",
-      "lastRunAt": "2026-04-23T20:53:23.557Z",
+      "nextRunAt": "2026-04-23T21:06:18.000Z",
+      "lastRunAt": "2026-04-23T21:01:41.458Z",
       "jitterSeconds": 78
     }
   ],
@@ -347,21 +347,21 @@
       },
       "paused": {}
     },
-    "logTail": "Asset: Data card / \u2026\n[2026-04-23T14:11:23.063Z]   -> cost $0.0092, files=0, capped=false\n[2026-04-23T14:24:23.642Z]   -> cost $0.3873, files=4, capped=false\n[2026-04-23T14:28:59.098Z]   -> cost $0.5204, files=4, capped=false\n[2026-04-23T14:53:02.112Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics run \u2014 audit.** 3 requests processed \u00b7 3 shipped \u00b7 0 blocked \u00b7 0 fell back to data-card\u2026\n[2026-04-23T14:53:05.104Z]   -> cost $0.0090, files=0, capped=false\n[2026-04-23T15:13:44.389Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-23T15:13:46.243Z]   -> cost $0.0087, files=0, capped=false\naphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-23T15:13:46.241Z]   -> cost $0.0087, files=0, capped=false\n",
-    "uptime": "16:05:31",
-    "channels": {
-      "brand-design": null,
-      "producer": null,
-      "graphic-design": null,
-      "guest-research": null,
-      "bookmarks": null
-    }
+    "logTail": "Asset: Data card / \u2026\n[2026-04-23T14:11:23.063Z]   -> cost $0.0092, files=0, capped=false\n[2026-04-23T14:24:23.642Z]   -> cost $0.3873, files=4, capped=false\n[2026-04-23T14:28:59.098Z]   -> cost $0.5204, files=4, capped=false\n[2026-04-23T14:53:02.112Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics run \u2014 audit.** 3 requests processed \u00b7 3 shipped \u00b7 0 blocked \u00b7 0 fell back to data-card\u2026\n[2026-04-23T14:53:05.104Z]   -> cost $0.0090, files=0, capped=false\n[2026-04-23T15:13:44.389Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-23T15:13:46.243Z]   -> cost $0.0087, files=0, capped=false\naphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-23T15:13:46.241Z]   -> cost $0.0087, files=0, capped=false",
+    "uptime": "16:07:51",
+    "channels": [
+      "#brand-design",
+      "#producer",
+      "#graphic-design",
+      "#guest-research",
+      "#bookmarks"
+    ]
   },
   "discord": {
     "ros": [
       {
         "id": "1496514466253115432",
-        "content": "**\ud83d\udfe0 B BLOCK (~30 min) \u2014 WSOP Rings Cross the Texas Border (While The Lodge Is Frozen) + USPO Finale Tonight**\n\n**Segment 1 (~18 min): First-Ever WSOP Circuit in Texas Opens Tomorrow \u2014 at TCH Austin, Not The Lodge**\n\n@tjreidpoker posted the full 12-day schedule for the first-ever WSOP Circuit in the state of Texas. **Thursday Apr 23 \u2013 May 4** at **Texas Card House Austin.**\n\u2022 **$600 Mini Main, $500K GTD (Apr 23\u201327)**\n\u2022 **$400 Ladies (Apr 26)**\n\u2022 **$400 Monster (Apr 27\u201330)**\n\u2022 Full mixed slate: Big O, 8-Game, HORSE, 2-7 SD, PLO\n\u2022 Jeff Platt confirms he's on the ground\n\n**Why this matters:** The Lodge \u2014 Texas' biggest room, Doug Polk's flagship \u2014 has been **shuttered under civil forfeiture** since the TABC raid. While The Lodge sits frozen, the WSOP is handing out **gold rings at a competitor** down the road. Selective enforcement isn't a theory anymore; it's a series calendar.",
+        "content": "**\ud83d\udfe0 B BLOCK (~30 min) \u2014 WSOP Rings Cross the Texas Border (While The Lodge Is Frozen) + USPO Finale Tonight**",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -371,7 +371,7 @@
       },
       {
         "id": "1496514538806444193",
-        "content": "**B BLOCK \u2014 Segment 2: USPO Championship Event #10 Tonight**\n\n**Segment 2 (~10 min): $25.6K Championship Runs Today \u2014 Wilson Is Still the Story**\n\nThe 2026 U.S. Poker Open wraps tonight at PokerGO Studio with the **$25,600 Championship (Event #10).** Through 9 events the series has produced **seven different winners** \u2014 Wilson (x2), Deng, Andrews, Kristen Foxen, Simao, Alex Foxen, Zobian. **Brock Wilson enters as USPO points leader.**\n\n\u26a0\ufe0f **Hand of the Day:** No qualifying hand in #hand-analysis today \u2014 **5th consecutive no-find.**",
+        "content": "**B BLOCK \u2014 Segment 2: USPO Championship Event #10 Tonight**",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -381,7 +381,7 @@
       },
       {
         "id": "1496514642942628063",
-        "content": "**\ud83d\ude02 C BLOCK (~15 min) \u2014 Light, Clip-Ready, + Wemby for the Degens**\n\n**Item 1 (~4 min): Aram Zobian Wins USPO Event #9 ($292,800) \u2014 And Runs a Children's Nonprofit**\nArmenian-American pro **Aram Zobian** took down USPO Event #9 ($15K NLH) Monday for **$292,800.** Heads-up: his K\u26606\u2660 out-flopped Brandon Wilson's A\u26659\u2665 on a **paired-sixes board.**\n\n**Item 2 (~4 min): Hellmuth's Home Game Ep 20 \u2014 \"When You're the Greatest, You Make Quads\"**",
+        "content": "**\ud83d\ude02 C BLOCK (~15 min) \u2014 Light, Clip-Ready, + Wemby for the Degens**",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -391,7 +391,7 @@
       },
       {
         "id": "1496514723360018495",
-        "content": "**C BLOCK continued \u2014 Items 3 & 4**\n\n**Item 3 (~3 min): Wemby Face-Plants in Game 2 \u2014 Biggest Sportsbook Event of the Bracket**\n\n**Item 4 (~2 min, CUT FIRST): Matthieu Cartillier Wins WSOPC Aix-en-Provence for \u20ac150K \u2014 On His 3rd Career Cash**\n\n\u26a0\ufe0f **No memes/culture drop today** \u2014 culture-research bridge failed (same Chrome-session issue as Apr 20 run).",
+        "content": "**C BLOCK continued \u2014 Items 3 & 4**",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -401,7 +401,7 @@
       },
       {
         "id": "1496514815701684395",
-        "content": "**\ud83d\udd1a CLOSE (~3 min)**\n\n**Tease tomorrow:** USPO Championship result + WSOPC Texas opening night. Also: **NFL Draft** opens in Pittsburgh tomorrow night, and **Tesla earnings** tonight.\n\n**Sign-off suggestion:** *\"Hendon Mob says seventy-six million. Chidwick says ten. The math is the story. Back tomorrow.\"*\n\n\ud83d\udcca **ALGORITHM NOTES SUMMARY**\n\n\ud83c\udfac **Best Clip:** A Block ~0:14:00\u20130:17:00 \u2014 Matusow \"mirage\" quote side-by-side with Chidwick's $5\u201310M / $76M reply.\n\n\ud83d\udcfa **YouTube Title \u2014 3 Options:**\n1. **\"Stephen Chidwick Just Admitted He's Only Kept $10M of His $76M in Lifetime Poker Cashes\"** \u2190 top pick\n2. \"Mike Matusow: 'High Roller Poker Is a Mirage' \u2014 Then Chidwick Confirmed It\"\n3. \"What High Roller Pros Actually Keep After Backers (Spoiler: Almost Nothing)\"",
+        "content": "**\ud83d\udd1a CLOSE (~3 min)** Tease tomorrow: USPO Championship result + WSOPC Texas opening night",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -411,7 +411,7 @@
       },
       {
         "id": "1496514912971653273",
-        "content": "**\ud83d\udea9 ALL PREP FLAGS** \u2014 Conrad: side-by-side Matusow vs Chidwick graphic; Hendon Mob Chidwick page; Davies/Deeb/Arieh quote-cards; WSOPC Texas schedule infographic; Lodge vs TCH split-screen; Hellmuth quads clip; Zobian HU hand card + Natna logo; Wemby fall clip. Andy: Hendon Mob profit-vs-cashes; Wilson PGT pace vs Soverel; USPO #10 entries; Wemby props movement. **Staleness check:** No topic repeats from Apr 14 ROS or Apr 20 ROS.\n\n*[cowork] Run-of-Show Agent \u00b7 April 22, 2026 \u00b7 7:25 AM PT \u00b7 A-block passes the click test (\"Chidwick kept $10M of $76M\")*",
+        "content": "**\ud83d\udea9 ALL PREP FLAGS** \u2014 Conrad + Andy briefs for Apr 22 show",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -421,7 +421,7 @@
       },
       {
         "id": "1496533530677608520",
-        "content": "\u26a0\ufe0f **Producer audit blocked from #producer \u2014 rerouted here**\n\nMain `DISCORD_BOT_TOKEN` is still 401 (flagged Apr 21 in #thumbnails); `GEORGE_BOT_TOKEN` fallback also returns 401; Cowork MCP bot (Claude_Bridge) has no send permission in <#1478657251446100101>. Posting the audit in #run-of-show so it isn't silent. **Action: rotate `DISCORD_BOT_TOKEN` in `~/.cowork-bridge/.env` + add `Claude_Bridge` to #producer overwrites.** Full report follows \u2193",
+        "content": "\u26a0\ufe0f Producer audit blocked from #producer \u2014 rerouted here (Apr 22)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -431,7 +431,7 @@
       },
       {
         "id": "1496533599770644673",
-        "content": "\ud83c\udfac **Producer Audit \u2014 April 22, 2026 \u2014 EP. \u2014**\n<@430458839247093790>\n\n\u2705 **Ready:**\n\u2022 ROS posted 7:25a PT \u2014 A/B/C blocks locked, cold open written, talking points + prep flags\n\u2022 A BLOCK lead (Matusow mirage \u2192 Chidwick $5\u201310M on $76M) is fresh, high-specificity.\n\u2022 Thumbnails 3/3 cleared judge \u226570 \u2014 A `$10M | OF $76M` 74/100, B `KEPT | PENNIES` 75/100, C `APRIL 23. | RINGS.` 72/100.\n\u2022 Thumb\u2013ROS alignment clean; 8/8 show graphics shipped to #assets.\n\u2022 Hand-of-Day absence (5th straight no-find) explicitly handled in ROS.",
+        "content": "\ud83c\udfac Producer Audit \u2014 April 22, 2026",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -441,7 +441,7 @@
       },
       {
         "id": "1496533691487359037",
-        "content": "\u26a0\ufe0f **Flags:**\n1. **World Intel #1 LEAD has zero ROS placement** \u2014 Iran attacking a container ship in the Strait of Hormuz.\n2. **B Block Talking Point 1 is the one partisan-adjacent line** \u2014 \"catastrophic optics for Texas AG\" \u2192 swap to \"Texas enforcement.\"\n3. **Thumbs A+B are concept-only (no person)** \u2014 Claid billing exhausted.\n4. **Clips in prep flags not visibly confirmed in #assets** \u2014 Matusow/Chidwick, Hellmuth quads, Wemby fall.\n5. **Andy research items not visible** \u2014 Hendon Mob profit chart, Wilson PGT pace, USPO #10, Wemby futures.",
+        "content": "\u26a0\ufe0f Flags: Iran/Hormuz unplaced; partisan softening on B TP1; Claid topped-up; Conrad clip confirms; Andy items",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -451,7 +451,7 @@
       },
       {
         "id": "1496533733808017490",
-        "content": "\ud83d\udd25 **Breaking (last 2 hrs):** None. Swept PokerNews, WSOP.com, CardPlayer, Google News.\n\n\ud83d\udca1 **Recommend:**\n1. **Lock Iran/Hormuz in or out** before Conrad walks on.\n2. **One-word softening on B block TP#1** \u2014 \"Texas AG\" \u2192 \"Texas enforcement.\"\n3. **Confirm Conrad's three clips** \u2014 Matusow/Chidwick, Hellmuth quads, Wemby fall.",
+        "content": "\ud83d\udd25 Breaking: none. Recommend Iran/Hormuz lock-in, TP#1 word swap, Conrad clip confirms.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -461,7 +461,7 @@
       },
       {
         "id": "1496875953861689607",
-        "content": "\ud83d\udccb **Run of Show \u2014 Thursday, April 23, 2026 \u2014 EP. \u2014**\n\n\ud83c\udfac **Cold Open:** \"She didn't say nothin\u2026 she just had that look\" \u2014 hold 3 seconds\n\ud83c\udd70\ufe0f **A Block:** Kristen Foxen's April Doubleheader \u2014 filthy A8 bluff folds out two pair, then folds trip queens to a pair of sixes in the same USPO $25K finale (Coleman wins title next hand)\n\ud83c\udd71\ufe0f **B Block:** Kalshi suspends 3 congressional candidates from their own election markets \u2014 prediction-market integrity reckoning + Polymarket Pulse cutaway\n\ud83c\udd8e **C Block:** Hellmuth quads / Alabama extends DeBoer 7-yr $87.5M / Wemby concussion, Spurs 1-1 / AITA gym rail-coach\n\ud83c\udfac **Close:** NFL Draft tonight in Pittsburgh \u2014 Matt's town\n\n\ud83c\udfaf **Top YT title:** \"Kristen Foxen Bluffed Ace-Eight Into Two Pair \u2014 Then Folded Trip Queens To Lose The Title\"\n\n*[cowork] Run-of-Show Agent \u00b7 April 23, 2026 \u00b7 7:25 AM PT \u00b7 A-block passes click test (both hands in the same match)*",
+        "content": "\ud83d\udccb Run of Show \u2014 Thursday, April 23, 2026 \u2014 Foxen doubleheader A / Kalshi B / Hellmuth-DeBoer-Wemby-AITA C / NFL Draft close",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -471,7 +471,7 @@
       },
       {
         "id": "1496894460942880838",
-        "content": "\u26a0\ufe0f **Producer audit blocked from #producer \u2014 rerouted here (same issue as Apr 22)**\n\nClaude_Bridge still has no send permission in <#1478657251446100101>. **Action still pending from Apr 22:** rotate `DISCORD_BOT_TOKEN` + add `Claude_Bridge` to #producer channel overwrites.",
+        "content": "\u26a0\ufe0f Producer audit blocked from #producer (Apr 23) \u2014 same permission issue",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -481,7 +481,7 @@
       },
       {
         "id": "1496894474427564103",
-        "content": "\ud83c\udfac **Producer Audit \u2014 April 23, 2026 \u2014 EP. \u2014**\n<@430458839247093790>\n\n\u2705 **Ready:**\n\u2022 ROS posted 7:10a PT \u2014 Foxen doubleheader A / Kalshi+Polymarket B / Hellmuth-DeBoer-Wemby-AITA C / NFL Draft close. Click test passes.\n\u2022 Thumbs 3/3 \u226570 \u2014 A `$1.2M | BLUFF` 82, B `TRIP QUEENS | FOLDED` 76, ALT `KALSHI | PULLS 3` 72.\n\u2022 Thumb\u2194ROS alignment tight.\n\u2022 3/3 block-lead graphics shipped (FOXEN'S APRIL, KALSHI, DeBOER). 7:30a primary + 8:05a late sweep both clean.\n\u2022 7 source assets promoted from #intel-staging \u2192 #assets this run.\n\u2022 No new design requests needed \u2014 all three block leads filed + shipped.",
+        "content": "\ud83c\udfac Producer Audit \u2014 April 23, 2026 \u2014 ROS, Thumbs, Graphics, Assets promoted, no Matt notes",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -490,8 +490,8 @@
         "hasAttachments": false
       },
       {
-        "id": "1496894500365402155",
-        "content": "\u26a0\ufe0f **Flags:**\n1. **C Block Item 1 \u2014 Hellmuth quads \u2014 is a repeat.** Same Ep 20 moment was in Apr 22 C Item 2. Action: tighten to 90-sec callback OR swap in USPO Main Event Day 1.\n2. **World Intel #4 \u2014 Tesla Q1 + Musk FSD autonomy admission \u2014 has no ROS placement.** Recommend 60\u201390 sec in B\u2192C transition.\n3. **World Intel #8 \u2014 Apple $2.5\u20133.3B tariff refunds unclaimed** \u2014 Not in ROS.\n4. **B Block political trip-wire \u2014 Kalshi suspension names congressional candidates.** Keep framing on integrity, avoid party affiliation.\n5. **Andy prep items not visible** \u2014 Foxen USPO totals, Davies 50% benchmark, USPO Main Day 1, NFL Draft pick-1 odds.\n6. **Claid status unclear on today's thumbs.**",
+        "id": "1496894517377237094",
+        "content": "\u26a0\ufe0f Flags: Hellmuth quads is a repeat; Tesla/Musk unplaced; partisan scrub on Kalshi TP; Andy items; Claid status",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -501,7 +501,7 @@
       },
       {
         "id": "1496894517377237094",
-        "content": "\ud83d\udd25 **Breaking (last 2 hrs):** None material. USPO Main Event Day 1 starts today. NFL Draft Round 1 tonight 8p ET \u2014 no trade news broken yet.\n\n\ud83d\udca1 **Recommend:**\n1. **Shrink Hellmuth quads to 90-sec callback** \u2014 reclaim ~2 min for USPO Main Day 1 OR Tesla/Musk autonomy admission.\n2. **Slot Tesla/Musk between Polymarket Pulse and Wemby** \u2014 60\u201390 sec.\n3. **Scrub B block talking points for any partisan name-check** on the Kalshi 3.",
+        "content": "\ud83d\udca1 Recommend: shrink Hellmuth, slot Tesla/Musk, scrub partisan framing",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -513,7 +513,7 @@
     "thumbs": [
       {
         "id": "1493436617493581966",
-        "content": "[cowork] **B \u2014 \"BLEW THE DEADLINE\"** | Lodge interior blurred bg | analysis angle | Google image",
+        "content": "[cowork] B \u2014 \"BLEW THE DEADLINE\" | Lodge interior blurred bg",
         "author": {
           "username": "George",
           "isBot": true
@@ -523,7 +523,7 @@
       },
       {
         "id": "1493436643569307729",
-        "content": "[cowork] **C \u2014 \"NO ROOM IS SAFE\"** | AI SWAT-raid poker scene | purple-dark bg | library (ai-lodge-raid-scene)",
+        "content": "[cowork] C \u2014 \"NO ROOM IS SAFE\" | AI SWAT-raid poker scene",
         "author": {
           "username": "George",
           "isBot": true
@@ -533,7 +533,7 @@
       },
       {
         "id": "1493436684526944326",
-        "content": "[cowork] \ud83d\uddbc\ufe0f Thumbnail options \u2014 April 13, 2026 \u2014 EP. \u2014\n**A:** \"THEY KEPT IT\" \u2014 Doug Polk contempt/intensity | red gradient | Google library\n**B:** \"BLEW THE DEADLINE\" \u2014 Lodge interior blurred bg | dark bg | Google image\n**C:** \"NO ROOM IS SAFE\" \u2014 AI SWAT poker raid scene | purple-dark | library\n\n**Story:** The Lodge / Texas drops money laundering, keeps $2M past forfeiture deadline\n**A Block lead:** \"if this is the standard, no poker room in a gray-market state is safe\"\n\n---\n\u26a0\ufe0f Build notes: Photoshop/Nano unavailable from sandbox this run \u2014 text rendered via ImageMagick/PIL (Oswald Bold). Gemini API key not enabled for this project. For sharper text rendering restore Mac-native build pipeline. Reference library stubbed (iCloud) \u2014 working from PROTOCOL.md only.\n\nMatt, reply with pick or edits \ud83c\udfaf",
+        "content": "[cowork] \ud83d\uddbc\ufe0f Thumbnail options \u2014 April 13, 2026",
         "author": {
           "username": "George",
           "isBot": true
@@ -543,7 +543,7 @@
       },
       {
         "id": "1493756476185907322",
-        "content": "**\ud83c\udfa8 THUMBNAIL CANDIDATES \u2014 April 14, 2026 (PT)**\n\n**Story 1 \u2014 concept:** Texas dropped money laundering charges against The Lodge but is still holding $2M under a backup \"illegal gambling\" theory after the civil forfeiture deadline passed.\n\n**A:** \"DROPPED. / KEPT IT.\" \u2014 Impossible Paradox \u2014 score 90/100\n  \u2022 concept thumb (courthouse night scene)  \u2022  text: bottom-left, fire orange\n  \u2022 top points lost: Face/Subject -10 (no person \u2014 concept thumb)\n\n**B:** \"$2,000,000. / NO CHARGES.\" \u2014 Specific Number \u2014 score 90/100\n  \u2022 concept thumb (evidence locker, cash + chips)  \u2022  text: top-left, cold cyan\n  \u2022 top points lost: Face/Subject -10 (no person \u2014 concept thumb)\n  \u2022 differentiation from A: courthouse\u2192evidence locker; fire\u2192cold; bottom-left\u2192top-left; paradox\u2192specific number\n\n**Story 2 \u2014 Brock Wilson:** Three PokerGO wins in ~30 days \u2014 most underrated player in high-roller poker?\n\n**ALT:** \"THREE. / IN A ROW.\" \u2014 Absurd Escalation \u2014 score 78/100\n  \u2022 person: center-left with trophy (authentic tournament photo)  \u2022  text: bottom-left, gold\n  \u2022 top points lost: Visual Hook -6 (sponsor banner distracts), Face/Subject -7 (mild expression), Clarity -3\n\n\u2014\nPipeline: Gemini Nano direct (build-thumbnail.sh v4 bypassed \u2014 ps.jsx missing + cp-to-self bug). Judge \u226570. Rebuilds: A=0, B=0, ALT=0.",
+        "content": "\ud83c\udfa8 THUMBNAIL CANDIDATES \u2014 April 14, 2026 (DROPPED/KEPT IT + $2M/NO CHARGES + THREE IN A ROW)",
         "author": {
           "username": "George",
           "isBot": true
@@ -553,7 +553,7 @@
       },
       {
         "id": "1494485457633804288",
-        "content": "**\ud83c\udfa8 E2E PIPELINE TEST \u2014 Apr 16**\n\n**Phil Ivey \u2014 \"THE GOAT | RETURNS\"**\nFull pipeline: DDG image search \u2192 image-fetch \u2192 Claid cutout \u2192 PS composite \u2192 Nano integration+text\n\n**A:** fire theme, right-side, 0.95x \u2014 OCR: GOAT \u2705 RETURNS partial\n**B:** warm theme, right-side, 0.95x \u2014 A/B dedup flagged (0.87 > 0.72 threshold)\n\n\u2014\nPipeline: v4 PS-composite + Nano. curl-image-search.sh (no browser needed).",
+        "content": "\ud83c\udfa8 E2E PIPELINE TEST \u2014 Apr 16 \u2014 Phil Ivey GOAT RETURNS",
         "author": {
           "username": "George",
           "isBot": true
@@ -563,7 +563,7 @@
       },
       {
         "id": "1494491222750789762",
-        "content": "**\ud83e\uddea E2E TEST \u2014 Independent A/B Builds + Story Context**\n\n**Subject:** Phil Ivey\n**Story:** Ivey loses $20M in baccarat\n\n**A:** \"LOST|$20M\" \u2014 specific-number \u2014 fire theme\n  \u2022 person: right, scale 0.95  \u2022  text: bottom-left\n  \u2022 brief: intense stare / dark poker room / dark+tense\n  \u2022 narrative prompt: haunted expression, weight of massive loss\n\n**B:** \"I BET|EVERYTHING\" \u2014 direct-quote \u2014 cold theme\n  \u2022 person: left, scale 0.90  \u2022  text: bottom-right\n  \u2022 brief: shocked reaction / Vegas neon rain / chaotic+explosive\n  \u2022 narrative prompt: defiant confidence under neon lights\n\n**Divergence:** 5/5 axes different \u2705\n**Dedup score:** 0.55 (threshold 0.72) \u2705 \u2014 was 0.87 before this fix\n**Pipeline:** v4 PS-composite + Nano narrative integration",
+        "content": "\ud83e\uddea E2E TEST \u2014 Ivey LOST $20M / I BET EVERYTHING",
         "author": {
           "username": "George",
           "isBot": true
@@ -573,7 +573,7 @@
       },
       {
         "id": "1496001733539790990",
-        "content": "\u26a0\ufe0f Thumbnail run aborted \u2014 no ROS from today (Mon 2026-04-20) found in #run-of-show. Last ROS seen: 2026-04-14 (Tue, \"Lodge witch hunt / Janssen sentencing / Bilzerian for Congress\"). Preflight passed (21/21). Waiting on today's run-of-show before generating thumbnails.",
+        "content": "\u26a0\ufe0f Thumbnail run aborted Apr 20 \u2014 no ROS",
         "author": {
           "username": "George",
           "isBot": true
@@ -583,7 +583,7 @@
       },
       {
         "id": "1496165692020363304",
-        "content": "\u26a0\ufe0f **Thumbnail run aborted** \u2014 no ROS from today (Tue 2026-04-21) found in #run-of-show.\nLast ROS seen: Monday, April 20, 2026 (posted 9:23pm PT yesterday).\n\n\ud83d\udd11 **Also flagging:** `DISCORD_BOT_TOKEN` in `~/.cowork-bridge/.env` is returning **HTTP 401** from Discord \u2014 the bot token has been revoked/rotated. Today's run posted via `GEORGE_BOT_TOKEN` as fallback. Rotate the main bot token in the Discord Developer Portal and update the .env file.\n\nPreflight checks passed (Photoshop, Gemini, Claid all live) \u2014 pipeline is ready to go as soon as ROS posts and the main bot token is restored.",
+        "content": "\u26a0\ufe0f Thumbnail run aborted Apr 21 \u2014 no ROS + DISCORD_BOT_TOKEN 401",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -593,7 +593,7 @@
       },
       {
         "id": "1496530839788589186",
-        "content": "\ud83c\udfa8 **Thumbnails \u2014 2026-04-22** \u00b7 Run `20260422-0805` \u00b7 3 candidates\n\n\u26a0\ufe0f **INFRASTRUCTURE FLAG \u2014 CLAID BILLING EXHAUSTED** (err 12015). Library has no Chidwick/Polk cutouts. All 3 thumbs pivoted to **concept treatment (no person)**. Top up Claid + add subjects to `workspace/thumbnail/source/`.\n\n**Top story (A/B):** Chidwick kept $10M of $76M lifetime cashes.\n**Story 2:** WSOPC Texas opens Apr 23 while Lodge stays frozen.\n**A\u2194B divergence:** 5/5 axes (pattern \u00b7 emotion \u00b7 metaphor \u00b7 color temp \u00b7 text hierarchy). Dedup composite 0.5596 \u2192 PASS.\n\n\ud83c\udd70 **Thumb A** \u2014 `$10M | OF $76M` \u00b7 SPECIFIC NUMBER \u00b7 cold cash stacks\nJudge **74/100** \u2705 \u00b7 H17 Subj7 Hook12 Txt11 Comp12 Clr8 Diff7 \u00b7 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n\ud83c\udd71 **Thumb B** \u2014 `KEPT | PENNIES` \u00b7 ABSURD ESCALATION \u00b7 noir cashier cage, fire rim\nJudge **75/100** \u2705 \u00b7 H14 Subj7 Hook13 Txt12 Comp13 Clr8 Diff8 \u00b7 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n\ud83c\udd8e **Thumb C (Story 2)** \u2014 `APRIL 23. | RINGS.` \u00b7 COUNTDOWN \u00b7 gold ring + shuttered Lodge\nJudge **72/100** \u2705 \u00b7 H15 Subj7 Hook11 Txt12 Comp12 Clr7 Diff8 \u00b7 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n**All 3 cleared 70 threshold \u00b7 0 rebuilds \u00b7 pipeline completed despite Claid outage.**",
+        "content": "\ud83c\udfa8 Thumbnails \u2014 2026-04-22 \u00b7 Claid billing exhausted, 3 concept thumbs 74/75/72",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -603,7 +603,7 @@
       },
       {
         "id": "1496892232660418600",
-        "content": "**\ud83c\udfa8 Thumbnails \u2014 Thursday, April 23, 2026**\n\n**A** \u2014 \"$1.2M | BLUFF\" \u2014 Kristen Foxen pulls off a filthy A8 bluff that folds out two pair at the USPO $25K finale \u2014 **82/100**\n**B** \u2014 \"TRIP QUEENS | FOLDED\" \u2014 Foxen then folds trip queens to a pair of sixes and hands the title to Coleman \u2014 **76/100**\n**ALT** \u2014 \"KALSHI | PULLS 3\" \u2014 Kalshi suspends three congressional candidates from their own election markets \u2014 **72/100**",
+        "content": "\ud83c\udfa8 Thumbnails \u2014 Thursday April 23 \u2014 BLUFF 82 / TRIP QUEENS 76 / KALSHI 72",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -615,7 +615,7 @@
     "assets": [
       {
         "id": "1496440319334547507",
-        "content": "\ud83d\udcce **Cartillier wins WSOPC Aix-en-Provence (\u20ac150K)** \u2014 PokerNews / article hero / C-BLOCK \u2014 Cinderella beat, 3rd career cash = gold ring.",
+        "content": "\ud83d\udcce Cartillier wins WSOPC Aix-en-Provence (\u20ac150K) \u2014 C-BLOCK Cinderella",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -625,7 +625,7 @@
       },
       {
         "id": "1496455013432557679",
-        "content": "\ud83d\udcce Tim Cook stepping down \u2014 Apple Newsroom / article header / B Block (Cook \u2192 Ternus transition Sept 1, AAPL slipped under $4T market cap)",
+        "content": "\ud83d\udcce Tim Cook stepping down \u2014 Apple \u2192 Ternus Sept 1",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -635,7 +635,7 @@
       },
       {
         "id": "1496455036840968207",
-        "content": "\ud83d\udcce Wemby concussion Game 2 \u2014 ESPN / article header / B Block",
+        "content": "\ud83d\udcce Wemby concussion Game 2",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -645,7 +645,7 @@
       },
       {
         "id": "1496455456426561546",
-        "content": "\ud83d\udcce NFL Draft tomorrow in Pittsburgh \u2014 ESPN / draft news page / A Block",
+        "content": "\ud83d\udcce NFL Draft tomorrow in Pittsburgh",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -655,7 +655,7 @@
       },
       {
         "id": "1496455462898634782",
-        "content": "\ud83d\udcce Schlittler death threats after Hurkacz match \u2014 NBC News / article header / B Block",
+        "content": "\ud83d\udcce Schlittler death threats after Hurkacz match",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -665,7 +665,7 @@
       },
       {
         "id": "1496515107692482630",
-        "content": "\ud83d\udcce **[A BLOCK] \u2014 Matusow \"Mirage\" \u2192 Chidwick Reply** \u2014 PokerNews write-up covering Matusow's \"high-roller earnings are fake\" claim + replies from Davies (~50% own action), Chidwick ($5\u201310M profit on $76M), Deeb, Arieh.",
+        "content": "\ud83d\udcce [A BLOCK] Matusow Mirage \u2192 Chidwick reply (PokerNews)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -675,7 +675,7 @@
       },
       {
         "id": "1496515167553454152",
-        "content": "\ud83d\udcce **[B BLOCK] \u2014 WSOPC Texas Schedule (TCH Austin)** \u2014 Terrance Reid's X post with official 12-day WSOP Circuit Austin schedule. Apr 23\u2013May 4. $600 Mini Main $500K GTD.",
+        "content": "\ud83d\udcce [B BLOCK] WSOPC Texas schedule (TCH Austin)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -685,7 +685,7 @@
       },
       {
         "id": "1496515258808930374",
-        "content": "\ud83d\udcce **[C BLOCK Item 1] \u2014 Aram Zobian wins USPO Event #9** \u2014 $292,800, HU K\u26606\u2660 vs A\u26659\u2665 paired-sixes board. Natna Children's Foundation backstory.\n\n\ud83d\udcce **[C BLOCK Item 2] \u2014 Hellmuth's Home Game Ep 20 recap (\"quads\" moment)**\n\n\ud83d\udcce **[C BLOCK Item 3] \u2014 Wemby concussion** \u2014 ESPN recap, face-first fall, Spurs lose 106-103.\n\n\ud83d\udcce **[C BLOCK Item 4] \u2014 Matthieu Cartillier WSOPC Aix-en-Provence** \u2014 \u20ac150K, 3rd career cash.",
+        "content": "\ud83d\udcce [C BLOCK 1-4] Zobian USPO #9, Hellmuth Ep 20 quads, Wemby concussion, Cartillier WSOPC",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -695,7 +695,7 @@
       },
       {
         "id": "1496525768480526366",
-        "content": "\ud83d\uddbc\ufe0f **MATUSOW MIRAGE vs. CHIDWICK REPLY \u2014 Show Graphic** \u2014 A BLOCK cold open / best-clip dual quote card.",
+        "content": "\ud83d\uddbc\ufe0f MATUSOW MIRAGE vs CHIDWICK REPLY graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -705,7 +705,7 @@
       },
       {
         "id": "1496525816895373454",
-        "content": "\ud83d\uddbc\ufe0f **WSOPC TEXAS DEBUT \u2014 Show Graphic** \u2014 B BLOCK open. First-ever WSOP Circuit in Texas (Apr 23\u2013May 4) at TCH Austin.",
+        "content": "\ud83d\uddbc\ufe0f WSOPC TEXAS DEBUT graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -715,7 +715,7 @@
       },
       {
         "id": "1496525846033469492",
-        "content": "\ud83d\uddbc\ufe0f **ZOBIAN USPO EVENT #9 \u2014 Show Graphic** \u2014 C BLOCK Item 1.",
+        "content": "\ud83d\uddbc\ufe0f ZOBIAN USPO EVENT #9 graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -725,7 +725,7 @@
       },
       {
         "id": "1496525868930039858",
-        "content": "\ud83d\uddbc\ufe0f **NATNA FOUNDATION \u2014 Show Graphic** \u2014 C BLOCK Item 1 sub-card.",
+        "content": "\ud83d\uddbc\ufe0f NATNA FOUNDATION graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -735,7 +735,7 @@
       },
       {
         "id": "1496525898671853578",
-        "content": "\ud83d\uddbc\ufe0f **POLYMARKET PULSE \u2014 Show Graphic** \u2014 Recurring-segment 4-quadrant card, Apr 22. NBA 51% \u00b7 Stanley Cup 25% \u00b7 World Cup Spain 16% \u00b7 ATP Sinner 56%.",
+        "content": "\ud83d\uddbc\ufe0f POLYMARKET PULSE graphic (Apr 22)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -745,7 +745,7 @@
       },
       {
         "id": "1496525923191623690",
-        "content": "\ud83d\uddbc\ufe0f **COOK HANDS OFF APPLE \u2014 Show Graphic** \u2014 World Intel. $4T market cap + Cook \u2192 Ternus succession (Apr 20).",
+        "content": "\ud83d\uddbc\ufe0f COOK HANDS OFF APPLE graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -755,7 +755,7 @@
       },
       {
         "id": "1496526114493960233",
-        "content": "\ud83d\uddbc\ufe0f **HIGH ROLLER CASHES \u2260 PROFITS \u2014 Show Graphic** \u2014 A BLOCK. 3-row receipts card: Chidwick $76M/$5\u201310M profit \u00b7 Peters $49.65M/~$25K of $50K stake \u00b7 Davies ~50% hold.",
+        "content": "\ud83d\uddbc\ufe0f HIGH ROLLER CASHES \u2260 PROFITS graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -765,7 +765,7 @@
       },
       {
         "id": "1496526147201273967",
-        "content": "\ud83d\uddbc\ufe0f **BTC SPOT CHECK \u2014 Show Graphic** \u2014 World Intel cutaway. BTC spot $78,000, Apr 22.",
+        "content": "\ud83d\uddbc\ufe0f BTC SPOT CHECK graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -775,7 +775,7 @@
       },
       {
         "id": "1496847955250909289",
-        "content": "\ud83c\udccf Foxen USPO Doubleheader (\"Filthy Bluff\" + Trip Queens Fold) \u2014 B Block \u2014 Source: https://www.pokernews.com/news/2026/04/david-coleman-wins-uspo-finale-51096.htm",
+        "content": "\ud83c\udccf Foxen USPO Doubleheader \u2014 B Block",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -785,7 +785,7 @@
       },
       {
         "id": "1496847969792557129",
-        "content": "\ud83c\udccf Foxen \"Absolutely Filthy\" Bluff \u2014 B Block \u2014 Source: https://www.poker.org/latest-news/absolutely-filthy-kristen-foxen-pulls-off-wild-bluff-in-us-poker-open-finale-a6KUE9R5QqVG",
+        "content": "\ud83c\udccf Foxen \"Absolutely Filthy\" Bluff \u2014 B Block",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -795,7 +795,7 @@
       },
       {
         "id": "1496847985945083915",
-        "content": "\ud83c\udccf Foxen Kings-Fold Callback (Triton Jeju, Doug Polk analysis) \u2014 B Block \u2014 Source: https://www.spadepoker.com/en/news/doug-polk-analyzes-kristen-foxen-and-the-fold-that-divided-the-poker-world/",
+        "content": "\ud83c\udccf Foxen Kings-Fold Callback (Triton Jeju)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -805,7 +805,7 @@
       },
       {
         "id": "1496848001992228995",
-        "content": "\ud83c\udccf Hellmuth Quad 8s (\"When you're the greatest, you make quads\") \u2014 B Block \u2014 Source: https://www.pokernews.com/news/2026/04/hellmuths-home-game-episode-20-recap-51082.htm",
+        "content": "\ud83c\udccf Hellmuth Quad 8s",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -815,7 +815,7 @@
       },
       {
         "id": "1496886436593668226",
-        "content": "\ud83d\uddbc\ufe0f **KALSHI SUSPENDS 3 CONGRESSIONAL CANDIDATES \u2014 Show Graphic** \u2014 B BLOCK open. Breaking-news alert frame for the prediction-market integrity segment. CNBC, Apr 23.",
+        "content": "\ud83d\uddbc\ufe0f KALSHI SUSPENDS 3 CONGRESSIONAL CANDIDATES graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -825,7 +825,7 @@
       },
       {
         "id": "1496886466591199401",
-        "content": "\ud83d\uddbc\ufe0f **DeBOER \u00b7 7 YEARS \u00b7 $87.5M \u2014 Show Graphic** \u2014 C BLOCK lead. Alabama extends Kalen DeBoer. ESPN, Apr 23.",
+        "content": "\ud83d\uddbc\ufe0f DeBOER \u00b7 7 YEARS \u00b7 $87.5M graphic",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -835,7 +835,7 @@
       },
       {
         "id": "1496886502872060045",
-        "content": "\ud83d\uddbc\ufe0f **KRISTEN FOXEN'S APRIL \u2014 Show Graphic** \u2014 A BLOCK lead. Side-by-side dual hand: Filthy Bluff + Trip Queens Fold. USPO $25K finale.",
+        "content": "\ud83d\uddbc\ufe0f KRISTEN FOXEN'S APRIL graphic (dual hand)",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -845,7 +845,7 @@
       },
       {
         "id": "1496894143237066895",
-        "content": "\ud83d\udcce COLD OPEN \u2014 \"She didn't say nothin... she just had that look.\" \u2014 r/rareinsults / 24.6k upvotes, #24 r/all today \u2014 hold full-screen 3 sec before Matt on camera. Source: intel-staging msg 1496832685279150211",
+        "content": "\ud83d\udcce COLD OPEN \u2014 r/rareinsults",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -855,7 +855,7 @@
       },
       {
         "id": "1496894144100958369",
-        "content": "\ud83d\udcce [B BLOCK] Kalshi suspends 3 congressional candidates \u2014 CNBC headline + lede screenshot \u2014 source for the B-block lead beat. Source: intel-staging msg 1496817346596179968",
+        "content": "\ud83d\udcce [B BLOCK] Kalshi CNBC asset",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -865,7 +865,7 @@
       },
       {
         "id": "1496894145246003220",
-        "content": "\ud83d\udcce [B BLOCK] Polymarket trending \u2014 Apr 23 open \u2014 Friday weekly stock-close boards + Silver >$65 conviction \u2014 Polymarket Pulse cutaway after Kalshi beat. Source: intel-staging msg 1496817396734758952",
+        "content": "\ud83d\udcce [B BLOCK] Polymarket Apr 23",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -875,7 +875,7 @@
       },
       {
         "id": "1496894145829146695",
-        "content": "\ud83d\udcce [C BLOCK] NBA playoffs update \u2014 Thunder 2-0, Pistons-Magic 1-1, Wemby update \u2014 ESPN NBA bracket visual for Wemby/sportsbook segment. Source: intel-staging msg 1496817405589196800",
+        "content": "\ud83d\udcce [C BLOCK] NBA playoffs / Wemby",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -885,7 +885,7 @@
       },
       {
         "id": "1496894152418394164",
-        "content": "\ud83d\udcce [C BLOCK] Alabama extends DeBoer \u2014 7yr/$87.5M \u2014 ESPN full contract terms screenshot \u2014 pairs with the DeBOER graphic for the CFB beat. Source: intel-staging msg 1496817376602226717",
+        "content": "\ud83d\udcce [C BLOCK] Alabama DeBoer 7yr/$87.5M",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -895,7 +895,7 @@
       },
       {
         "id": "1496894162241589369",
-        "content": "\ud83d\udcce [C BLOCK] AITA \u2014 \"Stop coaching my friend at the gym\" \u2014 90% upvoted, 59 comments. Gym rail-coach = poker table rail-coach translation. Source: intel-staging msg 1496832950891843746",
+        "content": "\ud83d\udcce [C BLOCK] AITA rail-coach",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -905,7 +905,7 @@
       },
       {
         "id": "1496894167802974371",
-        "content": "\ud83d\udcce [CLOSE] NFL Draft tonight in Pittsburgh \u2014 ESPN Draft news / mock boards + trade buzz \u2014 Matt's town tease for Friday. Source: intel-staging msg 1496817368339583159",
+        "content": "\ud83d\udcce [CLOSE] NFL Draft Pittsburgh",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
