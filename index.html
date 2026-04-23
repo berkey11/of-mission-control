@@ -304,6 +304,17 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
 .sv-body::-webkit-scrollbar { width: 6px; }
 .sv-body::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
 
+
+/* ---------- Flow-chip scroll affordance ---------- */
+.flow-chip {
+  position: absolute; bottom: 16px; right: 18px;
+  background: rgba(90,242,234,0.08); border: 1px solid var(--cyan-dim); color: var(--cyan);
+  padding: 6px 12px; border-radius: 999px;
+  font: 600 10.5px/1 "JetBrains Mono", Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; transition: all .15s;
+}
+.flow-chip:hover { background: rgba(90,242,234,0.16); border-color: var(--cyan); box-shadow: 0 0 14px rgba(90,242,234,0.25); }
+
 </style>
 </head>
 <body>
@@ -408,6 +419,7 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
             <div class="leg"><span class="dot" style="background:var(--tier3)"></span>audit</div>
             <div class="leg"><span class="dot" style="background:var(--ok)"></span>running</div>
           </div>
+          <button class="flow-chip" onclick="document.getElementById('pipeline-flow-anchor').scrollIntoView({behavior:'smooth', block:'start'})">↓ See pipeline flow</button>
         </div>
       </div>
 
@@ -428,7 +440,7 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
             <button onclick="go('#agents')">Open Agent Roster</button>
             <button onclick="go('#crons')">View Cron Timeline</button>
             <button onclick="go('#content')">Today's Outputs</button>
-            <button onclick="copyToClipboard('morning-brief-url')">Copy Morning-Brief Link</button>
+            <button onclick="document.getElementById('pipeline-flow-anchor').scrollIntoView({behavior:'smooth', block:'start'})">↓ Jump to Pipeline Flow</button>
           </div>
         </div>
 
@@ -463,12 +475,10 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ================== PIPELINE FLOW (full-width, live state) ================== -->
-  <div class="pane command visible" id="pane-command-flow" style="margin-top: 18px;">
-    <div class="panel">
-      <h4>Pipeline Flow · cron cascade 02:00 → 10:00 PT</h4>
+    <!-- ================== PIPELINE FLOW (inline inside Command pane) ================== -->
+    <div id="pipeline-flow-anchor" class="panel" style="margin-top: 18px; scroll-margin-top: 80px;">
+      <h4>Pipeline Flow · cron cascade 02:00 → 10:00 PT <a href="#pipeline-flow-anchor" style="color:var(--muted);text-decoration:none;font-size:10px;margin-left:8px;letter-spacing:0.1em">#direct-link</a></h4>
       <div class="flow-wrap">
         <svg viewBox="0 0 1200 380" id="flow-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-label="Pipeline flow chart">
           <defs>
@@ -688,10 +698,10 @@ Editing: to avoid a backend, edits are one of two paths.
 // =============================================================
 const AGENTS = [
   // tier 1 — research — outer ring
-  { id:'uncapped-research-poker',      tier:1, ring:'outer', angle:-130, short:'poker',    full:'Research · Poker',    cron:'2:03a' },
-  { id:'uncapped-research-world',      tier:1, ring:'outer', angle:-95,  short:'world',    full:'Research · World',    cron:'3:07a' },
-  { id:'uncapped-research-memes',      tier:1, ring:'outer', angle:-60,  short:'memes',    full:'Research · Memes',    cron:'4:06a' },
-  { id:'uncapped-hand-analysis',       tier:1, ring:'outer', angle:-25,  short:'hand',     full:'Research · Hands',    cron:'5:06a' },
+  { id:'uncapped-research-poker',      tier:1, ring:'outer', angle:-145, short:'poker',    full:'Research · Poker',    cron:'2:03a' },
+  { id:'uncapped-research-world',      tier:1, ring:'outer', angle:-115, short:'world',    full:'Research · World',    cron:'3:07a' },
+  { id:'uncapped-research-memes',      tier:1, ring:'outer', angle:-65,  short:'memes',    full:'Research · Memes',    cron:'4:06a' },
+  { id:'uncapped-hand-analysis',       tier:1, ring:'outer', angle:-35,  short:'hand',     full:'Research · Hands',    cron:'5:06a' },
   // tier 2 — production — inner ring
   { id:'uncapped-run-of-show',         tier:2, ring:'inner', angle:205,  short:'ROS',      full:'Production · ROS',        cron:'7:08a' },
   { id:'uncapped-graphic-design',      tier:2, ring:'inner', angle:245,  short:'graphics', full:'Production · Graphics',   cron:'7:38a' },
