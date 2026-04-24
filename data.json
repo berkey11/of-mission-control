@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T17:06:07Z",
+  "generatedAt": "2026-04-24T17:14:23Z",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-24T17:01:18.000Z",
-      "lastRunAt": "2026-04-24T16:59:25.997Z",
+      "nextRunAt": "2026-04-24T17:11:18.000Z",
+      "lastRunAt": "2026-04-24T17:07:26.131Z",
       "jitterSeconds": 78
     }
   ],
@@ -348,13 +348,13 @@
       "paused": {}
     },
     "logTail": "Need: Peters' *…\n[2026-04-24T14:17:04.793Z]   -> cost $0.3264, files=14, capped=false\n[2026-04-24T14:18:03.007Z]   -> cost $0.5054, files=14, capped=false\n[2026-04-24T14:29:03.282Z]   -> cost $0.3823, files=14, capped=false\n[2026-04-24T14:47:42.734Z] [graphic-design] Claude_Bridge: 📋 **Show Graphics — Morning Sweep Audit (Apr 24, 7:47a PT)** — processed: **3** · shipped: **3** · …\n[2026-04-24T14:47:47.550Z]   -> cost $0.0111, files=0, capped=false\n[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: 🎨 **Graphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\nraphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n",
-    "uptime": "01-12:05:24",
+    "uptime": "01-12:13:21",
     "channels": [
-      "#brand-design",
-      "#producer",
-      "#graphic-design",
-      "#guest-research",
-      "#bookmarks"
+      "brand-design",
+      "producer",
+      "graphic-design",
+      "guest-research",
+      "bookmarks"
     ]
   },
   "discord": {
@@ -543,7 +543,7 @@
       },
       {
         "id": "1493756476185907322",
-        "content": "**🎨 THUMBNAIL CANDIDATES — April 14, 2026 (PT)**",
+        "content": "**🎨 THUMBNAIL CANDIDATES — April 14, 2026 (PT)**\n\n**Story 1 — concept:** Texas dropped money laundering charges against The Lodge but is still holding $2M under a backup \"illegal gambling\" theory after the civil forfeiture deadline passed.\n\n**A:** \"DROPPED. / KEPT IT.\" — Impossible Paradox — score 90/100\n  • concept thumb (courthouse night scene)  •  text: bottom-left, fire orange\n  • top points lost: Face/Subject -10 (no person — concept thumb)\n\n**B:** \"$2,000,000. / NO CHARGES.\" — Specific Number — score 90/100\n  • concept thumb (evidence locker, cash + chips)  •  text: top-left, cold cyan\n  • top points lost: Face/Subject -10 (no person — concept thumb)\n  • differentiation from A: courthouse→evidence locker; fire→cold; bottom-left→top-left; paradox→specific number\n\n**Story 2 — Brock Wilson:** Three PokerGO wins in ~30 days — most underrated player in high-roller poker?\n\n**ALT:** \"THREE. / IN A ROW.\" — Absurd Escalation — score 78/100\n  • person: center-left with trophy (authentic tournament photo)  •  text: bottom-left, gold\n  • top points lost: Visual Hook -6 (sponsor banner distracts), Face/Subject -7 (mild expression), Clarity -3\n\n—\nPipeline: Gemini Nano direct (build-thumbnail.sh v4 bypassed — ps.jsx missing + cp-to-self bug). Judge ≥70. Rebuilds: A=0, B=0, ALT=0.",
         "author": {
           "username": "George",
           "isBot": true
@@ -553,7 +553,7 @@
       },
       {
         "id": "1494485457633804288",
-        "content": "**🎨 E2E PIPELINE TEST — Apr 16**",
+        "content": "**🎨 E2E PIPELINE TEST — Apr 16**\n\n**Phil Ivey — \"THE GOAT | RETURNS\"**\nFull pipeline: DDG image search → image-fetch → Claid cutout → PS composite → Nano integration+text\n\n**A:** fire theme, right-side, 0.95x — OCR: GOAT ✅ RETURNS partial\n**B:** warm theme, right-side, 0.95x — A/B dedup flagged (0.87 > 0.72 threshold)\n\n—\nPipeline: v4 PS-composite + Nano. curl-image-search.sh (no browser needed).",
         "author": {
           "username": "George",
           "isBot": true
@@ -563,7 +563,7 @@
       },
       {
         "id": "1494491222750789762",
-        "content": "**🧪 E2E TEST — Independent A/B Builds + Story Context**",
+        "content": "**🧪 E2E TEST — Independent A/B Builds + Story Context**\n\n**Subject:** Phil Ivey\n**Story:** Ivey loses $20M in baccarat\n\n**A:** \"LOST|$20M\" — specific-number — fire theme\n  • person: right, scale 0.95  •  text: bottom-left\n  • brief: intense stare / dark poker room / dark+tense\n  • narrative prompt: haunted expression, weight of massive loss\n\n**B:** \"I BET|EVERYTHING\" — direct-quote — cold theme\n  • person: left, scale 0.90  •  text: bottom-right\n  • brief: shocked reaction / Vegas neon rain / chaotic+explosive\n  • narrative prompt: defiant confidence under neon lights\n\n**Divergence:** 5/5 axes different ✅\n**Dedup score:** 0.55 (threshold 0.72) ✅ — was 0.87 before this fix\n**Pipeline:** v4 PS-composite + Nano narrative integration",
         "author": {
           "username": "George",
           "isBot": true
@@ -573,7 +573,7 @@
       },
       {
         "id": "1496001733539790990",
-        "content": "⚠️ Thumbnail run aborted — no ROS from today (Mon 2026-04-20) found in #run-of-show.",
+        "content": "⚠️ Thumbnail run aborted — no ROS from today (Mon 2026-04-20) found in #run-of-show. Last ROS seen: 2026-04-14 (Tue, \"Lodge witch hunt / Janssen sentencing / Bilzerian for Congress\"). Preflight passed (21/21). Waiting on today's run-of-show before generating thumbnails.",
         "author": {
           "username": "George",
           "isBot": true
@@ -593,7 +593,7 @@
       },
       {
         "id": "1496530839788589186",
-        "content": "🎨 **Thumbnails — 2026-04-22** · Run `20260422-0805` · 3 candidates\n\n⚠️ **INFRASTRUCTURE FLAG — CLAID BILLING EXHAUSTED** (err 12015). Library has no Chidwick/Polk cutouts. All 3 thumbs pivoted to **concept treatment (no person)**. Top up Claid + add subjects to `workspace/thumbnail/source/`.\n\n**Top story (A/B):** Chidwick kept $10M of $76M lifetime cashes.\n**Story 2:** WSOPC Texas opens Apr 23 while Lodge stays frozen.\n**A↔B divergence:** 5/5 axes (pattern · emotion · metaphor · color temp · text hierarchy). Dedup composite 0.5596 → PASS.\n\n🅰 **Thumb A** — `$10M | OF $76M` · SPECIFIC NUMBER · cold cash stacks\nJudge **74/100** ✅\n🅱 **Thumb B** — `KEPT | PENNIES` · ABSURD ESCALATION · noir cashier cage, fire rim\nJudge **75/100** ✅\n🆎 **Thumb C (Story 2)** — `APRIL 23. | RINGS.` · COUNTDOWN · gold ring + shuttered Lodge\nJudge **72/100** ✅",
+        "content": "🎨 **Thumbnails — 2026-04-22** · Run `20260422-0805` · 3 candidates\n\n⚠️ **INFRASTRUCTURE FLAG — CLAID BILLING EXHAUSTED** (err 12015). Library has no Chidwick/Polk cutouts. All 3 thumbs pivoted to **concept treatment (no person)**. Top up Claid + add subjects to `workspace/thumbnail/source/`.\n\n**Top story (A/B):** Chidwick kept $10M of $76M lifetime cashes.\n**Story 2:** WSOPC Texas opens Apr 23 while Lodge stays frozen.\n**A↔B divergence:** 5/5 axes (pattern · emotion · metaphor · color temp · text hierarchy). Dedup composite 0.5596 → PASS.\n\n🅰 **Thumb A** — `$10M | OF $76M` · SPECIFIC NUMBER · cold cash stacks\nJudge **74/100** ✅ · H17 Subj7 Hook12 Txt11 Comp12 Clr8 Diff7 · 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n🅱 **Thumb B** — `KEPT | PENNIES` · ABSURD ESCALATION · noir cashier cage, fire rim\nJudge **75/100** ✅ · H14 Subj7 Hook13 Txt12 Comp13 Clr8 Diff8 · 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n🆎 **Thumb C (Story 2)** — `APRIL 23. | RINGS.` · COUNTDOWN · gold ring + shuttered Lodge\nJudge **72/100** ✅ · H15 Subj7 Hook11 Txt12 Comp12 Clr7 Diff8 · 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n**All 3 cleared 70 threshold · 0 rebuilds · pipeline completed despite Claid outage.**",
         "author": {
           "username": "George 2.0",
           "isBot": true
