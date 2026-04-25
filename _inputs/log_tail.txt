@@ -1,0 +1,10 @@
+[2026-04-24T14:17:04.793Z]   -> cost $0.3264, files=14, capped=false
+[2026-04-24T14:18:03.007Z]   -> cost $0.5054, files=14, capped=false
+[2026-04-24T14:29:03.282Z]   -> cost $0.3823, files=14, capped=false
+[2026-04-24T14:47:42.734Z] [graphic-design] Claude_Bridge: 📋 **Show Graphics — Morning Sweep Audit (Apr 24, 7:47a PT)** — processed: **3** · shipped: **3** · …
+[2026-04-24T14:47:47.550Z]   -> cost $0.0111, files=0, capped=false
+[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: 🎨 **Graphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…
+[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false
+[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down
+ests · 0 shipped · 0 blocked · 0 fell back…
+[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false

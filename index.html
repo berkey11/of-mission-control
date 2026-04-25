@@ -502,7 +502,7 @@ body.guest .admin-only, body.unknown .admin-only { display: none !important; }
       <button type="button" class="splash-btn primary" data-action="login">🔓 ADMIN LOGIN</button>
       <button type="button" class="splash-btn" data-action="guest">👁 CONTINUE AS GUEST</button>
     </div>
-    <div class="splash-foot">build 20260425-2214 · only_friends_mission_control</div>
+    <div class="splash-foot">build 20260425-2229 · only_friends_mission_control</div>
   </div>
 </div>
 
@@ -959,7 +959,7 @@ George's personas (brand-designer, graphic-designer, producer, guest-research, e
   <footer>
     <span id="fetched-at">data: snapshot pending</span>
     &nbsp;·&nbsp;
-    <span>build 20260425-2214 · only_friends_mission_control</span>
+    <span>build 20260425-2229 · only_friends_mission_control</span>
   </footer>
 </div>
 
@@ -1763,7 +1763,7 @@ function renderCronsPane(tasks) {
 // =============================================================
 function renderChannelsPane(snapshot) {
   const g = snapshot.george || {};
-  const chList = g.channels || [
+  const chList = Array.isArray(g.channels) ? g.channels : [
     { name:'brand-design', mode:'always', modeLabel:'always' },
     { name:'producer', mode:'mention', modeLabel:'@-only' },
     { name:'graphic-design', mode:'always', modeLabel:'always' },
@@ -2227,6 +2227,10 @@ document.addEventListener('keydown', (e) => {
   else if ((e.metaKey || e.ctrlKey) && e.key === 's') { e.preventDefault(); saveEdit(); }
 });
 
+function safeRender(name, fn) {
+  try { fn(); } catch (e) { console.error('[mc] render error in ' + name + ':', e); }
+}
+
 async function loadAndRender() {
   let snap;
   try {
@@ -2265,11 +2269,11 @@ async function loadAndRender() {
   // Populate other panes
   renderAgentsPane(tasks);
   renderCronsPane(tasks);
-  renderChannelsPane(snap);
-  renderContentPane(snap);
-  renderSkillsPane(snap);
-  renderToolsPane(snap);
-  renderSoulPane(snap);
+  safeRender("renderChannelsPane", () => renderChannelsPane(snap));
+  safeRender("renderContentPane", () => renderContentPane(snap));
+  safeRender("renderSkillsPane", () => renderSkillsPane(snap));
+  safeRender("renderToolsPane", () => renderToolsPane(snap));
+  safeRender("renderSoulPane", () => renderSoulPane(snap));
   flowWireStatic();
 
   document.getElementById('fetched-at').textContent =
@@ -2332,7 +2336,7 @@ window.sendPrompt = () => showToast('Terminal = open Discord in your browser');
     });
     var pill = document.getElementById('auth-pill');
     if (pill) pill.addEventListener('click', function () { try { onAuthPillClick(); } catch(e) { console.error(e); } });
-    console.log('[mc] handlers bound · build 20260425-2214');
+    console.log('[mc] handlers bound · build 20260425-2229');
   });
 })();
 </script>
