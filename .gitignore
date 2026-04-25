@@ -1,3 +1,23 @@
+# OS
 .DS_Store
 *.swp
+
+# Snapshot cron scratch — never commit these
+.tmp/
+.staging/
+.snapshot-tmp/
+.inputs/
+.snapshot_*
+.staging-*
+.snapshot-inventory.json
+.snapshot-probe
+.einr*
+.eintr*
+.ping*
+.build_partials.py
+_inputs.json
+data.json.*
 deploy.sh.bak
+
+# Backup files from the admin server
+*.bak.*
