@@ -499,10 +499,10 @@ body.guest .admin-only, body.unknown .admin-only { display: none !important; }
     <div class="splash-title">MISSION<br>CONTROL</div>
     <div class="splash-sub">Live ops dashboard for the agent pipeline.<br>Editing requires admin authentication.</div>
     <div class="splash-actions">
-      <button type="button" class="splash-btn primary" onclick="openLoginModal()">🔓 ADMIN LOGIN</button>
-      <button type="button" class="splash-btn" onclick="continueAsGuest()">👁 CONTINUE AS GUEST</button>
+      <button type="button" class="splash-btn primary" data-action="login">🔓 ADMIN LOGIN</button>
+      <button type="button" class="splash-btn" data-action="guest">👁 CONTINUE AS GUEST</button>
     </div>
-    <div class="splash-foot">build 20260425-2155 · only_friends_mission_control</div>
+    <div class="splash-foot">build 20260425-2202 · only_friends_mission_control</div>
   </div>
 </div>
 
@@ -959,7 +959,7 @@ George's personas (brand-designer, graphic-designer, producer, guest-research, e
   <footer>
     <span id="fetched-at">data: snapshot pending</span>
     &nbsp;·&nbsp;
-    <span>build 20260425-2155 · only_friends_mission_control</span>
+    <span>build 20260425-2202 · only_friends_mission_control</span>
   </footer>
 </div>
 
@@ -2276,30 +2276,42 @@ setInterval(() => loadAndRender().catch(()=>{}), 90000);
 window.sendPrompt = () => showToast('Terminal = open Discord in your browser');
 </script>
 <script>
-// Defensive: explicitly bind splash + modal handlers via addEventListener too,
-// so even if inline onclick is broken (mobile-Safari quirks, CSP, extension
-// stripping, etc.) the buttons still work.
+// Splash + modal handlers via event delegation on the splash container.
+// One listener, no inline onclicks, no preventDefault. Maximally resilient.
 (function () {
-  function bind(sel, fn) {
-    document.querySelectorAll(sel).forEach(el => {
-      el.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        try { fn(e); } catch (err) { console.error('[mc] handler error', err); alert('handler error: ' + err.message); }
-      });
-    });
-  }
   function ready(fn) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
     else fn();
   }
   ready(function () {
-    bind('.splash-btn.primary', () => openLoginModal());
-    bind('.splash-btn:not(.primary)', () => continueAsGuest());
-    bind('#login-submit-btn', () => submitLogin());
-    bind('.modal-close', () => closeLoginModal());
-    bind('#auth-pill', () => onAuthPillClick());
-    console.log('[mc] defensive handlers bound');
+    // Single delegated listener on splash for action="login"|"guest"
+    var sp = document.getElementById('splash');
+    if (sp) {
+      sp.addEventListener('click', function (e) {
+        var t = e.target.closest('[data-action]');
+        if (!t) return;
+        var act = t.getAttribute('data-action');
+        console.log('[mc-splash] action=', act);
+        try {
+          if (act === 'login') {
+            if (typeof openLoginModal === 'function') openLoginModal();
+            else console.error('[mc] openLoginModal undefined');
+          } else if (act === 'guest') {
+            if (typeof continueAsGuest === 'function') continueAsGuest();
+            else console.error('[mc] continueAsGuest undefined');
+          }
+        } catch (err) { console.error('[mc] handler error', err); alert('error: ' + err.message); }
+      });
+    }
+    // Other modal buttons via direct addEventListener (no inline onclick interference)
+    var loginSubmit = document.getElementById('login-submit-btn');
+    if (loginSubmit) loginSubmit.addEventListener('click', function () { try { submitLogin(); } catch(e) { console.error(e); alert(e.message); } });
+    document.querySelectorAll('.modal-close').forEach(function (el) {
+      el.addEventListener('click', function () { try { closeLoginModal(); } catch(e) { console.error(e); } });
+    });
+    var pill = document.getElementById('auth-pill');
+    if (pill) pill.addEventListener('click', function () { try { onAuthPillClick(); } catch(e) { console.error(e); } });
+    console.log('[mc] handlers bound · build 20260425-2202');
   });
 })();
 </script>
