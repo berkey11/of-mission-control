@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T23:21:27.737753+00:00",
+  "generatedAt": "2026-04-25T23:35:04.411383+00:00",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-25T23:11:18.000Z",
-      "lastRunAt": "2026-04-25T23:08:29.665Z",
+      "nextRunAt": "2026-04-25T23:26:18.000Z",
+      "lastRunAt": "2026-04-25T23:22:29.909Z",
       "jitterSeconds": 78
     }
   ],
@@ -348,7 +348,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-24T14:17:04.793Z]   -> cost $0.3264, files=14, capped=false\n[2026-04-24T14:18:03.007Z]   -> cost $0.5054, files=14, capped=false\n[2026-04-24T14:29:03.282Z]   -> cost $0.3823, files=14, capped=false\n[2026-04-24T14:47:42.734Z] [graphic-design] Claude_Bridge: \ud83d\udccb **Show Graphics \u2014 Morning Sweep Audit (Apr 24, 7:47a PT)** \u2014 processed: **3** \u00b7 shipped: **3** \u00b7 \u2026\n[2026-04-24T14:47:47.550Z]   -> cost $0.0111, files=0, capped=false\n[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n",
-    "uptime": "02-18:27:02",
+    "uptime": "02-18:40:39",
     "channels": [
       {
         "name": "brand-design",
