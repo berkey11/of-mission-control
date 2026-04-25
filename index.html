@@ -399,9 +399,136 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
 .modal-status.err   { color: var(--danger); }
 .modal-status.busy  { color: var(--cyan); }
 
+
+/* ============ Splash gate ============ */
+#splash {
+  position: fixed; inset: 0; z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(ellipse at 25% 20%, rgba(90,242,234,0.08), transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(248,87,196,0.06), transparent 55%),
+    linear-gradient(180deg, #030812 0%, #08111e 100%);
+}
+.splash-card {
+  text-align: center; max-width: 560px; padding: 50px 40px;
+  border: 1px solid var(--line-2); border-radius: 16px;
+  background: rgba(10,22,40,0.6); backdrop-filter: blur(8px);
+  box-shadow: 0 20px 80px rgba(90,242,234,0.08);
+}
+.splash-eyebrow {
+  color: var(--gold); font: 700 10px/1.4 inherit; letter-spacing: 0.4em;
+  margin-bottom: 20px; opacity: 0.85;
+}
+.splash-title {
+  color: var(--cyan); font: 800 42px/1.05 inherit; letter-spacing: 0.06em;
+  text-shadow: 0 0 24px rgba(90,242,234,0.35);
+  margin-bottom: 22px;
+}
+.splash-sub {
+  color: var(--ink-2); font: 500 13px/1.6 inherit; margin-bottom: 32px;
+}
+.splash-actions { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+.splash-btn {
+  padding: 13px 22px; border-radius: 8px;
+  font: 800 12px/1 inherit; letter-spacing: 0.16em; cursor: pointer;
+  background: transparent; border: 1px solid var(--line-2); color: var(--ink-2);
+  transition: all .15s;
+}
+.splash-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.splash-btn.primary {
+  background: var(--cyan); color: #031018; border-color: var(--cyan);
+  box-shadow: 0 0 24px rgba(90,242,234,0.25);
+}
+.splash-btn.primary:hover { background: #9ff7f1; }
+.splash-foot { color: var(--muted); font: 500 10px/1 inherit; letter-spacing: 0.16em; margin-top: 28px; opacity: 0.65;}
+
+/* ============ Auth pill in topbar ============ */
+.auth-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 999px; cursor: pointer;
+  font: 700 11px/1 inherit; letter-spacing: 0.1em;
+  background: transparent; border: 1px solid var(--line-2); color: var(--ink-2);
+  transition: all .15s;
+}
+.auth-pill:hover { border-color: var(--cyan); color: var(--cyan); }
+.auth-pill.guest { color: var(--muted); }
+.auth-pill.admin-local  { color: var(--mag);  border-color: var(--mag-dim); background: rgba(248,87,196,0.06); }
+.auth-pill.admin-remote { color: var(--cyan); border-color: var(--cyan-dim); background: rgba(90,242,234,0.06); }
+.auth-pill.admin-local::before, .auth-pill.admin-remote::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* ============ Login modal extras ============ */
+.login-card { height: auto !important; max-height: 90vh; }
+.login-body { padding: 18px 22px; flex: 1; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+.login-label { color: var(--cyan); font: 700 10px/1 inherit; letter-spacing: 0.16em; text-transform: uppercase; }
+#login-pat {
+  background: var(--bg); border: 1px solid var(--line-2); border-radius: 6px;
+  padding: 12px 14px; color: var(--ink); outline: none;
+  font: 13px/1.4 ui-monospace, Menlo, monospace; letter-spacing: 0.04em;
+  width: 100%;
+}
+#login-pat:focus { border-color: var(--cyan); }
+.login-help { color: var(--muted); font: 500 11.5px/1.6 inherit; }
+.login-help a { color: var(--cyan); text-decoration: none; border-bottom: 1px dotted currentColor; }
+.login-help p { margin: 0 0 8px; }
+.login-status {
+  font: 600 11.5px/1.4 inherit; padding: 8px 12px; border-radius: 6px; min-height: 18px;
+  background: var(--bg); border: 1px solid var(--line); color: var(--muted);
+}
+.login-status.ok    { color: var(--ok);     border-color: var(--ok); background: rgba(52,211,153,0.06); }
+.login-status.err   { color: var(--danger); border-color: var(--danger); background: rgba(239,68,68,0.06); }
+.login-status.busy  { color: var(--cyan);   border-color: var(--cyan-dim); background: rgba(90,242,234,0.06); }
+
+/* Hide guest-side edit affordances in CSS so even ungated paint doesn't flash them */
+body.guest .admin-only, body.unknown .admin-only { display: none !important; }
+
 </style>
 </head>
 <body>
+
+<!-- ============ SPLASH GATE (login or continue as guest) ============ -->
+<div id="splash" style="display:none">
+  <div class="splash-card">
+    <div class="splash-eyebrow">·  THE  ·  ONLY  ·  FRIENDS  ·  PODCAST  ·</div>
+    <div class="splash-title">MISSION<br>CONTROL</div>
+    <div class="splash-sub">Live ops dashboard for the agent pipeline.<br>Editing requires admin authentication.</div>
+    <div class="splash-actions">
+      <button class="splash-btn primary" onclick="openLoginModal()">🔓 ADMIN LOGIN</button>
+      <button class="splash-btn" onclick="continueAsGuest()">👁 CONTINUE AS GUEST</button>
+    </div>
+    <div class="splash-foot">v1 · only_friends_mission_control</div>
+  </div>
+</div>
+
+<!-- ============ LOGIN MODAL (PAT entry) ============ -->
+<div id="login-modal" class="modal" style="display:none" onclick="if(event.target===this)closeLoginModal()">
+  <div class="modal-card login-card" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">ADMIN LOGIN</div>
+        <div class="modal-sub">paste a GitHub personal access token to enable editing</div>
+      </div>
+      <button class="modal-close" onclick="closeLoginModal()" title="Close (Esc)">×</button>
+    </div>
+    <div class="login-body">
+      <label class="login-label">GITHUB PAT</label>
+      <input id="login-pat" type="password" autocomplete="off" spellcheck="false"
+             placeholder="ghp_••••••••••••••••••••••••••••••••" />
+      <div class="login-help">
+        <p>Need one? <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">GitHub → Settings → Developer settings → Tokens</a> → generate a fine-grained token with <strong>read &amp; write contents</strong> scope on <strong>berkey11/of-mission-control</strong>.</p>
+        <p>Token is stored only in this browser's localStorage. Logout clears it.</p>
+      </div>
+      <div id="login-status" class="login-status">—</div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-save" id="login-submit-btn" onclick="submitLogin()">VALIDATE &amp; ENTER</button>
+      <button class="btn-cancel" onclick="closeLoginModal()">CANCEL</button>
+      <span class="modal-status" style="margin-left:auto;color:var(--muted)">all checks happen against api.github.com/user</span>
+    </div>
+  </div>
+</div>
 
 <div class="wrap">
   <!-- ================== TOP BAR ================== -->
@@ -412,6 +539,7 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
     </div>
     <div class="topbar-right">
       <span class="pill-live blue" id="status-pill">INITIALIZING</span>
+      <span id="auth-pill" class="auth-pill" onclick="onAuthPillClick()" style="display:none">—</span>
       <button class="terminal-btn" onclick="sendPrompt && sendPrompt('open terminal')">TERMINAL</button>
     </div>
   </div>
@@ -1056,16 +1184,16 @@ function selectSoul(key) {
     ? 'souls/scheduled/' + key.slice(8) + '.md'
     : 'souls/george/' + key.slice(9) + '.md';
   document.getElementById('souls-edit-link').href = 'https://github.com/berkey11/of-mission-control/edit/main/' + filename;
-  // Inject EDIT LOCAL button (admin mode only)
+  // Inject EDIT button when in admin mode (local or remote)
   const sa = document.getElementById('souls-actions');
   let local = sa.querySelector('.admin-btn');
-  if (ADMIN_MODE) {
+  if (isAdmin()) {
     if (!local) {
       local = document.createElement('button');
       local.className = 'terminal-btn admin-btn';
-      local.textContent = 'EDIT LOCAL';
       sa.insertBefore(local, sa.firstChild);
     }
+    local.textContent = AUTH.mode === 'admin-local' ? 'EDIT LOCAL' : 'EDIT REMOTE';
     local.onclick = () => openEditor({
       kind: key.startsWith('persona::') ? 'persona' : 'soul',
       id: data.agentId,
@@ -1074,6 +1202,7 @@ function selectSoul(key) {
   } else if (local) {
     local.remove();
   }
+  document.getElementById('souls-edit-link').style.display = isAdmin() ? '' : 'none';
   window.__currentSoul = data;
 }
 function copySoul() {
@@ -1183,16 +1312,16 @@ function selectSkill(key) {
     : 'skills/george/' + key.slice(9) + '.md';
   document.getElementById('skills-edit-link').href =
     'https://github.com/berkey11/of-mission-control/edit/main/' + filename;
-  // Inject EDIT LOCAL button (admin mode only)
+  // Inject EDIT button when in admin mode (local or remote)
   const sa = document.getElementById('skills-actions');
   let local = sa.querySelector('.admin-btn');
-  if (ADMIN_MODE) {
+  if (isAdmin()) {
     if (!local) {
       local = document.createElement('button');
       local.className = 'terminal-btn admin-btn';
-      local.textContent = 'EDIT LOCAL';
       sa.insertBefore(local, sa.firstChild);
     }
+    local.textContent = AUTH.mode === 'admin-local' ? 'EDIT LOCAL' : 'EDIT REMOTE';
     local.onclick = () => openEditor({
       kind: key.startsWith('persona::') ? 'persona' : 'skill',
       id: data.agentId,
@@ -1201,6 +1330,8 @@ function selectSkill(key) {
   } else if (local) {
     local.remove();
   }
+  // Hide "EDIT ON GITHUB" in guest/unknown modes
+  document.getElementById('skills-edit-link').style.display = isAdmin() ? '' : 'none';
   // Store currently selected for COPY button
   window.__currentSkill = data;
 }
@@ -1718,25 +1849,219 @@ function showToast(t) {
 // =============================================================
 
 // =============================================================
-//  Admin mode — only when loaded from localhost (admin server)
+//  Auth state machine
+//    'unknown'      — no decision yet, splash is shown
+//    'guest'        — read-only; no edit affordances
+//    'admin-local'  — loaded from localhost; admin server is reachable
+//    'admin-remote' — GitHub PAT validated as berkey11
 // =============================================================
-const ADMIN_MODE = ['localhost','127.0.0.1','::1'].includes(location.hostname);
-const ADMIN_API  = ''; // same-origin; admin server serves index.html itself
+const REPO_OWNER  = 'berkey11';
+const REPO_NAME   = 'of-mission-control';
+const REPO_BRANCH = 'main';
+const ADMIN_USER  = 'berkey11';   // only this GitHub login unlocks admin mode
 
-if (ADMIN_MODE) {
-  document.body.classList.add('admin');
+const IS_LOCALHOST = ['localhost','127.0.0.1','::1'].includes(location.hostname);
+
+let AUTH = {
+  mode: 'unknown',     // 'unknown' | 'guest' | 'admin-local' | 'admin-remote'
+  pat:  null,          // GitHub PAT when mode === 'admin-remote'
+  user: null,          // GitHub user object when admin-remote
+};
+// expose for legacy checks elsewhere in the file
+let ADMIN_MODE = false;
+const ADMIN_API = '';
+
+function isAdmin() { return AUTH.mode === 'admin-local' || AUTH.mode === 'admin-remote'; }
+
+function setBodyMode() {
+  document.body.classList.remove('admin','admin-local','admin-remote','guest','unknown');
+  document.body.classList.add(AUTH.mode);
+  if (isAdmin()) document.body.classList.add('admin');
+  ADMIN_MODE = isAdmin();
+}
+
+function renderAuthPill() {
+  const el = document.getElementById('auth-pill');
+  if (!el) return;
+  el.style.display = 'inline-flex';
+  el.classList.remove('guest','admin-local','admin-remote');
+  if (AUTH.mode === 'admin-local')  { el.classList.add('admin-local');  el.textContent = 'ADMIN · LOCAL'; }
+  else if (AUTH.mode === 'admin-remote') { el.classList.add('admin-remote'); el.textContent = 'ADMIN · @' + (AUTH.user?.login || ADMIN_USER); }
+  else if (AUTH.mode === 'guest')   { el.classList.add('guest'); el.textContent = 'GUEST · LOGIN →'; }
+  else el.textContent = 'LOGIN →';
+}
+
+function renderAdminBanner() {
   const b = document.getElementById('admin-banner');
-  if (b) {
+  if (!b) return;
+  if (AUTH.mode === 'admin-local') {
     b.style.display = 'flex';
+    b.querySelector('.admin-pill').textContent = '🔓 ADMIN · LOCAL';
     fetch('/api/health').then(r => r.json()).then(d => {
       document.getElementById('admin-health').innerHTML =
-        '<span style="color:var(--ok)">● healthy · ' + d.time.split('T')[1].slice(0,8) + ' UTC</span>';
-    }).catch(err => {
+        '<span style="color:var(--ok)">● admin server healthy</span>';
+    }).catch(() => {
       document.getElementById('admin-health').innerHTML =
-        '<span style="color:var(--danger)">✗ admin API unreachable</span>';
+        '<span style="color:var(--danger)">✗ admin server unreachable</span>';
     });
+  } else if (AUTH.mode === 'admin-remote') {
+    b.style.display = 'flex';
+    b.querySelector('.admin-pill').textContent = '🔓 ADMIN · REMOTE';
+    document.getElementById('admin-health').innerHTML =
+      '<span style="color:var(--cyan)">● editing as @' + (AUTH.user?.login || ADMIN_USER) + ' · commits to ' + REPO_OWNER + '/' + REPO_NAME + '</span>';
+  } else {
+    b.style.display = 'none';
   }
 }
+
+// ---------- splash control ----------
+function showSplash()  { document.getElementById('splash').style.display = 'flex'; }
+function hideSplash()  { document.getElementById('splash').style.display = 'none'; }
+
+function continueAsGuest() {
+  localStorage.setItem('of_mode', 'guest');
+  AUTH.mode = 'guest';
+  setBodyMode(); renderAuthPill(); renderAdminBanner();
+  hideSplash();
+  // re-render any panes that depend on auth mode
+  if (window.__lastSnap) {
+    if (typeof renderSkillsPane === 'function') renderSkillsPane(window.__lastSnap);
+    if (typeof renderSoulPane    === 'function') renderSoulPane(window.__lastSnap);
+  }
+}
+
+function logout() {
+  localStorage.removeItem('of_pat');
+  localStorage.removeItem('of_mode');
+  AUTH = { mode: 'unknown', pat: null, user: null };
+  setBodyMode(); renderAuthPill(); renderAdminBanner();
+  showSplash();
+}
+
+function onAuthPillClick() {
+  if (isAdmin()) {
+    if (confirm('Log out of admin mode?')) logout();
+  } else {
+    openLoginModal();
+  }
+}
+
+// ---------- login modal ----------
+function openLoginModal() {
+  document.getElementById('login-modal').style.display = 'flex';
+  document.getElementById('login-pat').value = '';
+  document.getElementById('login-pat').focus();
+  setLoginStatus('', 'paste a token and submit · ⌘+enter to validate');
+}
+function closeLoginModal() { document.getElementById('login-modal').style.display = 'none'; }
+function setLoginStatus(cls, msg) {
+  const el = document.getElementById('login-status');
+  el.className = 'login-status ' + cls; el.textContent = msg;
+}
+
+async function submitLogin() {
+  const pat = document.getElementById('login-pat').value.trim();
+  if (!pat) { setLoginStatus('err', 'paste a token first'); return; }
+  setLoginStatus('busy', 'validating against api.github.com/user…');
+  document.getElementById('login-submit-btn').disabled = true;
+  try {
+    const r = await fetch('https://api.github.com/user', {
+      headers: { 'Authorization': 'token ' + pat, 'Accept': 'application/vnd.github+json' }
+    });
+    if (!r.ok) throw new Error('GitHub returned HTTP ' + r.status);
+    const user = await r.json();
+    if (user.login !== ADMIN_USER) {
+      setLoginStatus('err', 'token belongs to @' + user.login + ', not @' + ADMIN_USER + ' — refusing to enter admin mode');
+      return;
+    }
+    // Check that the token can write to the repo
+    const probe = await fetch('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME, {
+      headers: { 'Authorization': 'token ' + pat, 'Accept': 'application/vnd.github+json' }
+    });
+    const repo = await probe.json();
+    if (!repo.permissions || !repo.permissions.push) {
+      setLoginStatus('err', 'token validates as @' + user.login + ' but lacks push access to ' + REPO_OWNER + '/' + REPO_NAME);
+      return;
+    }
+    // Persist + flip mode
+    localStorage.setItem('of_pat', pat);
+    localStorage.removeItem('of_mode');
+    AUTH = { mode: 'admin-remote', pat, user };
+    setBodyMode(); renderAuthPill(); renderAdminBanner();
+    setLoginStatus('ok', 'authenticated as @' + user.login + ' · entering admin mode');
+    setTimeout(() => { closeLoginModal(); hideSplash(); }, 700);
+    // Re-render panes that show edit affordances
+    if (window.__lastSnap) {
+      if (typeof renderSkillsPane === 'function') renderSkillsPane(window.__lastSnap);
+      if (typeof renderSoulPane    === 'function') renderSoulPane(window.__lastSnap);
+    }
+  } catch (e) {
+    setLoginStatus('err', 'failed: ' + e.message);
+  } finally {
+    document.getElementById('login-submit-btn').disabled = false;
+  }
+}
+
+// ---------- boot: decide which mode we're in ----------
+async function bootAuth() {
+  // 1. localhost → assume admin-local; verify the admin server is reachable
+  if (IS_LOCALHOST) {
+    try {
+      const r = await fetch('/api/health');
+      if (r.ok) {
+        AUTH.mode = 'admin-local';
+        setBodyMode(); renderAuthPill(); renderAdminBanner();
+        hideSplash();
+        return;
+      }
+    } catch {}
+    // localhost but admin server down — fall through to remote/guest
+  }
+
+  // 2. previously saved PAT? validate it
+  const savedPat = localStorage.getItem('of_pat');
+  if (savedPat) {
+    try {
+      const r = await fetch('https://api.github.com/user', {
+        headers: { 'Authorization': 'token ' + savedPat, 'Accept': 'application/vnd.github+json' }
+      });
+      if (r.ok) {
+        const user = await r.json();
+        if (user.login === ADMIN_USER) {
+          AUTH = { mode: 'admin-remote', pat: savedPat, user };
+          setBodyMode(); renderAuthPill(); renderAdminBanner();
+          hideSplash();
+          return;
+        }
+      }
+      // bad token → drop it
+      localStorage.removeItem('of_pat');
+    } catch {}
+  }
+
+  // 3. previously chose guest?
+  if (localStorage.getItem('of_mode') === 'guest') {
+    AUTH.mode = 'guest';
+    setBodyMode(); renderAuthPill(); renderAdminBanner();
+    hideSplash();
+    return;
+  }
+
+  // 4. nothing decided → show splash
+  AUTH.mode = 'unknown';
+  setBodyMode(); renderAuthPill(); renderAdminBanner();
+  showSplash();
+}
+bootAuth();
+
+// keyboard: ⌘+Enter on login modal submits; Esc closes
+document.addEventListener('keydown', (e) => {
+  const m = document.getElementById('login-modal');
+  if (m && m.style.display === 'flex') {
+    if (e.key === 'Escape') closeLoginModal();
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); submitLogin(); }
+  }
+});
 
 // =============================================================
 //  Edit modal: open/save/close
@@ -1769,21 +2094,62 @@ function closeEdit() {
   __editCtx = null;
 }
 
+function repoPathFor(ctx) {
+  if (ctx.kind === 'persona') return 'skills/george/' + ctx.id + '.md';
+  if (ctx.kind === 'skill')   return 'skills/scheduled/' + ctx.id + '.md';
+  if (ctx.kind === 'soul')    return 'souls/scheduled/' + ctx.id + '.md';
+  throw new Error('unknown kind: ' + ctx.kind);
+}
+
+async function saveEditLocal(content) {
+  const r = await fetch(`/api/${__editCtx.kind}/${__editCtx.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ content })
+  });
+  const result = await r.json();
+  if (!r.ok) throw new Error(result.error || ('HTTP ' + r.status));
+  return { size: result.size, info: 'backup ' + (result.backup ? result.backup.split('/').pop() : '(new file)') };
+}
+
+async function saveEditRemote(content) {
+  // GitHub Contents API: get sha, then PUT.
+  const repoPath = repoPathFor(__editCtx);
+  const url = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + repoPath;
+  let sha = null;
+  // Try to get current sha (may not exist for fresh files)
+  const head = await fetch(url + '?ref=' + REPO_BRANCH, {
+    headers: { 'Authorization': 'token ' + AUTH.pat, 'Accept': 'application/vnd.github+json' }
+  });
+  if (head.ok) { const j = await head.json(); sha = j.sha; }
+  // Base64-encode UTF-8 content (handles emoji, etc.)
+  const b64 = btoa(unescape(encodeURIComponent(content)));
+  const body = {
+    message: 'edit: ' + __editCtx.kind + '/' + __editCtx.id + ' via mission control',
+    content: b64,
+    branch: REPO_BRANCH,
+  };
+  if (sha) body.sha = sha;
+  const r = await fetch(url, {
+    method: 'PUT',
+    headers: { 'Authorization': 'token ' + AUTH.pat, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  const result = await r.json();
+  if (!r.ok) throw new Error(result.message || ('HTTP ' + r.status));
+  return { size: content.length, info: 'commit ' + (result.commit?.sha || '?').slice(0,7) + ' · syncs to your Mac on next snapshot run (~5 min)' };
+}
+
 async function saveEdit() {
   if (!__editCtx) return;
+  if (!isAdmin()) { setStatus('err', 'not in admin mode'); return; }
   const content = document.getElementById('edit-modal-content').value;
   if (!content.trim()) { setStatus('err', 'refusing to save empty content'); return; }
-  setStatus('busy', 'saving…');
+  setStatus('busy', AUTH.mode === 'admin-local' ? 'saving to disk…' : 'committing to GitHub…');
   document.getElementById('edit-save-btn').disabled = true;
   try {
-    const r = await fetch(`${ADMIN_API}/api/${__editCtx.kind}/${__editCtx.id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content })
-    });
-    const result = await r.json();
-    if (!r.ok) throw new Error(result.error || ('HTTP ' + r.status));
-    setStatus('ok', `saved ${result.size}B · backup ${result.backup ? result.backup.split('/').pop() : '(none — new file)'}`);
+    const result = AUTH.mode === 'admin-local' ? await saveEditLocal(content) : await saveEditRemote(content);
+    setStatus('ok', 'saved ' + result.size + 'B · ' + result.info);
     showToast(`saved ${__editCtx.id}/${__editCtx.kind}.md`);
     // Re-render the viewer with the new content immediately
     if (__editCtx.kind === 'skill') {
