@@ -1,0 +1,1 @@
+{"generatedAt":"2026-04-24T21:06:30Z","status":"degraded","reason":"EINTR storm — reads + main data.json write both timed out. Last successful snapshot remains at previous data.json. macOS filesystem needs Finder/Spotlight reindex or reboot. Same root cause George flagged in #thumbnails 19:31Z today."}

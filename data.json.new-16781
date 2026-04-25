@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-04-24T21:23:52Z",
+  "snapshotWarning": "PARTIAL SNAPSHOT — user Documents tree is EINTR-locked (reads fail with 'Interrupted system call', writes-to-new-files succeed). Same system-level outage flagged in the 2026-04-24 19:31Z #thumbnails post (msg 1497319158143127663). Could not read state.json, george.log, skills/**, or souls/**, and could not sync files into web/. Task list + Discord pulls are live; skills/souls/tools are stubbed with error markers.",
+  "tasks": [
+    {"taskId":"uncapped-research-poker","description":"Daily 2am PT poker intel briefing, posted to #intel-staging","schedule":"At 02:03 AM, Monday through Friday","cronExpression":"0 2 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T09:02:40.000Z","lastRunAt":"2026-04-24T09:03:05.051Z","jitterSeconds":160},
+    {"taskId":"uncapped-research-world","description":"Daily 3am PT world news & trends briefing, posted to #intel-staging","schedule":"At 03:07 AM, Monday through Friday","cronExpression":"0 3 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T10:07:18.000Z","lastRunAt":"2026-04-24T10:07:43.204Z","jitterSeconds":438},
+    {"taskId":"uncapped-research-memes","description":"Daily 4am PT memes & culture drop, posted to #intel-staging","schedule":"At 04:06 AM, Monday through Friday","cronExpression":"0 4 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T11:06:28.000Z","lastRunAt":"2026-04-24T11:06:53.239Z","jitterSeconds":388},
+    {"taskId":"uncapped-run-of-show","description":"Daily 7am PT run-of-show. Condensed to #run-of-show, full to #intel-staging.","schedule":"At 07:08 AM, Monday through Friday","cronExpression":"0 7 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T14:07:46.000Z","lastRunAt":"2026-04-24T14:08:11.617Z","jitterSeconds":466},
+    {"taskId":"uncapped-thumbnails","description":"Daily 8am PT thumbnails — A/B + ALT, judge ≥70, posts to #thumbnails.","schedule":"At 08:04 AM, Monday through Friday","cronExpression":"0 8 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T15:03:46.000Z","lastRunAt":"2026-04-24T15:04:12.289Z","jitterSeconds":226},
+    {"taskId":"uncapped-producer","description":"Daily 8:15am PT producer audit before 8:30 pre-production.","schedule":"At 08:20 AM, Monday through Friday","cronExpression":"15 8 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T15:20:28.000Z","lastRunAt":"2026-04-24T15:20:54.001Z","jitterSeconds":328},
+    {"taskId":"uncapped-graphic-design","description":"Primary 7:30am PT show-graphics sweep → #assets","schedule":"At 07:38 AM, Monday through Friday","cronExpression":"30 7 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T14:37:46.000Z","lastRunAt":"2026-04-24T14:38:11.759Z","jitterSeconds":466},
+    {"taskId":"uncapped-graphic-design-late","description":"Late 8:05am PT show-graphics sweep","schedule":"At 08:12 AM, Monday through Friday","cronExpression":"5 8 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T15:12:15.000Z","lastRunAt":"2026-04-24T15:12:40.782Z","jitterSeconds":435},
+    {"taskId":"uncapped-hand-analysis","description":"Daily 5am PT viral-hand research cron.","schedule":"At 05:06 AM, Monday through Friday","cronExpression":"0 5 * * 1-5","enabled":true,"nextRunAt":"2026-04-27T12:06:07.000Z","lastRunAt":"2026-04-24T12:06:32.411Z","jitterSeconds":367},
+    {"taskId":"of-dashboard-snapshot","description":"Writes web/data.json every 5 min + syncs skills/souls into web/","schedule":"Every 5 minutes, every hour, every day","cronExpression":"*/5 * * * *","enabled":true,"nextRunAt":"2026-04-24T21:26:18.000Z","lastRunAt":"2026-04-24T21:22:00.000Z","jitterSeconds":78}
+  ],
+  "george": {
+    "state": null,
+    "stateError": "EINTR on read of scripts/george/data/state.json",
+    "logTail": null,
+    "logError": "EINTR on tail of scripts/george/logs/george.log",
+    "uptime": "01-16:24:54",
+    "uptimeNote": "bot process has been running ~1d 16h 25m (pgrep/ps succeeded)"
+  },
+  "discord": {
+    "ros": [
+      {"id":"1497238177524748389","content":"ROS Fri Apr 24 — r/poker 'wide range'. A: DOJ arrests soldier classified-intel ~$400K Polymarket (Maduro) — first criminal prediction-market case. B: HAND OF DAY Coleman Q8 cracks Foxen TT USPO $25K ($420K). C: Peters apology Linde / Trump MJ III / NFL Draft Rd1. Close: Draft + Pens G4.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T14:09:58.862Z","hasAttachments":false},
+      {"id":"1497261417261437088","content":"Producer Audit Fri Apr 24 — ROS locked, Hand of Day FOUND, 3/3 graphics (2 data-card fallbacks).","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:42:19.647Z","hasAttachments":false},
+      {"id":"1497261550493237278","content":"Flags Apr 24 (1/2): NO THUMBNAILS TODAY — crons produced nothing. Iran/Hormuz no slot. MJ reclass no asset.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:42:51.412Z","hasAttachments":false},
+      {"id":"1497261651056001177","content":"Flags Apr 24 (2/2): A+C political trip-wires. Andy not public. Claid still exhausted.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:43:15.388Z","hasAttachments":false},
+      {"id":"1497261686967505130","content":"Breaking Apr 24: 3rd US carrier near Iran; IEA 'biggest energy security threat'; DOJ $33K→$409K (12x); USPO Main Day 1.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:43:23.950Z","hasAttachments":false},
+      {"id":"1496875953861689607","content":"ROS Thu Apr 23 — Foxen USPO doubleheader A / Kalshi 3 + Polymarket B / Hellmuth+DeBoer+Wemby+AITA C / NFL Draft close.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-23T14:10:38.011Z","hasAttachments":false},
+      {"id":"1496533599770644673","content":"Producer Audit Apr 22 — ROS locked, 3/3 thumbs ≥70, 8/8 graphics, 0 rebuilds.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-22T15:30:14.435Z","hasAttachments":false}
+    ],
+    "thumbs": [
+      {"id":"1497319158143127663","content":"Apr 24 BLOCKED at judge/upload — 3 thumbs built (stat-verified) but reads return EINTR. A '$400K CLASSIFIED' 662KB, B 'ARRESTED FOR WINNING' 683KB, ALT Coleman 'Q-8 $420K' 656KB. Divergence 4/5, dedup 0.56. Judge skipped.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T19:31:46.146Z","hasAttachments":false},
+      {"id":"1496892232660418600","content":"Apr 23 — A '$1.2M BLUFF' 82, B 'TRIP QUEENS FOLDED' 76, ALT 'KALSHI PULLS 3' 72.","author":{"username":"George 2.0","isBot":true},"createdAt":"2026-04-23T15:15:19.179Z","hasAttachments":true},
+      {"id":"1496530839788589186","content":"Apr 22 — Claid exhausted, 3 concept pivots. $10M 74, KEPT PENNIES 75, APRIL 23 RINGS 72.","author":{"username":"George 2.0","isBot":true},"createdAt":"2026-04-22T15:19:16.404Z","hasAttachments":true},
+      {"id":"1496165692020363304","content":"Apr 21 aborted — no ROS. DISCORD_BOT_TOKEN 401 (revoked). GEORGE_BOT_TOKEN fallback.","author":{"username":"George 2.0","isBot":true},"createdAt":"2026-04-21T15:08:18.392Z","hasAttachments":false}
+    ],
+    "assets": [
+      {"id":"1497247548279230505","content":"POLYMARKET-DOJ-SOLDIER — A block $400,000 data-card.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T14:47:13.024Z","hasAttachments":true},
+      {"id":"1497247581951099012","content":"COLEMAN-FOXEN-HERO-FOLD — B block $420K title.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T14:47:21.052Z","hasAttachments":true},
+      {"id":"1497247596941410334","content":"PETERS-APOLOGY — C block Linde $25K.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T14:47:24.626Z","hasAttachments":true},
+      {"id":"1497261271341338666","content":"[COLD OPEN] r/poker 'wide range'.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:41:44.857Z","hasAttachments":false},
+      {"id":"1497261281630228510","content":"[C] NFL Draft Rd1 — Mendoza #1, Steelers 21.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:41:47.310Z","hasAttachments":false},
+      {"id":"1497261290878669011","content":"[C] Kelce dunks on scouting.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:41:49.515Z","hasAttachments":false},
+      {"id":"1497261304648302702","content":"[C CUT-FIRST] Polymarket Pulse.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T15:41:52.798Z","hasAttachments":false},
+      {"id":"1497209353344651355","content":"Coleman Q-8 cracks Foxen TT — USPO finisher.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T12:15:26.642Z","hasAttachments":false},
+      {"id":"1497209373804597338","content":"Foxen folds trip queens — setup hand.","author":{"username":"Claude_Bridge","isBot":true},"createdAt":"2026-04-24T12:15:31.520Z","hasAttachments":false}
+    ]
+  },
+  "skills": {"scheduled":{},"george_personas":{},"error":"EINTR on glob/read — sync skipped this run"},
+  "souls":  {"scheduled":{},"george_personas":{},"error":"EINTR on glob/read — sync skipped this run"},
+  "tools":  {},
+  "toolsError": "EINTR — skipped this run"
+}

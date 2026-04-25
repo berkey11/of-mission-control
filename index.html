@@ -321,6 +321,84 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
 .flow-chip:hover { transform: translateX(-50%) translateY(-1px); }
 .flow-chip:hover { background: rgba(90,242,234,0.16); border-color: var(--cyan); box-shadow: 0 0 14px rgba(90,242,234,0.25); transform: translateX(-50%) translateY(-1px); }
 
+
+/* ============ Admin mode ============ */
+#admin-banner {
+  margin: -8px 0 14px; padding: 8px 16px;
+  background: rgba(248,87,196,0.06); border: 1px solid var(--mag-dim);
+  border-radius: 8px;
+  display: flex; align-items: center; gap: 12px;
+  font: 600 11px/1 inherit; letter-spacing: 0.04em; color: var(--ink);
+}
+.admin-pill {
+  background: var(--mag); color: #150410; padding: 4px 10px; border-radius: 999px;
+  font: 800 10px/1 inherit; letter-spacing: 0.1em;
+}
+.admin-btn {
+  border-color: var(--mag) !important; color: var(--mag) !important;
+}
+.admin-btn:hover { background: rgba(248,87,196,0.1); }
+
+/* ============ Edit modal ============ */
+.modal {
+  position: fixed; inset: 0; background: rgba(2,8,18,0.85);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; backdrop-filter: blur(4px);
+}
+.modal-card {
+  background: var(--panel); border: 1px solid var(--cyan-dim); border-radius: 12px;
+  width: 92vw; max-width: 1100px; height: 84vh;
+  display: flex; flex-direction: column; overflow: hidden;
+  box-shadow: 0 20px 80px rgba(90,242,234,0.15);
+}
+.modal-head {
+  padding: 14px 20px; border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;
+}
+.modal-title {
+  color: var(--cyan); font: 700 13px/1 inherit; letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.modal-sub {
+  color: var(--muted); font: 500 11px/1.4 ui-monospace, Menlo, monospace;
+  margin-top: 4px; word-break: break-all;
+}
+.modal-close {
+  background: transparent; border: 1px solid var(--line-2); color: var(--ink-2);
+  width: 30px; height: 30px; border-radius: 6px; cursor: pointer;
+  font: 600 18px/1 inherit;
+}
+.modal-close:hover { color: var(--mag); border-color: var(--mag); }
+.modal textarea {
+  flex: 1; padding: 16px 18px; resize: none;
+  background: var(--bg); border: none; outline: none; color: var(--ink);
+  font: 12.5px/1.55 "JetBrains Mono", Menlo, ui-monospace, monospace;
+  tab-size: 2;
+}
+.modal-foot {
+  padding: 12px 20px; border-top: 1px solid var(--line);
+  display: flex; gap: 10px; align-items: center;
+}
+.btn-save {
+  background: var(--cyan); color: #031018; border: none;
+  padding: 9px 22px; border-radius: 6px; cursor: pointer;
+  font: 800 12px/1 inherit; letter-spacing: 0.08em;
+}
+.btn-save:hover:not(:disabled) { background: #9ff7f1; }
+.btn-save:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-cancel {
+  background: transparent; color: var(--ink-2); border: 1px solid var(--line-2);
+  padding: 9px 18px; border-radius: 6px; cursor: pointer;
+  font: 600 12px/1 inherit; letter-spacing: 0.06em;
+}
+.btn-cancel:hover { color: var(--ink); border-color: var(--ink-2); }
+.modal-status {
+  margin-left: auto; color: var(--muted); font: 500 11px/1 inherit; letter-spacing: 0.04em;
+}
+.modal-status.ok    { color: var(--ok); }
+.modal-status.err   { color: var(--danger); }
+.modal-status.busy  { color: var(--cyan); }
+
 </style>
 </head>
 <body>
@@ -336,6 +414,13 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
       <span class="pill-live blue" id="status-pill">INITIALIZING</span>
       <button class="terminal-btn" onclick="sendPrompt && sendPrompt('open terminal')">TERMINAL</button>
     </div>
+  </div>
+
+  <!-- Admin mode banner (visible only when loaded from localhost) -->
+  <div id="admin-banner" style="display:none">
+    <span class="admin-pill">🔓 ADMIN MODE</span>
+    <span>connected to admin server · edits land directly on the Mac · backups auto-saved</span>
+    <span id="admin-health" style="margin-left:auto"></span>
   </div>
 
   <!-- ================== TABS ================== -->
@@ -746,6 +831,25 @@ George's personas (brand-designer, graphic-designer, producer, guest-research, e
   </footer>
 </div>
 
+<!-- ============ EDIT MODAL (admin only) ============ -->
+<div id="edit-modal" class="modal" style="display:none" onclick="if(event.target===this)closeEdit()">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="edit-modal-title">EDIT</div>
+        <div class="modal-sub" id="edit-modal-sub">—</div>
+      </div>
+      <button class="modal-close" onclick="closeEdit()" title="Close (Esc)">×</button>
+    </div>
+    <textarea id="edit-modal-content" spellcheck="false" placeholder="loading…"></textarea>
+    <div class="modal-foot">
+      <button class="btn-save" id="edit-save-btn" onclick="saveEdit()">SAVE</button>
+      <button class="btn-cancel" onclick="closeEdit()">CANCEL</button>
+      <span id="edit-modal-status" class="modal-status">—</span>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast">—</div>
 
 <script>
@@ -952,6 +1056,24 @@ function selectSoul(key) {
     ? 'souls/scheduled/' + key.slice(8) + '.md'
     : 'souls/george/' + key.slice(9) + '.md';
   document.getElementById('souls-edit-link').href = 'https://github.com/berkey11/of-mission-control/edit/main/' + filename;
+  // Inject EDIT LOCAL button (admin mode only)
+  const sa = document.getElementById('souls-actions');
+  let local = sa.querySelector('.admin-btn');
+  if (ADMIN_MODE) {
+    if (!local) {
+      local = document.createElement('button');
+      local.className = 'terminal-btn admin-btn';
+      local.textContent = 'EDIT LOCAL';
+      sa.insertBefore(local, sa.firstChild);
+    }
+    local.onclick = () => openEditor({
+      kind: key.startsWith('persona::') ? 'persona' : 'soul',
+      id: data.agentId,
+      displayName: data.displayName
+    });
+  } else if (local) {
+    local.remove();
+  }
   window.__currentSoul = data;
 }
 function copySoul() {
@@ -1061,6 +1183,24 @@ function selectSkill(key) {
     : 'skills/george/' + key.slice(9) + '.md';
   document.getElementById('skills-edit-link').href =
     'https://github.com/berkey11/of-mission-control/edit/main/' + filename;
+  // Inject EDIT LOCAL button (admin mode only)
+  const sa = document.getElementById('skills-actions');
+  let local = sa.querySelector('.admin-btn');
+  if (ADMIN_MODE) {
+    if (!local) {
+      local = document.createElement('button');
+      local.className = 'terminal-btn admin-btn';
+      local.textContent = 'EDIT LOCAL';
+      sa.insertBefore(local, sa.firstChild);
+    }
+    local.onclick = () => openEditor({
+      kind: key.startsWith('persona::') ? 'persona' : 'skill',
+      id: data.agentId,
+      displayName: data.displayName
+    });
+  } else if (local) {
+    local.remove();
+  }
   // Store currently selected for COPY button
   window.__currentSkill = data;
 }
@@ -1576,6 +1716,116 @@ function showToast(t) {
 // =============================================================
 //  Main loader
 // =============================================================
+
+// =============================================================
+//  Admin mode — only when loaded from localhost (admin server)
+// =============================================================
+const ADMIN_MODE = ['localhost','127.0.0.1','::1'].includes(location.hostname);
+const ADMIN_API  = ''; // same-origin; admin server serves index.html itself
+
+if (ADMIN_MODE) {
+  document.body.classList.add('admin');
+  const b = document.getElementById('admin-banner');
+  if (b) {
+    b.style.display = 'flex';
+    fetch('/api/health').then(r => r.json()).then(d => {
+      document.getElementById('admin-health').innerHTML =
+        '<span style="color:var(--ok)">● healthy · ' + d.time.split('T')[1].slice(0,8) + ' UTC</span>';
+    }).catch(err => {
+      document.getElementById('admin-health').innerHTML =
+        '<span style="color:var(--danger)">✗ admin API unreachable</span>';
+    });
+  }
+}
+
+// =============================================================
+//  Edit modal: open/save/close
+// =============================================================
+let __editCtx = null;  // { kind: 'skill'|'soul'|'persona', id, displayName, after?: function }
+
+function openEditor(ctx) {
+  if (!ADMIN_MODE) return;
+  __editCtx = ctx;
+  const modal = document.getElementById('edit-modal');
+  document.getElementById('edit-modal-title').textContent = 'EDIT ' + ctx.kind.toUpperCase() + ' · ' + ctx.displayName;
+  document.getElementById('edit-modal-sub').textContent = 'loading…';
+  document.getElementById('edit-modal-content').value = '';
+  setStatus('busy', 'fetching…');
+  modal.style.display = 'flex';
+  document.getElementById('edit-modal-content').focus();
+  // Fetch fresh content from the admin server (not the snapshot)
+  fetch(`${ADMIN_API}/api/${ctx.kind}/${ctx.id}`)
+    .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
+    .then(d => {
+      document.getElementById('edit-modal-content').value = d.content;
+      document.getElementById('edit-modal-sub').textContent = d.path;
+      setStatus('', `${d.size}B loaded · ⌘+S to save · Esc to close`);
+    })
+    .catch(err => setStatus('err', 'load failed: ' + err));
+}
+
+function closeEdit() {
+  document.getElementById('edit-modal').style.display = 'none';
+  __editCtx = null;
+}
+
+async function saveEdit() {
+  if (!__editCtx) return;
+  const content = document.getElementById('edit-modal-content').value;
+  if (!content.trim()) { setStatus('err', 'refusing to save empty content'); return; }
+  setStatus('busy', 'saving…');
+  document.getElementById('edit-save-btn').disabled = true;
+  try {
+    const r = await fetch(`${ADMIN_API}/api/${__editCtx.kind}/${__editCtx.id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content })
+    });
+    const result = await r.json();
+    if (!r.ok) throw new Error(result.error || ('HTTP ' + r.status));
+    setStatus('ok', `saved ${result.size}B · backup ${result.backup ? result.backup.split('/').pop() : '(none — new file)'}`);
+    showToast(`saved ${__editCtx.id}/${__editCtx.kind}.md`);
+    // Re-render the viewer with the new content immediately
+    if (__editCtx.kind === 'skill') {
+      const data = window.__lastSnap?.skills?.scheduled?.[__editCtx.id]
+                || window.__lastSnap?.skills?.george_personas?.[__editCtx.id];
+      if (data) data.content = content;
+      const key = (window.__lastSnap?.skills?.scheduled?.[__editCtx.id] ? 'sched::' : 'persona::') + __editCtx.id;
+      if (typeof selectSkill === 'function') selectSkill(key);
+    } else if (__editCtx.kind === 'soul') {
+      const data = window.__lastSnap?.souls?.scheduled?.[__editCtx.id]
+                || window.__lastSnap?.souls?.george_personas?.[__editCtx.id];
+      if (data) data.content = content;
+      const key = (window.__lastSnap?.souls?.scheduled?.[__editCtx.id] ? 'sched::' : 'persona::') + __editCtx.id;
+      if (typeof selectSoul === 'function') selectSoul(key);
+    } else if (__editCtx.kind === 'persona') {
+      const sk = window.__lastSnap?.skills?.george_personas?.[__editCtx.id];
+      const so = window.__lastSnap?.souls?.george_personas?.[__editCtx.id];
+      if (sk) sk.content = content;
+      if (so) so.content = content;
+    }
+    setTimeout(closeEdit, 700);
+  } catch (e) {
+    setStatus('err', 'save failed: ' + e.message);
+  } finally {
+    document.getElementById('edit-save-btn').disabled = false;
+  }
+}
+
+function setStatus(cls, msg) {
+  const el = document.getElementById('edit-modal-status');
+  el.className = 'modal-status ' + cls;
+  el.textContent = msg;
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  const modal = document.getElementById('edit-modal');
+  if (!modal || modal.style.display === 'none') return;
+  if (e.key === 'Escape') { closeEdit(); }
+  else if ((e.metaKey || e.ctrlKey) && e.key === 's') { e.preventDefault(); saveEdit(); }
+});
+
 async function loadAndRender() {
   let snap;
   try {
