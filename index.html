@@ -502,7 +502,7 @@ body.guest .admin-only, body.unknown .admin-only { display: none !important; }
       <button type="button" class="splash-btn primary" data-action="login">🔓 ADMIN LOGIN</button>
       <button type="button" class="splash-btn" data-action="guest">👁 CONTINUE AS GUEST</button>
     </div>
-    <div class="splash-foot">build 20260425-2202 · only_friends_mission_control</div>
+    <div class="splash-foot">build 20260425-2214 · only_friends_mission_control</div>
   </div>
 </div>
 
@@ -959,7 +959,7 @@ George's personas (brand-designer, graphic-designer, producer, guest-research, e
   <footer>
     <span id="fetched-at">data: snapshot pending</span>
     &nbsp;·&nbsp;
-    <span>build 20260425-2202 · only_friends_mission_control</span>
+    <span>build 20260425-2214 · only_friends_mission_control</span>
   </footer>
 </div>
 
@@ -2082,25 +2082,46 @@ document.addEventListener('keydown', (e) => {
 // =============================================================
 let __editCtx = null;  // { kind: 'skill'|'soul'|'persona', id, displayName, after?: function }
 
-function openEditor(ctx) {
-  if (!ADMIN_MODE) return;
+async function openEditor(ctx) {
+  if (!isAdmin()) return;
   __editCtx = ctx;
   const modal = document.getElementById('edit-modal');
   document.getElementById('edit-modal-title').textContent = 'EDIT ' + ctx.kind.toUpperCase() + ' · ' + ctx.displayName;
   document.getElementById('edit-modal-sub').textContent = 'loading…';
   document.getElementById('edit-modal-content').value = '';
-  setStatus('busy', 'fetching…');
+  setStatus('busy', AUTH.mode === 'admin-local' ? 'fetching from disk…' : 'fetching from GitHub…');
   modal.style.display = 'flex';
   document.getElementById('edit-modal-content').focus();
-  // Fetch fresh content from the admin server (not the snapshot)
-  fetch(`${ADMIN_API}/api/${ctx.kind}/${ctx.id}`)
-    .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
-    .then(d => {
-      document.getElementById('edit-modal-content').value = d.content;
-      document.getElementById('edit-modal-sub').textContent = d.path;
-      setStatus('', `${d.size}B loaded · ⌘+S to save · Esc to close`);
-    })
-    .catch(err => setStatus('err', 'load failed: ' + err));
+  try {
+    let content, path, size;
+    if (AUTH.mode === 'admin-local') {
+      const r = await fetch('/api/' + ctx.kind + '/' + ctx.id);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const d = await r.json();
+      content = d.content; path = d.path; size = d.size;
+    } else {
+      // admin-remote — fetch from GitHub Contents API
+      const repoPath = repoPathFor(ctx);
+      const url = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + repoPath + '?ref=' + REPO_BRANCH;
+      const r = await fetch(url, {
+        headers: { 'Authorization': 'token ' + AUTH.pat, 'Accept': 'application/vnd.github+json' }
+      });
+      if (!r.ok) {
+        const e = await r.json().catch(() => ({}));
+        throw new Error(e.message || ('HTTP ' + r.status));
+      }
+      const d = await r.json();
+      const b64 = (d.content || '').replace(/\s/g, '');
+      content = decodeURIComponent(escape(atob(b64)));
+      path = REPO_OWNER + '/' + REPO_NAME + '/' + repoPath + ' @ ' + (d.sha || '?').slice(0,7);
+      size = content.length;
+    }
+    document.getElementById('edit-modal-content').value = content;
+    document.getElementById('edit-modal-sub').textContent = path;
+    setStatus('', size + 'B loaded · ⌘+S to save · Esc to close');
+  } catch (err) {
+    setStatus('err', 'load failed: ' + err.message);
+  }
 }
 
 function closeEdit() {
@@ -2311,7 +2332,7 @@ window.sendPrompt = () => showToast('Terminal = open Discord in your browser');
     });
     var pill = document.getElementById('auth-pill');
     if (pill) pill.addEventListener('click', function () { try { onAuthPillClick(); } catch(e) { console.error(e); } });
-    console.log('[mc] handlers bound · build 20260425-2202');
+    console.log('[mc] handlers bound · build 20260425-2214');
   });
 })();
 </script>
