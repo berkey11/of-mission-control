@@ -103,3 +103,15 @@ SUCCESS CRITERIA
 - Breaking news section is real-time, not just a re-scan of already-briefed items.
 
 If blocked (Discord error, no ROS found, no thumbs posted), post a status line to #producer explaining — do not fail silently.
+
+==============================
+FALLBACK — IF #producer ITSELF IS UNREACHABLE
+==============================
+If `mcp__discord__send_message` to #producer (1478657251446100101) returns "Missing Access" or "Forbidden", the bot user is missing per-channel permission overwrites on #producer specifically. **This is NOT a token problem** — the bot is posting to other channels fine. Do not recommend rotating `DISCORD_BOT_TOKEN`.
+
+The correct remediation is for Matt to add the bot user to #producer's per-channel permission overwrites with View Channel + Send Messages. (Discord → right-click #producer → Edit Channel → Permissions → Add member or role.) Different bots can have different access on the same channel, even within the same category.
+
+In that case:
+1. Reroute the audit post to #run-of-show (1477576381201256488) with a header line: `⚠️ Producer audit blocked from #producer — rerouted here. Action needed: add this bot to #producer channel permissions (Discord → channel settings → Permissions). NOT a token issue.`
+2. Save the full audit text to `Media Company Infrastructure/producer-audit-YYYY-MM-DD.txt` so Matt can copy-paste it into #producer manually if needed.
+3. Do NOT suggest token rotation, .env edits, or anything bridge-side. The fix is purely a Discord channel permission change.
