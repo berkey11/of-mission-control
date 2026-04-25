@@ -49,6 +49,25 @@ Before you start, ask: "what medium does the final asset need to live in?"
 
 **Default rule of thumb:** vector tasks → Illustrator. Raster tasks → Photoshop (often with a Nano Banana background). Motion → After Effects. Everything else → shell.
 
+### Time-pressure rule — Illustrator is NOT the default for show-day deliverables
+
+This was learned the hard way across the 2026-04-23 / 04-24 production runs: complex Illustrator JSX scripts (≥3KB, with multiple `pathItems` + `textFrames.add()` calls) routinely take longer than the AppleScript event timeout to run, even though Illustrator itself completes the work. The bridge wrapper times out and reports failure to George, you retry with a simpler version, that still times out, and you ship nothing.
+
+**The rule:** if the brief is a same-day show graphic (block lead, breaking-news card, hand-of-the-day, quote card — anything tied to a 7:30am / 8am cron beat or an immediate Discord turn-around), DO NOT default to Illustrator JSX. Reach for one of these faster paths first:
+
+1. **PIL / Pillow via `shell`** — Python script with explicit drawing commands. Deterministic, fast (sub-second), no app event loop to time out. Best for data cards, quote cards, breaking-news alerts, dual-panel hand cards. Numbers render exactly as drawn — no font-substitution or layout drift.
+2. **Photoshop JSX (`photoshop_run_jsx`)** — when you need raster compositing with effects (drop shadows, gradients, masks, blend modes). Photoshop's JSX runs faster than Illustrator's for typical card layouts and doesn't hit the same event-loop wall.
+3. **Nano Banana Pro via `generate_graphic.sh`** — the production show-graphics cron already uses this. Use it for atmospheric backgrounds you'll composite over, or for impressionistic cards where a hand-drawn vector layout isn't required.
+
+**Reserve Illustrator JSX for:**
+- Logos, wordmarks, brand lockups, icon sets — anything that must be a true vector deliverable.
+- Multi-format vector exports (SVG + PDF + EPS + PNG) where the SVG is the canonical artifact.
+- Ad-hoc design work where Matt is in the loop and waiting 5 minutes for a careful build is fine.
+
+If you do reach for Illustrator on a time-pressured run, **keep the JSX small** — under 3KB, single composition, minimal individual `add()` calls. If the brief needs more structure than that, switch to PIL.
+
+The Polymarket-DOJ card on 2026-04-24 is the canonical example: agent tried Illustrator first, hit two AppleEvent timeouts, then pivoted to Pillow and shipped a verified `$400,000` data card in under a minute. Skip the first two steps.
+
 ---
 
 ## Output Protocol — how to hand off deliverables
