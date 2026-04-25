@@ -439,16 +439,25 @@ needs attention.
 
 Curl invocation (replace placeholders — $MESSAGE is the Markdown above, JSON-escaped):
 
+  IMPORTANT: wrap curl with eintr-retry.sh. curl reads the JPGs at multipart-upload
+  time, and macOS Spotlight on the workspace volume can sporadically EINTR file
+  reads when the metadata store is in a degraded state (observed 2026-04-24 — the
+  whole upload step was blocked by EINTR even though the JPGs were on disk).
+  eintr-retry.sh retries the entire curl up to 5 times with exponential backoff
+  on transient errors only; non-transient failures (HTTP 4xx, network errors) propagate
+  immediately so we don't hide real problems.
+
   shell_execute:
     source /Users/mjb11/Documents/Claude/Projects/Media\ Company\ Infrastructure/scripts/lib/load-secrets.sh
     TOKEN="${DISCORD_BOT_TOKEN:?set in ~/.cowork-bridge/.env}"
-    curl -sS -X POST \
-      -H "Authorization: Bot $TOKEN" \
-      -F "payload_json={\"content\": $(jq -Rsa . <<< \"$MESSAGE\")}" \
-      -F "files[0]=@$OUTPUT_DIR/${PREFIX}-thumb-a.jpg" \
-      -F "files[1]=@$OUTPUT_DIR/${PREFIX}-thumb-b.jpg" \
-      -F "files[2]=@$OUTPUT_DIR/${PREFIX}-thumb-alt.jpg" \
-      "https://discord.com/api/v10/channels/1478288038537724007/messages"
+    bash /Users/mjb11/Documents/Claude/Projects/Media\ Company\ Infrastructure/scripts/lib/eintr-retry.sh -- \
+      curl -sS -X POST \
+        -H "Authorization: Bot $TOKEN" \
+        -F "payload_json={\"content\": $(jq -Rsa . <<< \"$MESSAGE\")}" \
+        -F "files[0]=@$OUTPUT_DIR/${PREFIX}-thumb-a.jpg" \
+        -F "files[1]=@$OUTPUT_DIR/${PREFIX}-thumb-b.jpg" \
+        -F "files[2]=@$OUTPUT_DIR/${PREFIX}-thumb-alt.jpg" \
+        "https://discord.com/api/v10/channels/1478288038537724007/messages"
 
 Verify the curl response is HTTP 200 and contains an "id" field for the posted message. If it fails, retry once, then fall back to:
   mcp__discord__send_message(channel="thumbnails", content="⚠️ Thumbnail upload failed — files at: [paths]. curl error: [stderr]")
@@ -469,6 +478,14 @@ Available reliability libraries (already on disk — use as needed):
   • OCR text verify: bash /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/ocr-verify.sh <image> "WORD1|WORD2" [--strict] [--json]
   • A/B dedup guard: bash /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/ab-dedup.sh <thumb-a> <thumb-b> [--json]
     Run after Step 5 on THUMB_A + THUMB_B. If flagged (exit 1), rebuild B with different treatment.
+  • EINTR-resilient command wrapper: bash /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/eintr-retry.sh -- <cmd> [args...]
+    Wrap any sub-shell command (cp, cat, magick, curl -F @file, rsync, etc.) that reads
+    files from the workspace volume. Retries up to 5 times on EINTR / EAGAIN / EBUSY with
+    exponential backoff, propagates non-transient errors immediately. Use this any time
+    you need to read or copy a file in workspace/thumbnail/output/ from a sub-shell — the
+    volume's Spotlight metadata store can return "Interrupted system call" sporadically
+    (observed Apr 24 2026 — broke that morning's run). The bridge's MCP read_file/write_file
+    are already EINTR-protected internally; this helper covers the sub-shell path.
   • Divergence check: source /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/divergence-check.sh
     Run BEFORE Step 5 on A/B briefs. If <3 axes differ, regenerate BRIEF_B.
   • Number verify: python3 /Users/mjb11/Documents/Claude/Projects/Media Company Infrastructure/scripts/lib/number-verify.py <image> "<request>" [--json]
