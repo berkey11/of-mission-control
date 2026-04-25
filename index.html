@@ -343,7 +343,7 @@ footer { margin-top: 26px; color: var(--muted); font-size: 10.5px; text-align: c
 .modal {
   position: fixed; inset: 0; background: rgba(2,8,18,0.85);
   display: flex; align-items: center; justify-content: center;
-  z-index: 1000; backdrop-filter: blur(4px);
+  z-index: 3000; backdrop-filter: blur(4px);
 }
 .modal-card {
   background: var(--panel); border: 1px solid var(--cyan-dim); border-radius: 12px;
@@ -1948,12 +1948,22 @@ function onAuthPillClick() {
 
 // ---------- login modal ----------
 function openLoginModal() {
+  // hide splash so the modal isn't competing for the foreground
+  const sp = document.getElementById('splash');
+  if (sp && sp.style.display !== 'none') sp.dataset.wasOpen = '1';
+  if (sp) sp.style.display = 'none';
   document.getElementById('login-modal').style.display = 'flex';
   document.getElementById('login-pat').value = '';
-  document.getElementById('login-pat').focus();
+  setTimeout(() => document.getElementById('login-pat').focus(), 50);
   setLoginStatus('', 'paste a token and submit · ⌘+enter to validate');
 }
-function closeLoginModal() { document.getElementById('login-modal').style.display = 'none'; }
+function closeLoginModal() {
+  document.getElementById('login-modal').style.display = 'none';
+  // re-show splash if user came from it (clicked ADMIN LOGIN, then CANCEL)
+  const sp = document.getElementById('splash');
+  if (sp && sp.dataset.wasOpen === '1' && AUTH.mode === 'unknown') sp.style.display = 'flex';
+  delete sp.dataset.wasOpen;
+}
 function setLoginStatus(cls, msg) {
   const el = document.getElementById('login-status');
   el.className = 'login-status ' + cls; el.textContent = msg;
