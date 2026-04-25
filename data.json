@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-25T22:56:22.602914+00:00",
+  "generatedAt": "2026-04-25T23:07:53.330799+00:00",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
-      "description": "Daily 2am PT poker intel briefing for The Only Friends Podcast, posted to Discord #intel-staging Mon - Fri",
+      "description": "Daily 2am PT poker intel briefing",
       "schedule": "At 02:03 AM, Monday through Friday",
       "cronExpression": "0 2 * * 1-5",
       "enabled": true,
@@ -13,7 +13,7 @@
     },
     {
       "taskId": "uncapped-research-world",
-      "description": "Daily 3am PT world news & trends briefing for The Only Friends Podcast, posted to Discord #intel-staging",
+      "description": "Daily 3am PT world news briefing",
       "schedule": "At 03:07 AM, Monday through Friday",
       "cronExpression": "0 3 * * 1-5",
       "enabled": true,
@@ -23,7 +23,7 @@
     },
     {
       "taskId": "uncapped-research-memes",
-      "description": "Daily 4am PT memes & culture drop for The Only Friends Podcast, posted to Discord #intel-staging",
+      "description": "Daily 4am PT memes drop",
       "schedule": "At 04:06 AM, Monday through Friday",
       "cronExpression": "0 4 * * 1-5",
       "enabled": true,
@@ -33,7 +33,7 @@
     },
     {
       "taskId": "uncapped-run-of-show",
-      "description": "Daily 7am PT run-of-show for The Only Friends Podcast. Posts a condensed single-page brief to #run-of-show and the full detailed ROS to #intel-staging.",
+      "description": "Daily 7am PT run-of-show",
       "schedule": "At 07:08 AM, Monday through Friday",
       "cronExpression": "0 7 * * 1-5",
       "enabled": true,
@@ -43,7 +43,7 @@
     },
     {
       "taskId": "uncapped-thumbnails",
-      "description": "Daily 8am PT thumbnail generator for The Only Friends Podcast \u2014 reads ROS from #run-of-show, produces A/B for biggest story + alternative for 2nd biggest, judge enforces \u226570 with rebuilds, posts 3 images to #thumbnails.",
+      "description": "Daily 8am PT thumbnail generator",
       "schedule": "At 08:04 AM, Monday through Friday",
       "cronExpression": "0 8 * * 1-5",
       "enabled": true,
@@ -53,7 +53,7 @@
     },
     {
       "taskId": "uncapped-producer",
-      "description": "Daily 8:15am PT producer audit before 8:30 pre-production for The Only Friends Podcast. Audits #intel-staging / ROS / thumbnails, promotes assets + design requests out of #intel-staging, and acts on Matt's manual notes in #producer.",
+      "description": "Daily 8:15am PT producer audit",
       "schedule": "At 08:20 AM, Monday through Friday",
       "cronExpression": "15 8 * * 1-5",
       "enabled": true,
@@ -63,7 +63,7 @@
     },
     {
       "taskId": "uncapped-graphic-design",
-      "description": "Primary 7:30am PT show-graphics sweep for The Only Friends Podcast \u2014 reads #graphic-design requests, generates tone-driven 1280\u00d7720 graphics via Nano Banana Pro, posts to #assets",
+      "description": "Primary 7:30am PT show-graphics sweep",
       "schedule": "At 07:38 AM, Monday through Friday",
       "cronExpression": "30 7 * * 1-5",
       "enabled": true,
@@ -73,7 +73,7 @@
     },
     {
       "taskId": "uncapped-graphic-design-late",
-      "description": "Late 8:05am PT show-graphics sweep for The Only Friends Podcast \u2014 catches late adds and any graphics flagged by thumbnails, finishes before 8:15 producer audit",
+      "description": "Late 8:05am PT show-graphics sweep",
       "schedule": "At 08:12 AM, Monday through Friday",
       "cronExpression": "5 8 * * 1-5",
       "enabled": true,
@@ -83,7 +83,7 @@
     },
     {
       "taskId": "uncapped-hand-analysis",
-      "description": "Daily 5am PT viral-hand research cron for The Only Friends Podcast. Summary of ranked hands \u2192 #intel-staging; clip link \u2192 #assets. Feeds the B block.",
+      "description": "Daily 5am PT viral-hand research",
       "schedule": "At 05:06 AM, Monday through Friday",
       "cronExpression": "0 5 * * 1-5",
       "enabled": true,
@@ -93,12 +93,12 @@
     },
     {
       "taskId": "of-dashboard-snapshot",
-      "description": "Reverse-syncs Matt's admin edits from the GitHub repo into the running ~/Scheduled/ files, then writes web/data.json (state + skills + tools + souls) and pushes to GitHub. Hands all file shuffling to web/snapshot.sh \u2014 the agent only does the MCP calls. Runs every 5 min so the live Mission Control site has fresh data.",
-      "schedule": "Every 5 minutes, every hour, every day",
+      "description": "Mission Control snapshot",
+      "schedule": "Every 5 minutes",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-25T22:51:18.000Z",
-      "lastRunAt": "2026-04-25T22:49:29.621Z",
+      "nextRunAt": "2026-04-25T23:01:18.000Z",
+      "lastRunAt": "2026-04-25T22:56:29.597Z",
       "jitterSeconds": 78
     }
   ],
@@ -348,7 +348,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-24T14:17:04.793Z]   -> cost $0.3264, files=14, capped=false\n[2026-04-24T14:18:03.007Z]   -> cost $0.5054, files=14, capped=false\n[2026-04-24T14:29:03.282Z]   -> cost $0.3823, files=14, capped=false\n[2026-04-24T14:47:42.734Z] [graphic-design] Claude_Bridge: \ud83d\udccb **Show Graphics \u2014 Morning Sweep Audit (Apr 24, 7:47a PT)** \u2014 processed: **3** \u00b7 shipped: **3** \u00b7 \u2026\n[2026-04-24T14:47:47.550Z]   -> cost $0.0111, files=0, capped=false\n[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n",
-    "uptime": "02-18:01:57",
+    "uptime": "02-18:13:28",
     "channels": [
       {
         "name": "brand-design",
@@ -383,7 +383,7 @@
     "ros": [
       {
         "id": "1496533530677608520",
-        "content": "\u26a0\ufe0f **Producer audit blocked from #producer \u2014 rerouted here**\n\nMain `DISCORD_BOT_TOKEN` is still 401 (flagged Apr 21 in #thumbnails); `GEORGE_BOT_TOKEN` fallback also returns 401; Cowork MCP bot (Claude_Bridge) has no send permission in <#1478657251446100101>. Posting the audit in #run-of-show so it isn't silent. **Action: rotate `DISCORD_BOT_TOKEN` in `~/.cowork-bridge/.env` + add `Claude_Bridge` to #producer overwrites.**",
+        "content": "Producer audit blocked from #producer rerouted here. DISCORD_BOT_TOKEN 401 + GEORGE_BOT_TOKEN 401; Claude_Bridge has no send permission in #producer.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -393,7 +393,7 @@
       },
       {
         "id": "1496533599770644673",
-        "content": "\ud83c\udfac **Producer Audit \u2014 April 22, 2026** \u2705 Ready: ROS posted 7:25a \u00b7 Matusow mirage \u2192 Chidwick $5\u201310M on $76M lead \u00b7 Thumbs 3/3 \u226570 (A 74, B 75, C 72) \u00b7 8/8 show graphics shipped \u00b7 Hand-of-Day 5th straight no-find handled.",
+        "content": "Producer Audit Apr 22, 2026. ROS 7:25a; A-block Matusow/Chidwick; thumbs 3/3 cleared 70 (74/75/72); 8/8 graphics shipped.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -403,7 +403,7 @@
       },
       {
         "id": "1496533691487359037",
-        "content": "\u26a0\ufe0f Flags: 1) Iran/Hormuz strait container ship \u2014 top World story not in ROS \u00b7 2) B Block TP1 partisan-adjacent: \"Texas AG\" \u2192 \"Texas enforcement\" \u00b7 3) Thumbs A+B concept-only (no person) \u2014 Claid billing exhausted \u00b7 4) Conrad's Matusow/Chidwick + Hellmuth + Wemby clips not visibly confirmed \u00b7 5) Andy research items not visible.",
+        "content": "Flags Apr 22: Iran/Hormuz no ROS placement; B block partisan-adjacent line on Texas AG; thumbs concept-only Claid exhausted; clips not visibly confirmed.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -413,7 +413,7 @@
       },
       {
         "id": "1496533733808017490",
-        "content": "\ud83d\udd25 Breaking (last 2 hrs): None. \ud83d\udca1 Recommend: lock Iran/Hormuz in or out \u00b7 soften B-block TP1 \u00b7 confirm Conrad's three clip timestamps.",
+        "content": "Breaking last 2hrs: None. Recommend Iran/Hormuz lock-in or skip; Texas AG to Texas enforcement.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -423,7 +423,7 @@
       },
       {
         "id": "1496875953861689607",
-        "content": "\ud83d\udccb **Run of Show \u2014 Thursday, April 23, 2026**\n\ud83c\udfac Cold Open: \"She didn't say nothin\u2026 she just had that look\" \u2014 3 sec hold\n\ud83c\udd70\ufe0f A: Kristen Foxen's April Doubleheader \u2014 A8 bluff folds out two pair, then folds trip queens to pair of sixes (USPO $25K finale, Coleman wins next hand)\n\ud83c\udd71\ufe0f B: Kalshi suspends 3 congressional candidates from own election markets + Polymarket Pulse cutaway\n\ud83c\udd8e C: Hellmuth quads / Alabama DeBoer 7yr $87.5M / Wemby concussion / AITA gym rail-coach\n\ud83c\udfac Close: NFL Draft tonight Pittsburgh \u2014 Matt's town\n\ud83c\udfaf YT title: \"Kristen Foxen Bluffed Ace-Eight Into Two Pair \u2014 Then Folded Trip Queens To Lose The Title\"",
+        "content": "Run of Show Thu Apr 23 2026. Cold Open: She didnt say nothin. A: Foxen April Doubleheader filthy A8 bluff + trip queens fold USPO 25K. B: Kalshi suspends 3 congressional candidates. C: Hellmuth quads / DeBoer 7yr 87.5M / Wemby concussion / AITA gym.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -433,7 +433,7 @@
       },
       {
         "id": "1496894460942880838",
-        "content": "\u26a0\ufe0f Producer audit blocked from #producer \u2014 rerouted (same issue as Apr 22). Rotate DISCORD_BOT_TOKEN + add Claude_Bridge to #producer overwrites.",
+        "content": "Producer audit blocked from #producer rerouted here (same issue as Apr 22).",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -443,7 +443,7 @@
       },
       {
         "id": "1496894474427564103",
-        "content": "\ud83c\udfac **Producer Audit \u2014 April 23, 2026** \u2705 ROS 7:10a \u00b7 Click test passes (both hands same match) \u00b7 Thumbs 3/3 \u226570 (A 82, B 76, ALT 72) \u00b7 Thumb\u2194ROS aligned \u00b7 3/3 block-lead graphics shipped \u00b7 7 source assets promoted \u00b7 No Matt notes since Apr 22.",
+        "content": "Producer Audit Apr 23. ROS 7:10a; thumbs 3/3 >=70 (82/76/72); 3/3 block-lead graphics shipped; 7 source assets promoted.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -453,7 +453,7 @@
       },
       {
         "id": "1496894500365402155",
-        "content": "\u26a0\ufe0f Flags: 1) C1 Hellmuth quads = repeat from Apr 22 C2 \u2014 tighten to 90s callback or swap in USPO Main Day 1 \u00b7 2) Tesla/Musk FSD admission has no ROS slot \u2014 bridge B\u2192C \u00b7 3) Apple $2.5\u20133.3B tariff refunds unclaimed not in ROS \u00b7 4) Kalshi B-block political trip-wire \u2014 keep on integrity \u00b7 5) Andy prep items not visible \u00b7 6) Claid status unclear today.",
+        "content": "Flags Apr 23: C Item 1 Hellmuth quads is repeat from Apr 22; Tesla/Musk autonomy admission no ROS placement; Apple tariff refunds aside.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -463,7 +463,7 @@
       },
       {
         "id": "1496894517377237094",
-        "content": "\ud83d\udd25 Breaking: None material. NFL Draft Round 1 8p ET, no trade news yet. \ud83d\udca1 Shrink Hellmuth \u00b7 slot Tesla/Musk B\u2192C \u00b7 scrub Kalshi for partisan name-checks.",
+        "content": "Breaking last 2hrs: None material. Recommend shrink Hellmuth to 90s, slot Tesla/Musk between Polymarket and Wemby.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -473,7 +473,7 @@
       },
       {
         "id": "1497238177524748389",
-        "content": "\ud83d\udccb **Run of Show \u2014 Friday, April 24, 2026**\n\ud83c\udfac Cold Open: r/poker \"wide range\" GIF \u2014 Jose Fernandez bare-hands a Tulo rocket \u2014 \"35o is in your range\"\n\ud83c\udd70\ufe0f A: DOJ arrests active-duty US soldier for using classified intel to win ~$400K on Polymarket (Maduro-capture markets) \u2014 first criminal prediction-market insider-trading case\n\ud83c\udd71\ufe0f B: Hand of the Day \u2014 Coleman's Q\u26608x cracks Foxen's T\u2663T\u2660 to seal USPO $25K Championship ($420K)\n\ud83c\udd8e C: Peters Linde apology / Trump MJ Schedule III / NFL Draft Round 1 (Steelers Iheanachor 21, Mendoza #1 Raiders)\n\ud83c\udfac Close: NFL Draft in Matt's city + Penguins Game 4\n\ud83c\udfaf YT title: \"A US Soldier Used Classified Intel To Win $400K On Polymarket \u2014 The First Criminal Case Ever\"",
+        "content": "Run of Show Fri Apr 24 2026. Cold Open: r/poker wide range GIF. A: DOJ arrests soldier classified intel Polymarket 400K. B: Coleman Q-8 cracks Foxen TT USPO 25K 420K title. C: Peters apology / MJ Schedule III / NFL Draft Pittsburgh.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -483,7 +483,7 @@
       },
       {
         "id": "1497261348332245123",
-        "content": "\u26a0\ufe0f Producer audit blocked from #producer \u2014 rerouted (3rd consecutive: Apr 22/23/24). Action still pending.",
+        "content": "Producer audit blocked from #producer rerouted here (3rd consecutive: Apr 22/23/24).",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -493,7 +493,7 @@
       },
       {
         "id": "1497261417261437088",
-        "content": "\ud83c\udfac **Producer Audit \u2014 Friday, April 24, 2026** \u2705 ROS 7:10a \u00b7 Hand of Day FOUND after 5 no-finds (Coleman Q-8 vs TT) \u00b7 3/3 block-lead graphics shipped (POLYMARKET-DOJ $400K, COLEMAN-FOXEN finisher, PETERS $25K apology) \u00b7 4 source assets promoted \u00b7 No Matt notes (channel locked).",
+        "content": "Producer Audit Fri Apr 24. ROS 7:10a; Hand of the Day FOUND after 5 no-finds (Coleman Q-8 vs TT); 3/3 block-lead graphics shipped; 4 source assets promoted.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -503,7 +503,7 @@
       },
       {
         "id": "1497261550493237278",
-        "content": "\u26a0\ufe0f Flags 1/2: 1) \ud83d\udea8 NO THUMBNAILS POSTED FOR TODAY \u2014 manual run NOW or fall back to Foxen A \u00b7 2) Iran/Hormuz \"shoot-to-kill\" not in ROS \u2014 recommend 60\u201390s in A-block tangent \u00b7 3) MJ Reclass C2 has no graphic + no design request \u2014 decide Andy stat card or text-only trim.",
+        "content": "Flags 1/2 Apr 24: NO THUMBNAILS POSTED FOR TODAY. Iran/Hormuz shoot-to-kill no ROS placement. MJ Reclass C Item 2 has no staged asset.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -513,7 +513,7 @@
       },
       {
         "id": "1497261651056001177",
-        "content": "\u26a0\ufe0f Flags 2/2: 4) Political trip-wires A/C \u2014 keep framing integrity-clean (A) and \"what this means for investors\" (C) \u00b7 5) Andy prep items not visible (Foxen TT solver, Coleman 2026 earnings, USPO POS frequency, crude chart, $409K/$33K Polymarket multiple) \u00b7 6) Claid still exhausted.",
+        "content": "Flags 2/2 Apr 24: Political trip-wires in A/C; Andy prep items not visible; Claid still exhausted.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -523,7 +523,7 @@
       },
       {
         "id": "1497261686967505130",
-        "content": "\ud83d\udd25 Breaking: 3rd US carrier near Iran (USS GHWB strike group) \u00b7 IEA Birol \"biggest energy security threat in history\" \u00b7 Precise DOJ figure $33K \u2192 $409K (12x) \u00b7 USPO Main Day 1 starting (Wilson chip lead, Schulman 2nd). \ud83d\udca1 URGENT thumbs \u00b7 bake Iran/IEA into A-block tangent \u00b7 update graphic $400K\u2192$409K (12x) \u00b7 decide MJ Reclass before showtime.",
+        "content": "Breaking last 2hrs Apr 24: 3rd US carrier near Iran (USS GHW Bush); IEA Birol biggest energy security threat in history; Precise DOJ figure 33K stake to 409K (12x); USPO Main Day 1 Wilson lead.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -535,7 +535,7 @@
     "thumbs": [
       {
         "id": "1493436643569307729",
-        "content": "[cowork] **C \u2014 \"NO ROOM IS SAFE\"** | AI SWAT-raid poker scene | purple-dark bg | library",
+        "content": "C NO ROOM IS SAFE AI SWAT-raid poker scene purple-dark bg.",
         "author": {
           "username": "George",
           "isBot": true
@@ -545,7 +545,7 @@
       },
       {
         "id": "1493436684526944326",
-        "content": "[cowork] \ud83d\uddbc\ufe0f Thumbnail options \u2014 April 13, 2026 \u2014 A: \"THEY KEPT IT\" Doug Polk \u00b7 B: \"BLEW THE DEADLINE\" Lodge interior \u00b7 C: \"NO ROOM IS SAFE\" SWAT raid. Story: Lodge / Texas drops money laundering, keeps $2M past forfeiture deadline.",
+        "content": "Thumbnail options Apr 13. A THEY KEPT IT, B BLEW THE DEADLINE, C NO ROOM IS SAFE.",
         "author": {
           "username": "George",
           "isBot": true
@@ -555,7 +555,7 @@
       },
       {
         "id": "1493756476185907322",
-        "content": "\ud83c\udfa8 **THUMBNAIL CANDIDATES \u2014 April 14, 2026 (PT)** A: DROPPED./KEPT IT. 90/100 \u00b7 B: $2,000,000./NO CHARGES. 90/100 \u00b7 ALT: THREE./IN A ROW. (Brock Wilson) 78/100",
+        "content": "THUMBNAIL CANDIDATES Apr 14. A DROPPED./KEPT IT. 90/100. B 2,000,000./NO CHARGES. 90/100. ALT THREE./IN A ROW. 78/100.",
         "author": {
           "username": "George",
           "isBot": true
@@ -565,7 +565,7 @@
       },
       {
         "id": "1494485457633804288",
-        "content": "\ud83c\udfa8 **E2E PIPELINE TEST \u2014 Apr 16** Phil Ivey \"THE GOAT | RETURNS\" \u2014 A fire 0.95x \u00b7 B warm 0.95x (A/B dedup flagged 0.87 > 0.72)",
+        "content": "E2E PIPELINE TEST Apr 16. Phil Ivey THE GOAT|RETURNS. A fire 0.95x; B warm 0.95x dedup flagged.",
         "author": {
           "username": "George",
           "isBot": true
@@ -575,7 +575,7 @@
       },
       {
         "id": "1494491222750789762",
-        "content": "\ud83e\uddea **E2E TEST \u2014 Independent A/B Builds + Story Context** Subject Phil Ivey, story \"loses $20M baccarat\" \u2014 A LOST|$20M fire \u00b7 B I BET|EVERYTHING cold. Divergence 5/5, dedup 0.55.",
+        "content": "E2E TEST Independent A/B Builds. Ivey 20M baccarat. A LOST|20M fire; B I BET|EVERYTHING cold. Divergence 5/5, dedup 0.55.",
         "author": {
           "username": "George",
           "isBot": true
@@ -585,7 +585,7 @@
       },
       {
         "id": "1496001733539790990",
-        "content": "\u26a0\ufe0f Thumbnail run aborted \u2014 no ROS from today (Mon 2026-04-20) found in #run-of-show. Last ROS seen: 2026-04-14.",
+        "content": "Thumbnail run aborted Apr 20 no ROS today. Last ROS Apr 14.",
         "author": {
           "username": "George",
           "isBot": true
@@ -595,7 +595,7 @@
       },
       {
         "id": "1496165692020363304",
-        "content": "\u26a0\ufe0f Thumbnail run aborted \u2014 no ROS today (Tue 2026-04-21). Also flagging: DISCORD_BOT_TOKEN HTTP 401 \u2014 bot token revoked/rotated. Today's run posted via GEORGE_BOT_TOKEN fallback.",
+        "content": "Thumbnail run aborted Apr 21 no ROS today. DISCORD_BOT_TOKEN HTTP 401.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -605,7 +605,7 @@
       },
       {
         "id": "1496530839788589186",
-        "content": "\ud83c\udfa8 **Thumbnails \u2014 2026-04-22** \u26a0\ufe0f CLAID BILLING EXHAUSTED (err 12015) \u2014 3 thumbs pivoted to concept. A `$10M | OF $76M` 74/100 \u00b7 B `KEPT | PENNIES` 75/100 \u00b7 C `APRIL 23. | RINGS.` 72/100. All cleared 70, 0 rebuilds.",
+        "content": "Thumbnails 2026-04-22. CLAID BILLING EXHAUSTED, all 3 concept treatment. A 10M|OF 76M 74/100. B KEPT|PENNIES 75/100. C APRIL 23.|RINGS. 72/100.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -615,7 +615,7 @@
       },
       {
         "id": "1496892232660418600",
-        "content": "\ud83c\udfa8 **Thumbnails \u2014 Thursday, April 23, 2026** A: \"$1.2M | BLUFF\" Kristen Foxen 82/100 \u00b7 B: \"TRIP QUEENS | FOLDED\" 76/100 \u00b7 ALT: \"KALSHI | PULLS 3\" 72/100",
+        "content": "Thumbnails Thu Apr 23 2026. A 1.2M|BLUFF Foxen 82/100. B TRIP QUEENS|FOLDED 76/100. ALT KALSHI|PULLS 3 72/100.",
         "author": {
           "username": "George 2.0",
           "isBot": true
@@ -625,7 +625,7 @@
       },
       {
         "id": "1497319158143127663",
-        "content": "\u26a0\ufe0f **Thumbnail run blocked at judge/upload \u2014 April 24** All 3 thumbs built (sizes verified) but reads from workspace/thumbnail/output/ EINTR \u2014 judge can't read, Discord upload can't stream. A `$400K | CLASSIFIED` (fire) \u00b7 B `ARRESTED | FOR WINNING` (cold) \u00b7 ALT Coleman Q-8 `Q-8 | $420K`. Divergence 4/5 passed, dedup 0.56 passed. Action: open the JPGs and upload manually.",
+        "content": "Thumbnail run blocked judge/upload Apr 24. All 3 built but reads return EINTR. A 400K|CLASSIFIED, B ARRESTED|FOR WINNING, ALT Q-8|420K Coleman.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -637,7 +637,7 @@
     "assets": [
       {
         "id": "1496525816895373454",
-        "content": "\ud83d\uddbc\ufe0f **WSOPC TEXAS DEBUT \u2014 Show Graphic** B BLOCK open. First-ever WSOP Circuit in Texas (Apr 23\u2013May 4) at TCH Austin.",
+        "content": "WSOPC TEXAS DEBUT Show Graphic. B BLOCK open. Apr 23 to May 4 TCH Austin.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -647,7 +647,7 @@
       },
       {
         "id": "1496525846033469492",
-        "content": "\ud83d\uddbc\ufe0f **ZOBIAN USPO EVENT #9 \u2014 Show Graphic** Aram Zobian wins USPO Event #9 ($292,800).",
+        "content": "ZOBIAN USPO EVENT 9 Show Graphic. C BLOCK Item 1. 292,800.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -657,7 +657,7 @@
       },
       {
         "id": "1496525868930039858",
-        "content": "\ud83d\uddbc\ufe0f **NATNA FOUNDATION \u2014 Show Graphic** Natna Children's Foundation, co-founded by Aram Zobian.",
+        "content": "NATNA FOUNDATION Show Graphic. C BLOCK Item 1 sub-card.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -667,7 +667,7 @@
       },
       {
         "id": "1496525898671853578",
-        "content": "\ud83d\uddbc\ufe0f **POLYMARKET PULSE \u2014 Show Graphic** NBA 51% \u00b7 Stanley Cup 25% \u00b7 WC Spain 16% \u00b7 ATP Sinner 56%.",
+        "content": "POLYMARKET PULSE Show Graphic. NBA 51 Stanley Cup 25 World Cup Spain 16 ATP Sinner 56.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -677,7 +677,7 @@
       },
       {
         "id": "1496525923191623690",
-        "content": "\ud83d\uddbc\ufe0f **COOK HANDS OFF APPLE \u2014 Show Graphic** $4T market cap + Tim Cook \u2192 John Ternus succession (Apr 20).",
+        "content": "COOK HANDS OFF APPLE Show Graphic. 4T market cap + Cook to Ternus.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -687,7 +687,7 @@
       },
       {
         "id": "1496526114493960233",
-        "content": "\ud83d\uddbc\ufe0f **HIGH ROLLER CASHES \u2260 PROFITS \u2014 Show Graphic** Chidwick $76M/$5\u201310M \u00b7 Peters $49.65M/~$25K of $50K Triton stake \u00b7 Davies ~50% hold.",
+        "content": "HIGH ROLLER CASHES NOT PROFITS Show Graphic. A BLOCK. Chidwick 76M cashes 5-10M profit; Peters 49.65M / 25K Triton stake; Davies 50% hold.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -697,7 +697,7 @@
       },
       {
         "id": "1496526147201273967",
-        "content": "\ud83d\uddbc\ufe0f **BTC SPOT CHECK \u2014 Show Graphic** BTC $78,000 morning Apr 22.",
+        "content": "BTC SPOT CHECK Show Graphic. BTC 78,000 Apr 22.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -707,7 +707,7 @@
       },
       {
         "id": "1496847955250909289",
-        "content": "\ud83c\udccf Foxen USPO Doubleheader (Filthy Bluff + Trip Queens Fold) \u2014 B Block \u2014 pokernews.com",
+        "content": "Foxen USPO Doubleheader B Block.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -717,7 +717,7 @@
       },
       {
         "id": "1496847969792557129",
-        "content": "\ud83c\udccf Foxen \"Absolutely Filthy\" Bluff \u2014 B Block \u2014 poker.org",
+        "content": "Foxen Absolutely Filthy Bluff B Block.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -727,7 +727,7 @@
       },
       {
         "id": "1496847985945083915",
-        "content": "\ud83c\udccf Foxen Kings-Fold Callback (Triton Jeju, Doug Polk analysis) \u2014 B Block \u2014 spadepoker.com",
+        "content": "Foxen Kings-Fold Callback Polk analysis B Block.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -737,7 +737,7 @@
       },
       {
         "id": "1496848001992228995",
-        "content": "\ud83c\udccf Hellmuth Quad 8s \u2014 B Block \u2014 pokernews.com",
+        "content": "Hellmuth Quad 8s B Block.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -747,7 +747,7 @@
       },
       {
         "id": "1496886436593668226",
-        "content": "\ud83d\uddbc\ufe0f **KALSHI SUSPENDS 3 CONGRESSIONAL CANDIDATES \u2014 Show Graphic** B BLOCK open. CNBC, Apr 23.",
+        "content": "KALSHI SUSPENDS 3 CONGRESSIONAL CANDIDATES Show Graphic B BLOCK open. CNBC Apr 23.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -757,7 +757,7 @@
       },
       {
         "id": "1496886466591199401",
-        "content": "\ud83d\uddbc\ufe0f **DeBOER \u00b7 7 YEARS \u00b7 $87.5M \u2014 Show Graphic** C BLOCK lead. ESPN, Apr 23.",
+        "content": "DeBOER 7 YEARS 87.5M Show Graphic. C BLOCK lead. Alabama extends DeBoer.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -767,7 +767,7 @@
       },
       {
         "id": "1496886502872060045",
-        "content": "\ud83d\uddbc\ufe0f **KRISTEN FOXEN'S APRIL \u2014 Show Graphic** A BLOCK lead. Side-by-side Filthy Bluff + Trip Queens Fold. USPO $25K finale.",
+        "content": "KRISTEN FOXENS APRIL Show Graphic. A BLOCK. Filthy Bluff + Trip Queens Fold USPO 25K finale.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -777,7 +777,7 @@
       },
       {
         "id": "1496894143237066895",
-        "content": "\ud83d\udcce COLD OPEN \u2014 \"She didn't say nothin... she just had that look.\" r/rareinsults / 24.6k upvotes.",
+        "content": "COLD OPEN r/rareinsults She didnt say nothin she just had that look. 24.6k upvotes.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -787,7 +787,7 @@
       },
       {
         "id": "1496894144100958369",
-        "content": "\ud83d\udcce [B BLOCK] Kalshi suspends 3 congressional candidates \u2014 CNBC headline + lede.",
+        "content": "B BLOCK Kalshi suspends 3 congressional candidates CNBC.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -797,7 +797,7 @@
       },
       {
         "id": "1496894145246003220",
-        "content": "\ud83d\udcce [B BLOCK] Polymarket trending \u2014 Apr 23 open \u2014 Friday weekly stock-close + Silver >$65.",
+        "content": "B BLOCK Polymarket trending Apr 23 open.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -807,7 +807,7 @@
       },
       {
         "id": "1496894145829146695",
-        "content": "\ud83d\udcce [C BLOCK] NBA playoffs \u2014 Thunder 2-0, Pistons-Magic 1-1, Wemby update.",
+        "content": "C BLOCK NBA playoffs update Thunder 2-0 Wemby.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -817,7 +817,7 @@
       },
       {
         "id": "1496894152418394164",
-        "content": "\ud83d\udcce [C BLOCK] Alabama extends DeBoer 7yr/$87.5M \u2014 ESPN.",
+        "content": "C BLOCK Alabama extends DeBoer 7yr 87.5M ESPN.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -827,7 +827,7 @@
       },
       {
         "id": "1496894162241589369",
-        "content": "\ud83d\udcce [C BLOCK] AITA \u2014 \"Stop coaching my friend at the gym\" \u2014 gym rail-coach = poker rail-coach.",
+        "content": "C BLOCK AITA gym rail-coach 90 percent upvoted.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -837,7 +837,7 @@
       },
       {
         "id": "1496894167802974371",
-        "content": "\ud83d\udcce [CLOSE] NFL Draft tonight in Pittsburgh \u2014 ESPN tracker + mock + trade buzz.",
+        "content": "CLOSE NFL Draft tonight in Pittsburgh ESPN.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -847,7 +847,7 @@
       },
       {
         "id": "1497209353344651355",
-        "content": "\ud83c\udccf Coleman Q-8 cracks Foxen's pocket tens \u2014 USPO Championship finisher \u2014 B Block.",
+        "content": "Coleman Q-8 cracks Foxen pocket tens USPO finisher B Block.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -857,7 +857,7 @@
       },
       {
         "id": "1497209373804597338",
-        "content": "\ud83c\udccf Foxen folds trip queens to Coleman's pair-of-sixes jam \u2014 USPO heads-up setup.",
+        "content": "Foxen folds trip queens to Coleman pair-of-sixes USPO setup B Block.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -867,7 +867,7 @@
       },
       {
         "id": "1497247548279230505",
-        "content": "\ud83d\uddbc\ufe0f **POLYMARKET-DOJ-SOLDIER-ARREST \u2014 Show Graphic** A-block lead. $400,000 hero stat. (Nano declined live-person framing 3x \u2014 clean data-card fallback.)",
+        "content": "POLYMARKET-DOJ-SOLDIER-ARREST Show Graphic. A-block lead. 400,000 hero stat. Nano safety-trip x3 data-card fallback.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -877,7 +877,7 @@
       },
       {
         "id": "1497247581951099012",
-        "content": "\ud83d\uddbc\ufe0f **COLEMAN-FOXEN-HERO-FOLD-FINISHER \u2014 Show Graphic** B-block / hand of day. USPO #10 finale. $420K title. (Data-card fallback because Nano kept rendering $420K \u2192 $400K.)",
+        "content": "COLEMAN-FOXEN-HERO-FOLD-FINISHER Show Graphic. B-block lead. Foxen trip-queens HERO FOLD then Coleman 420K TITLE.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -887,7 +887,7 @@
       },
       {
         "id": "1497247596941410334",
-        "content": "\ud83d\uddbc\ufe0f **PETERS-APOLOGY-QUOTE-CARD \u2014 Show Graphic** C-block lead. Pull-quote \u2014 Peters' \"I deeply regret\u2026\" X post on Linde $25K staking-debt confession.",
+        "content": "PETERS-APOLOGY-QUOTE-CARD Show Graphic. C-block lead. Linde 25,000 staking-debt confession.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -897,7 +897,7 @@
       },
       {
         "id": "1497261271341338666",
-        "content": "\ud83d\udcce [COLD OPEN] r/poker \"wide range\" \u2014 Jose Fernandez bare-hands a Tulo rocket / 35o \u2208 WIDE RANGE overlay.",
+        "content": "COLD OPEN r/poker wide range Tulo rocket 35o WIDE RANGE 486 upvotes.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -907,7 +907,7 @@
       },
       {
         "id": "1497261281630228510",
-        "content": "\ud83d\udcce [C BLOCK] NFL Draft Round 1 Kiper scorecard \u2014 Raiders Mendoza #1, Steelers Iheanachor 21, Eagles trade up for Lemon.",
+        "content": "C BLOCK NFL Draft Round 1 Kiper scorecard. Raiders Mendoza 1, Steelers Iheanachor 21, Eagles Lemon.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -917,7 +917,7 @@
       },
       {
         "id": "1497261290878669011",
-        "content": "\ud83d\udcce [C BLOCK] Jason Kelce dunks on scouting reports \u2014 3.4K likes, pairs with NFL Draft beat.",
+        "content": "C BLOCK Jason Kelce dunks on scouting reports 3.4K likes.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -927,7 +927,7 @@
       },
       {
         "id": "1497261304648302702",
-        "content": "\ud83d\udcce [C BLOCK Item 4 \u2014 CUT FIRST] Polymarket Pulse \u2014 OKC 52% NBA, France 17% WC, Newsom 26% Dem 2028, US\u00d7Iran peace 43%, BTC $150K Dec 31 = 10%.",
+        "content": "C BLOCK Polymarket Pulse board. OKC 52 NBA, France 17 FIFA, Newsom 26 Dem 2028, US-Iran peace 43, BTC 150K Dec 31 = 10.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
