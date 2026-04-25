@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T09:54:01Z",
+  "generatedAt": "2026-04-25T10:02:13Z",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-25T09:51:18.000Z",
-      "lastRunAt": "2026-04-25T09:46:46.128Z",
+      "nextRunAt": "2026-04-25T09:56:18.000Z",
+      "lastRunAt": "2026-04-25T09:54:28.183Z",
       "jitterSeconds": 78
     }
   ],
@@ -126,16 +126,20 @@
         }
       }
     },
+    "paused": {},
     "channels": {
-      "paused": {},
-      "conversationIds": [
-        "1478657251446100101",
-        "1477576382924980345",
-        "1489392874029187304"
-      ]
+      "1478657251446100101": {
+        "messageCount": 2
+      },
+      "1477576382924980345": {
+        "messageCount": 30
+      },
+      "1489392874029187304": {
+        "messageCount": 10
+      }
     },
-    "logTail": "[2026-04-24T14:17:04.793Z]   -> cost $0.3264, files=14, capped=false\n[2026-04-24T14:18:03.007Z]   -> cost $0.5054, files=14, capped=false\n[2026-04-24T14:29:03.282Z]   -> cost $0.3823, files=14, capped=false\n[2026-04-24T14:47:42.734Z] [graphic-design] Claude_Bridge: 📋 **Show Graphics — Morning Sweep Audit (Apr 24, 7:47a PT)** — processed: **3** · shipped: **3** · …\n[2026-04-24T14:47:47.550Z]   -> cost $0.0111, files=0, capped=false\n[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: ⚠️ **Graphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n",
-    "uptime": "not-running"
+    "logTail": "[2026-04-24T14:17:04.793Z]   -> cost $0.3264, files=14, capped=false\n[2026-04-24T14:18:03.007Z]   -> cost $0.5054, files=14, capped=false\n[2026-04-24T14:29:03.282Z]   -> cost $0.3823, files=14, capped=false\n[2026-04-24T14:47:42.734Z] [graphic-design] Claude_Bridge: 📋 **Show Graphics — Morning Sweep Audit (Apr 24, 7:47a PT)** — processed: **3** · shipped: **3** · …\n[2026-04-24T14:47:47.550Z]   -> cost $0.0111, files=0, capped=false\n[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: 🎨 **Graphics LATE SWEEP — audit (8:05am PT).** 0 new requests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests · 0 shipped · 0 blocked · 0 fell back…\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false",
+    "uptime": "02-05:00:24"
   },
   "discord": {
     "ros": [
@@ -221,7 +225,7 @@
       },
       {
         "id": "1496894517377237094",
-        "content": "🔥 **Breaking (last 2 hrs):** None material. Swept PokerNews, WSOP.com, ESPN Draft tracker. USPO Main Event Day 1 starts today (already in context). NFL Draft Round 1 tonight 8p ET — no trade news broken yet. No A-block-swap-worthy items.\n\n💡 **Recommend:**\n1. **Shrink Hellmuth quads to 90-sec callback** — reclaim ~2 min for USPO Main Day 1 OR Tesla/Musk autonomy admission.\n2. **Slot Tesla/Musk between Polymarket Pulse and Wemby** — 60–90 sec, frames the B→C handoff as \"markets saying one thing, reality saying another.\"\n3. **Scrub B block talking points for any partisan name-check** on the Kalshi 3 — keep it on integrity, not affiliation.\n\n—\n*Full text also saved to `Media Company Infrastructure/producer-audit-2026-04-23.txt` in case you want to copy into #producer by hand after the token/permission fix.*",
+        "content": "🔥 **Breaking (last 2 hrs):** None material. Swept PokerNews, WSOP.com, ESPN Draft tracker. USPO Main Event Day 1 starts today (already in context). NFL Draft Round 1 tonight 8p ET — no trade news broken yet. No A-block-worthy post-briefing items.\n\n💡 **Recommend:**\n1. **Shrink Hellmuth quads to 90-sec callback** — reclaim ~2 min for USPO Main Day 1 OR Tesla/Musk autonomy admission.\n2. **Slot Tesla/Musk between Polymarket Pulse and Wemby** — 60–90 sec, frames the B→C handoff as \"markets saying one thing, reality saying another.\"\n3. **Scrub B block talking points for any partisan name-check** on the Kalshi 3 — keep it on integrity, not affiliation.\n\n—\n*Full text also saved to `Media Company Infrastructure/producer-audit-2026-04-23.txt` in case you want to copy into #producer by hand after the token/permission fix.*",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
