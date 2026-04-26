@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T07:26:03.791758+00:00",
+  "generatedAt": "2026-04-26T07:39:23.833042+00:00",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-26T07:06:18.000Z",
-      "lastRunAt": "2026-04-26T07:03:51.258Z",
+      "nextRunAt": "2026-04-26T07:31:18.000Z",
+      "lastRunAt": "2026-04-26T07:26:51.381Z",
       "jitterSeconds": 78
     }
   ],
@@ -331,7 +331,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n[2026-04-26T02:09:58.903Z] got SIGTERM, shutting down\n[2026-04-26T02:11:42.862Z] (legacy ready event) George 2.0 online as George 2.0#9605\n[2026-04-26T02:11:42.867Z] George 2.0 online as George 2.0#9605 (id 1496028625189863544)\n[2026-04-26T02:11:42.867Z] configured channels: 5\n[2026-04-26T02:11:42.867Z] default mode for everything else: mention\n",
-    "uptime": "05:14:31",
+    "uptime": "05:27:51",
     "channels": [
       {
         "name": "brand-design",
@@ -608,7 +608,7 @@
       },
       {
         "id": "1497319158143127663",
-        "content": "\u26a0\ufe0f **Thumbnail run blocked at judge/upload \u2014 April 24**\n\nAll 3 thumbs built successfully (sizes verified via stat), but reads from `workspace/thumbnail/output/` are returning EINTR (\"Interrupted system call\") on every cp/cat/dd/magick \u2014 so the judge read can't happen and the Discord upload can't stream the files. Writes to the same directory still succeed; only existing-file reads are blocked. System-level issue, not pipeline logic.\n\nArtifacts on disk (stat-confirmed):\n\u2022 `20260424-0805-thumb-a.jpg` \u2014 662 KB \u2014 A / STORY_1 concept \u2014 headline `$400K | CLASSIFIED` (fire theme, bottom-left, war-room BG)\n\u2022 `20260424-0805-thumb-b.jpg` \u2014 683 KB \u2014 B / STORY_1 concept \u2014 headline `ARRESTED | FOR WINNING` (cold theme, top-right, cuffs+cash aftermath BG)\n\u2022 `20260424-0805-thumb-alt.jpg` \u2014 656 KB \u2014 ALT / STORY_2 \u2014 David Coleman cutout, headline `Q-8 | $420K` (warm theme, right-side, poker finale BG)\n\nDivergence gate A\u2194B: **4/5 axes differ** (passed). A/B dedup guard: **composite 0.56 < 0.72** (passed). Both pre-build guards green. Judge scoring skipped (couldn't read the rendered JPGs).\n\nStory mapping: A+B = A-block soldier/Polymarket $400K insider case; ALT = B-block Coleman cracks Foxen's TT for USPO $25K title.\n\n**Action for Matt:** open the three JPGs at the paths above and upload manually, or retry this run after the filesystem state clears. If the EINTR persists across the whole workspace, a Finder / Spotlight reindex or a restart will fix it.",
+        "content": "\u26a0\ufe0f **Thumbnail run blocked at judge/upload \u2014 April 24**\n\nAll 3 thumbs built successfully (sizes verified via stat), but reads from `workspace/thumbnail/output/` are returning EINTR (\"Interrupted system call\") on every cp/cat/dd/magick \u2014 so the judge read can't happen and the Discord upload can't stream the files. Writes to the same directory still succeed; only existing-file reads are blocked. System-level issue, not pipeline logic.\n\nArtifacts on disk (stat-confirmed):\n\u2022 `20260424-0805-thumb-a.jpg` \u2014 662 KB \u2014 A / STORY_1 concept \u2014 headline `$400K | CLASSIFIED` (fire theme, bottom-left, war-room BG)\n\u2022 `20260424-0805-thumb-b.jpg` \u2014 683 KB \u2014 B / STORY_1 concept \u2014 headline `ARRESTED | FOR WINNING` (cold theme, top-right, cuffs+cash aftermath BG)\n\u2022 `20260424-0805-thumb-alt.jpg` \u2014 656 KB \u2014 ALT / STORY_2 \u2014 David Coleman cutout, headline `Q-8 | $420K` (warm theme, right-side, poker finale BG)\n\nDivergence gate A\u2194B: **4/5 axes differ** (passed). A/B dedup guard: **composite 0.56 < 0.72** (passed). Both pre-build guards green. Judge scoring skipped (couldn't read the rendered JPGs).\n\nStory mapping: A+B = A-block soldier/Polymarket $400K insider case; ALT = B-block Coleman cracks Foxen's TT for USPO $25K title.\n\n**Action for Matt:** open the three JPGs at the paths above and upload manually, or retry this run after the filesystem state clears. If the EINTR persists across the whole workspace, a Finder / Spotlight reindex or a reboot will fix it.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
