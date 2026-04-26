@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T22:07:16.300741+00:00",
+  "generatedAt": "2026-04-26T22:20:11.411161+00:00",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-26T22:01:18.000Z",
-      "lastRunAt": "2026-04-26T21:54:53.187Z",
+      "nextRunAt": "2026-04-26T22:11:18.000Z",
+      "lastRunAt": "2026-04-26T22:07:53.228Z",
       "jitterSeconds": 78
     }
   ],
@@ -331,7 +331,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n[2026-04-26T02:09:58.903Z] got SIGTERM, shutting down\n[2026-04-26T02:11:42.862Z] (legacy ready event) George 2.0 online as George 2.0#9605\n[2026-04-26T02:11:42.867Z] George 2.0 online as George 2.0#9605 (id 1496028625189863544)\n[2026-04-26T02:11:42.867Z] configured channels: 5\n[2026-04-26T02:11:42.867Z] default mode for everything else: mention\n",
-    "uptime": "19:55:44",
+    "uptime": "20:08:39",
     "channels": [
       {
         "name": "brand-design",
