@@ -1,6 +1,6 @@
 ---
 name: uncapped-research-poker
-description: Daily 2am PT poker intel briefing for The Only Friends Podcast, posted to Discord #intel-staging Mon - Fri
+description: Daily 2am PT poker intel briefing for The Only Friends Podcast, posted to Discord #intel-staging 
 ---
 
 ---
