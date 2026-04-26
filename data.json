@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T05:52:53.161351+00:00",
+  "generatedAt": "2026-04-26T06:01:03.924072+00:00",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-26T05:51:18.000Z",
-      "lastRunAt": "2026-04-26T05:46:51.256Z",
+      "nextRunAt": "2026-04-26T05:56:18.000Z",
+      "lastRunAt": "2026-04-26T05:53:51.104Z",
       "jitterSeconds": 78
     }
   ],
@@ -331,7 +331,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n[2026-04-26T02:09:58.903Z] got SIGTERM, shutting down\n[2026-04-26T02:11:42.862Z] (legacy ready event) George 2.0 online as George 2.0#9605\n[2026-04-26T02:11:42.867Z] George 2.0 online as George 2.0#9605 (id 1496028625189863544)\n[2026-04-26T02:11:42.867Z] configured channels: 5\n[2026-04-26T02:11:42.867Z] default mode for everything else: mention\n",
-    "uptime": "03:41:21",
+    "uptime": "03:49:31",
     "channels": [
       {
         "name": "brand-design",
@@ -446,7 +446,7 @@
       },
       {
         "id": "1496894517377237094",
-        "content": "\ud83d\udd25 **Breaking (last 2 hrs):** None material. Swept PokerNews, WSOP.com, ESPN Draft tracker. USPO Main Event Day 1 starts today (already in context). NFL Draft Round 1 tonight 8p ET \u2014 no trade news broken yet. No A-block-swap-worthy items.\n\n\ud83d\udca1 **Recommend:**\n1. **Shrink Hellmuth quads to 90-sec callback** \u2014 reclaim ~2 min for USPO Main Day 1 OR Tesla/Musk autonomy admission.\n2. **Slot Tesla/Musk between Polymarket Pulse and Wemby** \u2014 60\u201390 sec, frames the B\u2192C handoff as \"markets saying one thing, reality saying another.\"\n3. **Scrub B block talking points for any partisan name-check** on the Kalshi 3 \u2014 keep it on integrity, not affiliation.\n\n\u2014\n*Full text also saved to `Media Company Infrastructure/producer-audit-2026-04-23.txt` in case you want to copy into #producer by hand after the token/permission fix.*",
+        "content": "\ud83d\udd25 **Breaking (last 2 hrs):** None material. Swept PokerNews, WSOP.com, ESPN Draft tracker. USPO Main Event Day 1 starts today (already in context). NFL Draft Round 1 tonight 8p ET \u2014 no trade news broken yet. No A-block-worthy post-briefing items.\n\n\ud83d\udca1 **Recommend:**\n1. **Shrink Hellmuth quads to 90-sec callback** \u2014 reclaim ~2 min for USPO Main Day 1 OR Tesla/Musk autonomy admission.\n2. **Slot Tesla/Musk between Polymarket Pulse and Wemby** \u2014 60\u201390 sec, frames the B\u2192C handoff as \"markets saying one thing, reality saying another.\"\n3. **Scrub B block talking points for any partisan name-check** on the Kalshi 3 \u2014 keep it on integrity, not affiliation.\n\n\u2014\n*Full text also saved to `Media Company Infrastructure/producer-audit-2026-04-23.txt` in case you want to copy into #producer by hand after the token/permission fix.*",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -538,7 +538,7 @@
       },
       {
         "id": "1493756476185907322",
-        "content": "**\ud83c\udfa8 THUMBNAIL CANDIDATES \u2014 April 14, 2026 (PT)**",
+        "content": "**\ud83c\udfa8 THUMBNAIL CANDIDATES \u2014 April 14, 2026 (PT)**\n\n**Story 1 \u2014 concept:** Texas dropped money laundering charges against The Lodge but is still holding $2M under a backup \"illegal gambling\" theory after the civil forfeiture deadline passed.\n\n**A:** \"DROPPED. / KEPT IT.\" \u2014 Impossible Paradox \u2014 score 90/100\n  \u2022 concept thumb (courthouse night scene)  \u2022  text: bottom-left, fire orange\n  \u2022 top points lost: Face/Subject -10 (no person \u2014 concept thumb)\n\n**B:** \"$2,000,000. / NO CHARGES.\" \u2014 Specific Number \u2014 score 90/100\n  \u2022 concept thumb (evidence locker, cash + chips)  \u2022  text: top-left, cold cyan\n  \u2022 top points lost: Face/Subject -10 (no person \u2014 concept thumb)\n  \u2022 differentiation from A: courthouse\u2192evidence locker; fire\u2192cold; bottom-left\u2192top-left; paradox\u2192specific number\n\n**Story 2 \u2014 Brock Wilson:** Three PokerGO wins in ~30 days \u2014 most underrated player in high-roller poker?\n\n**ALT:** \"THREE. / IN A ROW.\" \u2014 Absurd Escalation \u2014 score 78/100\n  \u2022 person: center-left with trophy (authentic tournament photo)  \u2022  text: bottom-left, gold\n  \u2022 top points lost: Visual Hook -6 (sponsor banner distracts), Face/Subject -7 (mild expression), Clarity -3\n\n\u2014\nPipeline: Gemini Nano direct (build-thumbnail.sh v4 bypassed \u2014 ps.jsx missing + cp-to-self bug). Judge \u226570. Rebuilds: A=0, B=0, ALT=0.",
         "author": {
           "username": "George",
           "isBot": true
@@ -548,7 +548,7 @@
       },
       {
         "id": "1494485457633804288",
-        "content": "**\ud83c\udfa8 E2E PIPELINE TEST \u2014 Apr 16**",
+        "content": "**\ud83c\udfa8 E2E PIPELINE TEST \u2014 Apr 16**\n\n**Phil Ivey \u2014 \"THE GOAT | RETURNS\"**\nFull pipeline: DDG image search \u2192 image-fetch \u2192 Claid cutout \u2192 PS composite \u2192 Nano integration+text\n\n**A:** fire theme, right-side, 0.95x \u2014 OCR: GOAT \u2705 RETURNS partial\n**B:** warm theme, right-side, 0.95x \u2014 A/B dedup flagged (0.87 > 0.72 threshold)\n\n\u2014\nPipeline: v4 PS-composite + Nano. curl-image-search.sh (no browser needed).",
         "author": {
           "username": "George",
           "isBot": true
@@ -558,7 +558,7 @@
       },
       {
         "id": "1494491222750789762",
-        "content": "**\ud83e\uddea E2E TEST \u2014 Independent A/B Builds + Story Context**",
+        "content": "**\ud83e\uddea E2E TEST \u2014 Independent A/B Builds + Story Context**\n\n**Subject:** Phil Ivey\n**Story:** Ivey loses $20M in baccarat\n\n**A:** \"LOST|$20M\" \u2014 specific-number \u2014 fire theme\n  \u2022 person: right, scale 0.95  \u2022  text: bottom-left\n  \u2022 brief: intense stare / dark poker room / dark+tense\n  \u2022 narrative prompt: haunted expression, weight of massive loss\n\n**B:** \"I BET|EVERYTHING\" \u2014 direct-quote \u2014 cold theme\n  \u2022 person: left, scale 0.90  \u2022  text: bottom-right\n  \u2022 brief: shocked reaction / Vegas neon rain / chaotic+explosive\n  \u2022 narrative prompt: defiant confidence under neon lights\n\n**Divergence:** 5/5 axes different \u2705\n**Dedup score:** 0.55 (threshold 0.72) \u2705 \u2014 was 0.87 before this fix\n**Pipeline:** v4 PS-composite + Nano narrative integration",
         "author": {
           "username": "George",
           "isBot": true
@@ -588,7 +588,7 @@
       },
       {
         "id": "1496530839788589186",
-        "content": "\ud83c\udfa8 **Thumbnails \u2014 2026-04-22** \u00b7 Run `20260422-0805` \u00b7 3 candidates\n\n\u26a0\ufe0f **INFRASTRUCTURE FLAG \u2014 CLAID BILLING EXHAUSTED** (err 12015). Library has no Chidwick/Polk cutouts. All 3 thumbs pivoted to **concept treatment (no person)**. Top up Claid + add subjects to `workspace/thumbnail/source/`.",
+        "content": "\ud83c\udfa8 **Thumbnails \u2014 2026-04-22** \u00b7 Run `20260422-0805` \u00b7 3 candidates\n\n\u26a0\ufe0f **INFRASTRUCTURE FLAG \u2014 CLAID BILLING EXHAUSTED** (err 12015). Library has no Chidwick/Polk cutouts. All 3 thumbs pivoted to **concept treatment (no person)**. Top up Claid + add subjects to `workspace/thumbnail/source/`.\n\n**Top story (A/B):** Chidwick kept $10M of $76M lifetime cashes.\n**Story 2:** WSOPC Texas opens Apr 23 while Lodge stays frozen.\n**A\u2194B divergence:** 5/5 axes (pattern \u00b7 emotion \u00b7 metaphor \u00b7 color temp \u00b7 text hierarchy). Dedup composite 0.5596 \u2192 PASS.\n\n\ud83c\udd70 **Thumb A** \u2014 `$10M | OF $76M` \u00b7 SPECIFIC NUMBER \u00b7 cold cash stacks\nJudge **74/100** \u2705 \u00b7 H17 Subj7 Hook12 Txt11 Comp12 Clr8 Diff7 \u00b7 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n\ud83c\udd71 **Thumb B** \u2014 `KEPT | PENNIES` \u00b7 ABSURD ESCALATION \u00b7 noir cashier cage, fire rim\nJudge **75/100** \u2705 \u00b7 H14 Subj7 Hook13 Txt12 Comp13 Clr8 Diff8 \u00b7 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n\ud83c\udd8e **Thumb C (Story 2)** \u2014 `APRIL 23. | RINGS.` \u00b7 COUNTDOWN \u00b7 gold ring + shuttered Lodge\nJudge **72/100** \u2705 \u00b7 H15 Subj7 Hook11 Txt12 Comp12 Clr7 Diff8 \u00b7 0 rebuilds\nFlags: `CLAID_BILLING_EXHAUSTED`, `NO_SUBJECT_LIBRARY`, `FRESH_DDG_BG`\n\n**All 3 cleared 70 threshold \u00b7 0 rebuilds \u00b7 pipeline completed despite Claid outage.**",
         "author": {
           "username": "George 2.0",
           "isBot": true
