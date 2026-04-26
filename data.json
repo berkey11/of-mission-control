@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T05:29:19.528322+00:00",
+  "generatedAt": "2026-04-26T05:37:12.851801+00:00",
   "tasks": [
     {
       "taskId": "uncapped-research-poker",
@@ -97,8 +97,8 @@
       "schedule": "Every 5 minutes, every hour, every day",
       "cronExpression": "*/5 * * * *",
       "enabled": true,
-      "nextRunAt": "2026-04-26T05:21:18.000Z",
-      "lastRunAt": "2026-04-26T05:16:51.131Z",
+      "nextRunAt": "2026-04-26T05:36:18.000Z",
+      "lastRunAt": "2026-04-26T05:29:51.001Z",
       "jitterSeconds": 78
     }
   ],
@@ -331,7 +331,7 @@
       "paused": {}
     },
     "logTail": "[2026-04-24T15:13:28.414Z] [graphic-design] Claude_Bridge: \ud83c\udfa8 **Graphics LATE SWEEP \u2014 audit (8:05am PT).** 0 new requests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:29.896Z]   -> cost $0.0107, files=0, capped=false\n[2026-04-25T00:30:59.528Z] got SIGTERM, shutting down\nests \u00b7 0 shipped \u00b7 0 blocked \u00b7 0 fell back\u2026\n[2026-04-24T15:13:31.136Z]   -> cost $0.0103, files=0, capped=false\n[2026-04-26T02:09:58.903Z] got SIGTERM, shutting down\n[2026-04-26T02:11:42.862Z] (legacy ready event) George 2.0 online as George 2.0#9605\n[2026-04-26T02:11:42.867Z] George 2.0 online as George 2.0#9605 (id 1496028625189863544)\n[2026-04-26T02:11:42.867Z] configured channels: 5\n[2026-04-26T02:11:42.867Z] default mode for everything else: mention\n",
-    "uptime": "03:17:47",
+    "uptime": "03:25:40",
     "channels": [
       {
         "name": "brand-design",
@@ -446,7 +446,7 @@
       },
       {
         "id": "1496894517377237094",
-        "content": "\ud83d\udd25 **Breaking (last 2 hrs):** None material. Swept PokerNews, WSOP.com, ESPN Draft tracker. USPO Main Event Day 1 starts today (already in context). NFL Draft Round 1 tonight 8p ET \u2014 no trade news broken yet. No A-block-swap-worthy items.\n\n\ud83d\udca1 **Recommend:**\n1. **Shrink Hellmuth quads to 90-sec callback** \u2014 reclaim ~2 min for USPO Main Day 1 OR Tesla/Musk autonomy admission.\n2. **Slot Tesla/Musk between Polymarket Pulse and Wemby** \u2014 60\u201390 sec, frames the B\u2192C handoff as \"markets saying one thing, reality saying another.\"\n3. **Scrub B block talking points for any partisan name-check** on the Kalshi 3 \u2014 keep it on integrity, not affiliation.\n\n\u2014\n*Full text also saved to `Media Company Infrastructure/producer-audit-2026-04-23.txt` in case you want to copy into #producer by hand after the token/permission fix.*",
+        "content": "\ud83d\udd25 **Breaking (last 2 hrs):** None material. Swept PokerNews, WSOP.com, ESPN Draft tracker. USPO Main Event Day 1 starts today (already in context). NFL Draft Round 1 tonight 8p ET \u2014 no trade news broken yet. No A-block-worthy post-briefing items.\n\n\ud83d\udca1 **Recommend:**\n1. **Shrink Hellmuth quads to 90-sec callback** \u2014 reclaim ~2 min for USPO Main Day 1 OR Tesla/Musk autonomy admission.\n2. **Slot Tesla/Musk between Polymarket Pulse and Wemby** \u2014 60\u201390 sec, frames the B\u2192C handoff as \"markets saying one thing, reality saying another.\"\n3. **Scrub B block talking points for any partisan name-check** on the Kalshi 3 \u2014 keep it on integrity, not affiliation.\n\n\u2014\n*Full text also saved to `Media Company Infrastructure/producer-audit-2026-04-23.txt` in case you want to copy into #producer by hand after the token/permission fix.*",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
@@ -476,7 +476,7 @@
       },
       {
         "id": "1497261417261437088",
-        "content": "\ud83c\udfac **Producer Audit \u2014 Friday, April 24, 2026 \u2014 EP. \u2014**\n<@430458839247093790>\n\n\u2705 **Ready:**\n\u2022 ROS posted 7:10a PT \u2014 Polymarket-DOJ-soldier A / Coleman Q-8 cracks Foxen TT B / Peters+MJ-reclass+NFL-Draft+Kelce C / USPO Main + WSOPC Texas + NFL Day 2 close. Click test passes (classified-intel hook + $400K number is unprecedented).\n\u2022 Hand of the Day FOUND after 5 consecutive no-finds (Coleman Q-8 vs TT title-sealing finisher) \u2014 hand-sweep unblocked.\n\u2022 3/3 block-lead graphics shipped to #assets (POLYMARKET-DOJ $400K, COLEMAN-FOXEN hero-fold-finisher, PETERS $25K apology). 7:30a primary + 8:05a late sweep both clean. 2 data-card fallbacks (Nano safety trip on \"classified intel\" + Nano OCR misread $420K\u2192$400K) \u2014 both verified-accurate per graphic-design audit.\n\u2022 4 source assets promoted #intel-staging \u2192 #assets this run: r/poker \"wide range\" (Cold Open), NFL Draft Kiper scorecard (C Item 3), Jason Kelce scouting clap-back (C), Polymarket Pulse board (C Item 4).\n\u2022 A-block + B-block + C-block Item 1 + Item 3 + Item 4 all have at least one staged asset.\n\u2022 No Matt notes in #producer since \u2014 channel is still locked out, so N/A.",
+        "content": "\ud83c\udfac **Producer Audit \u2014 Friday, April 24, 2026 \u2014 EP. \u2014**\n<@430458839247093790>\n\n\u2705 **Ready:**\n\u2022 ROS posted 7:10a PT \u2014 Polymarket-DOJ-soldier A / Coleman Q-8 cracks Foxen TT B / Peters $25K apology + MJ reclass + NFL Draft Day 1 + Kelce C / USPO Main + WSOPC Texas + NFL Day 2 close. Click test passes (classified-intel hook + $400K number is unprecedented).\n\u2022 Hand of the Day FOUND after 5 consecutive no-finds (Coleman Q-8 vs TT title-sealing finisher) \u2014 hand-sweep unblocked.\n\u2022 3/3 block-lead graphics shipped to #assets (POLYMARKET-DOJ $400K, COLEMAN-FOXEN hero-fold-finisher, PETERS $25K apology). 7:30a primary + 8:05a late sweep both clean. 2 data-card fallbacks (Nano safety trip on \"classified intel\" + Nano OCR misread $420K\u2192$400K) \u2014 both verified-accurate per graphic-design audit.\n\u2022 4 source assets promoted #intel-staging \u2192 #assets this run: r/poker \"wide range\" (Cold Open), NFL Draft Kiper scorecard (C Item 3), Jason Kelce scouting clap-back (C), Polymarket Pulse board (C Item 4).\n\u2022 A-block + B-block + C-block Item 1 + Item 3 + Item 4 all have at least one staged asset.\n\u2022 No Matt notes in #producer since \u2014 channel is still locked out, so N/A.",
         "author": {
           "username": "Claude_Bridge",
           "isBot": true
