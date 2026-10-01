@@ -21,3 +21,7 @@ deploy.sh.bak
 
 # Backup files from the admin server
 *.bak.*
+
+# snapshot cron scratch (2026-10-01)
+.snapshot-staging/
+_snapshot-*.json
