@@ -1,0 +1,2605 @@
+{
+ "schemaVersion": 2,
+ "generatedAt": "2026-10-24T17:22:57.753393+00:00",
+ "generator": "web/snapshot.py (launchd com.uncapped.dashboard-snapshot)",
+ "todayPT": "2026-10-24",
+ "tasks": [
+  {
+   "taskId": "uncapped-research-poker",
+   "description": "Poker intel briefing → #intel-staging",
+   "schedule": "2:00 PT, Mon–Fri",
+   "cronExpression": "0 2 * * 1-5",
+   "enabled": true,
+   "runner": "desktop",
+   "nextRunAt": "2026-10-26T09:00:00Z",
+   "lastRunAt": "2026-10-23T09:19:37Z",
+   "lastStartedAt": "2026-10-23T09:10:30Z",
+   "lastStatus": "success",
+   "lastRuntimeSec": 547.0,
+   "lastSlotAt": "2026-10-23T09:00:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 619
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 420
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 446
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 491
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 455
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 637
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 444
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 471
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 396
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 547
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "taskId": "uncapped-research-world",
+   "description": "World/news intel briefing → #intel-staging",
+   "schedule": "3:00 PT, Mon–Fri",
+   "cronExpression": "0 3 * * 1-5",
+   "enabled": true,
+   "runner": "desktop",
+   "nextRunAt": "2026-10-26T10:00:00Z",
+   "lastRunAt": "2026-10-23T10:11:46Z",
+   "lastStartedAt": "2026-10-23T10:05:52Z",
+   "lastStatus": "success",
+   "lastRuntimeSec": 354.0,
+   "lastSlotAt": "2026-10-23T10:00:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 398
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 390
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 320
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 335
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 585
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 281
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 435
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 382
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 295
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 354
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "taskId": "uncapped-research-memes",
+   "description": "Memes / AITA segment → #intel-staging",
+   "schedule": "4:00 PT, Mon–Fri",
+   "cronExpression": "0 4 * * 1-5",
+   "enabled": true,
+   "runner": "desktop",
+   "nextRunAt": "2026-10-26T11:00:00Z",
+   "lastRunAt": "2026-10-23T11:13:17Z",
+   "lastStartedAt": "2026-10-23T11:09:12Z",
+   "lastStatus": "success",
+   "lastRuntimeSec": 245.0,
+   "lastSlotAt": "2026-10-23T11:00:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 301
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 192
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 281
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 270
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 245
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 300
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 480
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 465
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 256
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 245
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "taskId": "uncapped-hand-analysis",
+   "description": "Hand of the day analysis",
+   "schedule": "5:00 PT, Mon–Fri",
+   "cronExpression": "0 5 * * 1-5",
+   "enabled": true,
+   "runner": "desktop",
+   "nextRunAt": "2026-10-26T12:00:00Z",
+   "lastRunAt": "2026-10-23T12:15:23Z",
+   "lastStartedAt": "2026-10-23T12:08:47Z",
+   "lastStatus": "success",
+   "lastRuntimeSec": 396.0,
+   "lastSlotAt": "2026-10-23T12:00:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 483
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 376
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 450
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 335
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 479
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 360
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 416
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 445
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 406
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 396
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "taskId": "uncapped-run-of-show",
+   "description": "Run of Show (ROS)",
+   "schedule": "6:14 PT, Mon–Fri",
+   "cronExpression": "14 6 * * 1-5",
+   "enabled": true,
+   "runner": "desktop",
+   "nextRunAt": "2026-10-26T13:14:00Z",
+   "lastRunAt": "2026-10-23T13:22:12Z",
+   "lastStartedAt": "2026-10-23T13:14:22Z",
+   "lastStatus": "success",
+   "lastRuntimeSec": 470.0,
+   "lastSlotAt": "2026-10-23T13:14:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 600
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 622
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 403
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 655
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 488
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 757
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 422
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 380
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 540
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 470
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "taskId": "uncapped-graphic-design",
+   "description": "Show graphics → #approvals",
+   "schedule": "7:03 PT, Mon–Fri",
+   "cronExpression": "3 7 * * 1-5",
+   "enabled": true,
+   "runner": "desktop",
+   "nextRunAt": "2026-10-26T14:03:00Z",
+   "lastRunAt": "2026-10-23T14:23:05Z",
+   "lastStartedAt": "2026-10-23T14:08:38Z",
+   "lastStatus": "success",
+   "lastRuntimeSec": 867.0,
+   "lastSlotAt": "2026-10-23T14:03:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 990
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 815
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 445
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 788
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 756
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 942
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 709
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 616
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 609
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 867
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "taskId": "uncapped-thumbnails",
+   "description": "Thumbnails → #approvals",
+   "schedule": "7:47 PT, Mon–Fri",
+   "cronExpression": "47 7 * * 1-5",
+   "enabled": true,
+   "runner": "desktop",
+   "nextRunAt": "2026-10-26T14:47:00Z",
+   "lastRunAt": "2026-10-23T15:06:00Z",
+   "lastStartedAt": "2026-10-23T14:47:40Z",
+   "lastStatus": "partial",
+   "lastRuntimeSec": 1100.0,
+   "lastSlotAt": "2026-10-23T14:47:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 1325
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1653
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 1587
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1079
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1407
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 1036
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1034
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1195
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1320
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 1100
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "taskId": "uncapped-producer",
+   "description": "Producer v2 — pass 1 editorial, pass 2 pre-show rundown",
+   "schedule": "6:20 + 8:50 PT, Mon–Fri",
+   "cronExpression": "20 6 * * 1-5",
+   "enabled": true,
+   "runner": "launchd",
+   "nextRunAt": "2026-10-26T13:20:00Z",
+   "lastRunAt": "2026-10-23T15:52:38Z",
+   "lastStartedAt": "2026-10-23T15:50:08Z",
+   "lastStatus": "success",
+   "lastRuntimeSec": 150.0,
+   "lastSlotAt": "2026-10-23T15:50:00Z",
+   "missed": false,
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 622
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 437
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 344
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 343
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 363
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 674
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 279
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 329
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 394
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 370
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  }
+ ],
+ "support": [
+  {
+   "cron": "uncapped-research-deepdive",
+   "label": "com.uncapped.research-deepdive",
+   "schedule": "5:15, 8:05, 12:30, 17:30, 21:30 (6 days)",
+   "nextRunAt": "2026-10-26T04:30:00Z",
+   "loaded": true,
+   "last": {
+    "id": 1555,
+    "startedAt": "2026-10-24T04:30:25Z",
+    "endedAt": "2026-10-24T04:52:00Z",
+    "runtimeSec": 1295.0,
+    "date": "2026-10-23",
+    "status": "partial"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1635
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 5,
+     "status": "success",
+     "runtimeSec": 7370
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 5,
+     "status": "success",
+     "runtimeSec": 8496
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 5,
+     "status": "partial",
+     "runtimeSec": 7591
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 5,
+     "status": "success",
+     "runtimeSec": 8543
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 5,
+     "status": "partial",
+     "runtimeSec": 8070
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 2204
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 5,
+     "status": "success",
+     "runtimeSec": 7730
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 5,
+     "status": "success",
+     "runtimeSec": 7563
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 5,
+     "status": "success",
+     "runtimeSec": 6847
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 5,
+     "status": "success",
+     "runtimeSec": 6208
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 5,
+     "status": "partial",
+     "runtimeSec": 6843
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-pipeline-watchdog",
+   "label": "com.uncapped.pipeline-watchdog",
+   "schedule": "8:49 Mon–Fri",
+   "nextRunAt": "2026-10-26T15:49:00Z",
+   "loaded": true,
+   "last": {
+    "id": 1541,
+    "startedAt": "2026-10-23T15:49:02Z",
+    "endedAt": "2026-10-23T15:49:07Z",
+    "runtimeSec": 5.0,
+    "date": "2026-10-23",
+    "status": "partial"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 3
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 3
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 5
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 3
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 3
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 5
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-image-feedback-harvest",
+   "label": "com.uncapped.image-feedback-harvest",
+   "schedule": "6:40, 21:40",
+   "nextRunAt": "2026-10-25T04:40:00Z",
+   "loaded": true,
+   "last": {
+    "id": 1560,
+    "startedAt": "2026-10-24T13:40:05Z",
+    "endedAt": "2026-10-24T13:43:20Z",
+    "runtimeSec": 195.0,
+    "date": "2026-10-24",
+    "status": "success"
+   },
+   "today": [
+    {
+     "id": 1560,
+     "startedAt": "2026-10-24T13:40:05Z",
+     "endedAt": "2026-10-24T13:43:20Z",
+     "runtimeSec": 195.0,
+     "date": "2026-10-24",
+     "status": "success"
+    }
+   ],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 236
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 256
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 299
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 276
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 299
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 303
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 320
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 157
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 315
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 337
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 338
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 354
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 358
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 195
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-shadow-design",
+   "label": "com.uncapped.shadow-design",
+   "schedule": "6:25 Mon–Fri",
+   "nextRunAt": "2026-10-26T13:25:00Z",
+   "loaded": true,
+   "last": {
+    "id": 1543,
+    "startedAt": "2026-10-23T13:25:05Z",
+    "endedAt": "2026-10-23T16:00:24Z",
+    "runtimeSec": 9319.0,
+    "date": "2026-10-23",
+    "status": "success"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9316
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9325
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9317
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 9317
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9317
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9317
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9317
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "partial",
+     "runtimeSec": 9317
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9316
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9319
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-shadow-tally",
+   "label": "com.uncapped.shadow-tally",
+   "schedule": "12:30, 20:00 Mon–Fri",
+   "nextRunAt": "2026-10-26T19:30:00Z",
+   "loaded": true,
+   "last": {
+    "id": 1552,
+    "startedAt": "2026-10-24T03:00:04Z",
+    "endedAt": "2026-10-24T03:00:05Z",
+    "runtimeSec": 1.0,
+    "date": "2026-10-23",
+    "status": "success"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 3
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 2
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 1
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 1
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 2,
+     "status": "success",
+     "runtimeSec": 1
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-reactions-sweep",
+   "label": null,
+   "schedule": null,
+   "nextRunAt": null,
+   "loaded": false,
+   "last": {
+    "id": 1556,
+    "startedAt": "2026-10-24T06:03:13Z",
+    "endedAt": "2026-10-24T06:05:38Z",
+    "runtimeSec": 145.0,
+    "date": "2026-10-23",
+    "status": "success"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 10
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 98
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 170
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 180
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 170
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 136
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 68
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 11
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 74
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 153
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 281
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 153
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 145
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-wrapper-audit",
+   "label": null,
+   "schedule": null,
+   "nextRunAt": null,
+   "loaded": false,
+   "last": {
+    "id": 1544,
+    "startedAt": "2026-10-23T16:01:41Z",
+    "endedAt": "2026-10-23T16:01:57Z",
+    "runtimeSec": 16.0,
+    "date": "2026-10-23",
+    "status": "success"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 50
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 21
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 19
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 21
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 40
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 18
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 55
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 28
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 27
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 16
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-render-review",
+   "label": null,
+   "schedule": null,
+   "nextRunAt": null,
+   "loaded": false,
+   "last": {
+    "id": 1546,
+    "startedAt": "2026-10-23T16:15:30Z",
+    "endedAt": "2026-10-23T16:17:30Z",
+    "runtimeSec": 120.0,
+    "date": "2026-10-23",
+    "status": "success"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 180
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 180
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 37
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 120
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-render-audit",
+   "label": null,
+   "schedule": null,
+   "nextRunAt": null,
+   "loaded": false,
+   "last": {
+    "id": 1547,
+    "startedAt": "2026-10-23T16:26:54Z",
+    "endedAt": "2026-10-23T16:27:01Z",
+    "runtimeSec": 7.0,
+    "date": "2026-10-23",
+    "status": "success"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 1
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 9
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 6
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 6
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 6
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 5
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 5
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 5
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 7
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  },
+  {
+   "cron": "uncapped-assets-audit",
+   "label": null,
+   "schedule": null,
+   "nextRunAt": null,
+   "loaded": false,
+   "last": {
+    "id": 1548,
+    "startedAt": "2026-10-23T16:40:33Z",
+    "endedAt": "2026-10-23T16:40:33Z",
+    "runtimeSec": 0.5,
+    "date": "2026-10-23",
+    "status": "success"
+   },
+   "today": [],
+   "history": [
+    {
+     "date": "2026-10-11",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-12",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-13",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-14",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-15",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-16",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-17",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-18",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-19",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-20",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-21",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-22",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-23",
+     "weekday": true,
+     "n": 1,
+     "status": "success",
+     "runtimeSec": 0
+    },
+    {
+     "date": "2026-10-24",
+     "weekday": false,
+     "n": 0,
+     "status": null,
+     "runtimeSec": 0
+    }
+   ]
+  }
+ ],
+ "runsOk": true,
+ "launchd": [
+  {
+   "label": "ai.uncapped.dashboard",
+   "loaded": true,
+   "pid": 804,
+   "lastExit": 0,
+   "schedule": "keep-alive",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/ai.uncapped.dashboard.plist",
+   "state": "running"
+  },
+  {
+   "label": "com.mci.approvals-drain",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 2 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.mci.approvals-drain.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.mci.ps-preflight",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "6:50",
+   "nextRunAt": "2026-10-25T13:50:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.mci.ps-preflight.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.mci.swap-sampler",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 10 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.mci.swap-sampler.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.back-half-metadata",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 15 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.back-half-metadata.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.back-half-postshow",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 10 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.back-half-postshow.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.back-half-schedule",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "9:15",
+   "nextRunAt": "2026-10-25T16:15:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.back-half-schedule.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.back-half-worker",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 5 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.back-half-worker.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.backup-chain",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "5:20, 6:40, 7:25, 8:10 Mon–Fri",
+   "nextRunAt": "2026-10-26T12:20:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.backup-chain.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.beta-posts",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "7:40 Mon–Fri",
+   "nextRunAt": "2026-10-26T14:40:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.beta-posts.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.caffeinate",
+   "loaded": true,
+   "pid": 809,
+   "lastExit": 0,
+   "schedule": "keep-alive",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.caffeinate.plist",
+   "state": "running"
+  },
+  {
+   "label": "com.uncapped.dashboard-publish",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 15 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.dashboard-publish.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.dashboard-snapshot",
+   "loaded": true,
+   "pid": 52869,
+   "lastExit": 0,
+   "schedule": "every 5 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.dashboard-snapshot.plist",
+   "state": "running"
+  },
+  {
+   "label": "com.uncapped.dashboard-web",
+   "loaded": true,
+   "pid": 98831,
+   "lastExit": 0,
+   "schedule": "keep-alive",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.dashboard-web.plist",
+   "state": "running"
+  },
+  {
+   "label": "com.uncapped.face-signoff",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 2 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.face-signoff.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.funnel-check",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 15 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.funnel-check.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.george",
+   "loaded": true,
+   "pid": 90605,
+   "lastExit": 0,
+   "schedule": "keep-alive",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.george.plist",
+   "state": "running"
+  },
+  {
+   "label": "com.uncapped.ig-token-refresh",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "3:35 (1 days)",
+   "nextRunAt": "2026-10-26T10:35:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.ig-token-refresh.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.image-feedback-harvest",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "6:40, 21:40",
+   "nextRunAt": "2026-10-25T04:40:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.image-feedback-harvest.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.login-canary",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "1:30, 5:45, 21:00, 23:30",
+   "nextRunAt": "2026-10-25T04:00:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.login-canary.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.pin-phone-brief",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "7:00, 9:05 Mon–Fri",
+   "nextRunAt": "2026-10-26T14:00:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.pin-phone-brief.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.pipeline-watchdog",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 1,
+   "schedule": "8:49 Mon–Fri",
+   "nextRunAt": "2026-10-26T15:49:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.pipeline-watchdog.plist",
+   "state": "last exit 1"
+  },
+  {
+   "label": "com.uncapped.producer-pass1",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "6:20 Mon–Fri",
+   "nextRunAt": "2026-10-26T13:20:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.producer-pass1.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.producer-pass2",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "8:50 Mon–Fri",
+   "nextRunAt": "2026-10-26T15:50:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.producer-pass2.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.research-deepdive",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "5:15, 8:05, 12:30, 17:30, 21:30 (6 days)",
+   "nextRunAt": "2026-10-26T04:30:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.research-deepdive.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.scheduler-watchdog",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 15 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.scheduler-watchdog.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.shadow-design",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "6:25 Mon–Fri",
+   "nextRunAt": "2026-10-26T13:25:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.shadow-design.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.shadow-fix",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "every 2 min",
+   "nextRunAt": null,
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.shadow-fix.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.shadow-tally",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "12:30, 20:00 Mon–Fri",
+   "nextRunAt": "2026-10-26T19:30:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.shadow-tally.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.soto-cleanup",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "0:30",
+   "nextRunAt": "2026-10-25T07:30:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.soto-cleanup.plist",
+   "state": "ok"
+  },
+  {
+   "label": "com.uncapped.thumb-trial",
+   "loaded": true,
+   "pid": null,
+   "lastExit": 0,
+   "schedule": "8:10 Mon–Fri",
+   "nextRunAt": "2026-10-26T15:10:00Z",
+   "plist": "/Users/mjb11/Library/LaunchAgents/com.uncapped.thumb-trial.plist",
+   "state": "ok"
+  }
+ ],
+ "backlog": {
+  "counts": {
+   "P0": 3,
+   "P1": 15,
+   "P2": 18,
+   "P3": 18
+  },
+  "items": [
+   {
+    "priority": "P0",
+    "title": "Thumbnail rework (10-22) first production — Fri 10-23 08:10",
+    "status": ""
+   },
+   {
+    "priority": "P0",
+    "title": "Headline rewrite + person-first thumbnail trial — LIVE from Thu 10-22 (`task_headline_spec`, `task_person_first_thumbs`)",
+    "status": ""
+   },
+   {
+    "priority": "P0",
+    "title": "Design-first graphics trial — LIVE from Thu 10-22 (`task_design_first`, commit f2ac1eb)",
+    "status": ""
+   },
+   {
+    "priority": "P1",
+    "title": "YouTube rename + handle swap for the relaunch (Matt 2026-10-21)",
+    "status": "Matt released the clips channel handle 2026-10-22 → the old handle is held for that channel 14 days; main channel can claim it ~2026-11-05 (after launch). Was: waiting on Matt's step (1). Reveal-day d"
+   },
+   {
+    "priority": "P1",
+    "title": "Christian Soto in the YouTube archive — 992 of 1,347 uploads (found 2026-10-21)",
+    "status": "blocked on Matt's scope decision."
+   },
+   {
+    "priority": "P1",
+    "title": "Pre-launch plan: tease the return on X and other socials (Matt 2026-10-18)",
+    "status": "DRAFTED 2026-10-19 ~16:00 — Claude Doc \"Only Friends — Launch Teaser Plan\" (https://claude.ai/code/artifact/4e291abb-a9cc-4a20-9c6b-3d7f57d29cd1): REVISED 10-19 21:00 (Matt: no cast reveals, \"slowly b"
+   },
+   {
+    "priority": "P1",
+    "title": "Thumbnail frame-facts \"one re-render\" is a blind re-roll",
+    "status": "LIVE 2026-10-16 01:05 (`task_thumb_rerender_correction`); one test re-render removed the invented TV listing (OCR-verified). Production check 2026-10-20: no production thumbnail needed a frame-facts r"
+   },
+   {
+    "priority": "P1",
+    "title": "Image model invents account names on post cards (\"PokerTruths\")",
+    "status": "open."
+   },
+   {
+    "priority": "P1",
+    "title": "social-agents: the guardrail state layer has never actually run — verify caps/quotas/spacing on a real multi-post day",
+    "status": "open — fix landed 2026-10-13, verification not done."
+   },
+   {
+    "priority": "P1",
+    "title": "Pre-post approval gate in Discord for any draft naming a real person or business",
+    "status": "open — designed, not built. Belongs with the `marketing-strategist` George sub-agent."
+   },
+   {
+    "priority": "P1",
+    "title": "Overnight safety net (stress test 2026-10-07)",
+    "status": "mostly LIVE 2026-10-15 ~23:45 (`task_telegram_mirror`, `task_chain_backup`, `task_offmac_check`; see PIPELINE-STATE). Done: backup ROS (and research/graphics/thumbnails) via the CLI when the app didn'"
+   },
+   {
+    "priority": "P1",
+    "title": "The back half: publish, chapters, clips, X (audit 2026-10-07)",
+    "status": "BUILT, dry run (2026-10-16 ~01:00): approvals seam LIVE in George, schedule/metadata/post-show/clips/publishers in `scripts/back-half/`; X v2 video upload LIVE. Rehearsed on Ep #719 + launchd installe"
+   },
+   {
+    "priority": "P1",
+    "title": "Wire the recurring segments into the ROS (decided 2026-10-09)",
+    "status": "LIVE 2026-10-18 (`task_segments` + `task_segments_tune`; no grid, Matt: slow days only, ~1 in 3). First live run Mon 10-19 with a Take a Beat on private games. Still open: (a) invite the pipeline bot "
+   },
+   {
+    "priority": "P1",
+    "title": "Test runs leak into production records (three holes)",
+    "status": ""
+   },
+   {
+    "priority": "P1",
+    "title": "social-agents → X: tone test program before the first live post",
+    "status": "Holes 1 + 2 CLOSED 2026-10-16 01:24 (`task_test_calllog_quarantine`, byte-identical proof); hole 3 closed 10-14. Remaining: old test rows in the production log (filterable), 47 harness entries in the "
+   },
+   {
+    "priority": "P1",
+    "title": "Source several verified reference photos per person, not one (Matt 2026-10-14)",
+    "status": "LIVE 2026-10-16 02:43 (`task_multi_ref_faces`); done-when 1–5 met in code/tests. **Done-when 6 PASSED 2026-10-20:** `tmp/overnight-1016/mrf/prahlad_search_arm.py 3` (test mode, no posts; log `prahlad-"
+   },
+   {
+    "priority": "P1",
+    "title": "Second approver: Brian Lamanna (Matt 2026-10-14) — LIVE 15:07 PT (`task_second_approver`)",
+    "status": "live, unverified (no Lamanna reaction yet)."
+   },
+   {
+    "priority": "P1",
+    "title": "Graphics library wired to the graphics writer — LIVE 2026-10-14 (`task_graphic_library`; replaces \"Library harvest: two segregated, machine-scored reference libraries\")",
+    "status": ""
+   }
+  ],
+  "total": 54
+ },
+ "pipelineState": {
+  "lastUpdated": "2026-10-23 ~00:50 PT",
+  "lastUpdatedFull": "2026-10-23 ~00:50 PT (Cowork /handoff #2: `task_thumb_ab_auto` — Studio A/B thumbnail tests started by the post-show step through the bridge Chrome, verified on a private probe; Lynne Ji verified photo from Matt + Wednesday A/B (Britney vs C Ye vs Lynne Ji); bug class 71. Before that: 2026-10-23 ~00:10 PT (Cowork /handoff, 10-21 12:00 → 10-23 00:05: relaunch week LOCKED by Matt (`task_relaunch_wee"
+ },
+ "shadow": {
+  "date": "2026-10-23",
+  "at": "2026-10-23T20:00:04",
+  "counts": {
+   "show-graphic": {
+    "new": 1,
+    "none": 1
+   },
+   "thumbnail": {}
+  },
+  "briefs": 2,
+  "shadowRendered": 3,
+  "shadowPlanned": 3,
+  "liveMadeFrame": 2
+ },
+ "producerV2": {
+  "pass1": {
+   "loaded": true,
+   "schedule": "6:20 Mon–Fri",
+   "nextRunAt": "2026-10-26T13:20:00Z",
+   "state": "ok"
+  },
+  "pass2": {
+   "loaded": true,
+   "schedule": "8:50 Mon–Fri",
+   "nextRunAt": "2026-10-26T15:50:00Z",
+   "state": "ok"
+  },
+  "installed": true,
+  "todayRuns": []
+ },
+ "george": {
+  "state": {
+   "budget": {
+    "date": "2026-10-23",
+    "spentUSD": 0.17341665,
+    "calls": 11,
+    "byModel": {
+     "claude-haiku-4-5-20251001": {
+      "calls": 11,
+      "costUSD": 0.17341665,
+      "inputTok": 114107,
+      "outputTok": 3657,
+      "cacheReadTok": 35934,
+      "cacheWriteTok": 29945
+     }
+    }
+   },
+   "paused": {}
+  },
+  "uptime": "01-09:46:29",
+  "channels": [
+   {
+    "name": "brand-design",
+    "mode": "always",
+    "modeLabel": "always"
+   },
+   {
+    "name": "producer",
+    "mode": "mention",
+    "modeLabel": "@-mention only"
+   },
+   {
+    "name": "graphic-design",
+    "mode": "always",
+    "modeLabel": "always"
+   },
+   {
+    "name": "guest-research",
+    "mode": "always",
+    "modeLabel": "always"
+   },
+   {
+    "name": "bookmarks",
+    "mode": "mirror",
+    "modeLabel": "mirror → #intel-staging"
+   }
+  ]
+ },
+ "public": true
+}
