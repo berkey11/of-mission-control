@@ -1,0 +1,57 @@
+{
+ "members": 31,
+ "goal": {
+  "from": 0,
+  "next": {
+   "at": 100,
+   "label": "New emote unlocks. Members vote on it"
+  },
+  "all": [
+   {
+    "at": 100,
+    "label": "New emote unlocks. Members vote on it"
+   },
+   {
+    "at": 200,
+    "label": "Second new emote. Members vote again"
+   },
+   {
+    "at": 300,
+    "label": "Third emote + a bonus After Hours"
+   }
+  ]
+ },
+ "train": {
+  "week": "2026-W44",
+  "gifts": 0,
+  "stops": [
+   {
+    "at": 10,
+    "label": "An off-limits question"
+   },
+   {
+    "at": 25,
+    "label": "An untold story from a big game"
+   },
+   {
+    "at": 50,
+    "label": "Chat picks a hand, Matt breaks it down"
+   },
+   {
+    "at": 100,
+    "label": "Bonus members-only episode"
+   }
+  ],
+  "reached": 0,
+  "next": {
+   "at": 10,
+   "label": "An off-limits question"
+  },
+  "top": []
+ },
+ "join_url": "https://www.youtube.com/@SolveForWhy/join",
+ "test": false,
+ "recent": [],
+ "live": false,
+ "updatedAt": "2026-10-26T23:02:51-07:00"
+}
