@@ -1,0 +1,198 @@
+{
+ "members": 76,
+ "goal": {
+  "from": 0,
+  "next": {
+   "at": 100,
+   "label": "New emote unlocks. Members vote on it"
+  },
+  "all": [
+   {
+    "at": 100,
+    "label": "New emote unlocks. Members vote on it"
+   },
+   {
+    "at": 200,
+    "label": "Second new emote. Members vote again"
+   },
+   {
+    "at": 300,
+    "label": "Third emote + a bonus After Hours"
+   }
+  ]
+ },
+ "train": {
+  "week": "2026-W46",
+  "gifts": 5,
+  "stops": [
+   {
+    "at": 10,
+    "label": "An off-limits question"
+   },
+   {
+    "at": 25,
+    "label": "An untold story from a big game"
+   },
+   {
+    "at": 50,
+    "label": "Chat picks a hand, Matt breaks it down"
+   },
+   {
+    "at": 100,
+    "label": "Bonus members-only episode"
+   }
+  ],
+  "reached": 0,
+  "next": {
+   "at": 10,
+   "label": "An off-limits question"
+  },
+  "top": [
+   {
+    "name": "@guyfrommontana2861",
+    "n": 5
+   }
+  ]
+ },
+ "join_url": "https://www.youtube.com/@SolveForWhy/join",
+ "test": false,
+ "recent": [
+  {
+   "kind": "join",
+   "name": "@garopel3934",
+   "at": "2026-11-10T19:51:32.371472+00:00"
+  },
+  {
+   "kind": "join",
+   "name": "@davidbeyl7586",
+   "at": "2026-11-10T20:36:09.62773+00:00"
+  },
+  {
+   "kind": "join",
+   "name": "@ChrisCop-q9c4h",
+   "at": "2026-11-11T18:59:43.060673+00:00"
+  },
+  {
+   "kind": "join",
+   "name": "@Saskabreeze",
+   "at": "2026-11-11T19:02:23.533524+00:00"
+  },
+  {
+   "kind": "join",
+   "name": "@Melissa-zg2lm",
+   "at": "2026-11-11T19:45:32.846082+00:00"
+  },
+  {
+   "kind": "join",
+   "name": "@4cjackson",
+   "at": "2026-11-11T19:46:20.977718+00:00"
+  },
+  {
+   "kind": "join",
+   "name": "@BetStack",
+   "at": "2026-11-12T18:34:28.389686+00:00"
+  },
+  {
+   "kind": "join",
+   "name": "@gregfarrell7164",
+   "at": "2026-11-12T20:28:20.693639+00:00"
+  }
+ ],
+ "shout": [
+  {
+   "id": "test-1794349820-1",
+   "kind": "superchat",
+   "name": "Test Viewer",
+   "at": "2026-11-10T22:30:20Z",
+   "amount": "$20.00",
+   "tier": 5,
+   "msg": "Test Super Chat from the pipeline. Ignore me!",
+   "test": true
+  },
+  {
+   "id": "test-1794349820-2",
+   "kind": "supersticker",
+   "name": "Test Viewer",
+   "at": "2026-11-10T22:30:20Z",
+   "amount": "$5.00",
+   "tier": 3,
+   "sticker": "Test sticker",
+   "test": true
+  },
+  {
+   "id": "test-1794349820-3",
+   "kind": "gifted",
+   "name": "Test Gifter",
+   "at": "2026-11-10T22:30:20Z",
+   "n": 5,
+   "test": true
+  },
+  {
+   "id": "test-1794350156-1",
+   "kind": "superchat",
+   "name": "Test Viewer",
+   "at": "2026-11-10T22:35:56Z",
+   "amount": "$20.00",
+   "tier": 5,
+   "msg": "Test Super Chat from the pipeline. Ignore me!",
+   "test": true
+  },
+  {
+   "id": "test-1794350156-2",
+   "kind": "supersticker",
+   "name": "Test Viewer",
+   "at": "2026-11-10T22:35:56Z",
+   "amount": "$5.00",
+   "tier": 3,
+   "sticker": "Test sticker",
+   "test": true
+  },
+  {
+   "id": "test-1794350156-3",
+   "kind": "gifted",
+   "name": "Test Gifter",
+   "at": "2026-11-10T22:35:56Z",
+   "n": 5,
+   "test": true
+  },
+  {
+   "id": "test-1794350252-1",
+   "kind": "superchat",
+   "name": "Test Viewer",
+   "at": "2026-11-10T22:37:32Z",
+   "amount": "$20.00",
+   "tier": 5,
+   "msg": "Test Super Chat from the pipeline. Ignore me!",
+   "test": true
+  },
+  {
+   "id": "test-1794350252-2",
+   "kind": "supersticker",
+   "name": "Test Viewer",
+   "at": "2026-11-10T22:37:32Z",
+   "amount": "$5.00",
+   "tier": 3,
+   "sticker": "Test sticker",
+   "test": true
+  },
+  {
+   "id": "test-1794350252-3",
+   "kind": "gifted",
+   "name": "Test Gifter",
+   "at": "2026-11-10T22:37:32Z",
+   "n": 5,
+   "test": true
+  },
+  {
+   "id": "LCC.EhwKGkNPbU4xOFhiZ0pnREZXeW1fd1FkVnJzZE93",
+   "kind": "superchat",
+   "name": "@leehjones",
+   "at": "2026-11-11T20:06:05.484442+00:00",
+   "amount": "$2.00",
+   "msg": "omg Berkey just said \"Moore's Law\" 🥰",
+   "tier": 2
+  }
+ ],
+ "live": false,
+ "updatedAt": "2026-11-12T12:43:37-08:00"
+}
