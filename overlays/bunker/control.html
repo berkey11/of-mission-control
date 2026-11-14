@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bunker Control</title>
+<style>
+  :root{--bg:#141414;--card:#222;--line:#333;--txt:#eee;--hot:#ffc94a;--red:#e53935}
+  body{margin:0;padding:12px;background:var(--bg);color:var(--txt);font:15px/1.3 -apple-system,Segoe UI,Arial,sans-serif}
+  h3{margin:14px 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+  .row{display:flex;flex-wrap:wrap;gap:8px}
+  button{font:inherit;color:inherit;background:var(--card);border:2px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
+  button:active{transform:scale(.97)}
+  .mode.on{background:var(--hot);color:#000;border-color:var(--hot);font-weight:700}
+  .pick{display:flex;flex-direction:column;align-items:center;gap:4px;width:78px;padding:6px}
+  .pick img,.pick .ph{width:56px;height:56px;border-radius:50%;object-fit:cover;background:#555}
+  .pick .ph{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px}
+  .pick.sel{border-color:var(--hot);box-shadow:0 0 0 2px var(--hot)}
+  .pick .n{font-size:11px;opacity:.75}
+  .dest{flex:1 1 45%;padding:14px 8px;font-weight:700}
+  .dest.out{border-color:var(--red);color:#ff6b61}
+  .dest:disabled{opacity:.35}
+  .bk{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;margin-top:6px}
+  .bk b{display:block;margin-bottom:6px}
+  .chip{display:inline-flex;align-items:center;gap:6px;margin:2px;padding:4px 10px;border-radius:999px;background:#333;border:1px solid #444;font-size:13px}
+  .hint{opacity:.55;font-size:12px;margin-top:4px}
+  .danger{border-color:var(--red)}
+</style></head><body>
+<h3>On air</h3>
+<div class="row">
+  <button class="mode" data-m="title">Title card</button><button class="mode" data-m="board">Board</button>
+  <button class="mode" data-m="tally">Final tally</button><button class="mode" data-m="hide">Hide</button>
+</div>
+<h3>1 · Tap who got picked</h3>
+<div class="row" id="pool"></div>
+<h3>2 · Tap whose bunker</h3>
+<div class="row" id="dests"></div>
+<div class="hint">Tap a name in a bunker below to take it back out.</div>
+<h3>Bunkers</h3>
+<div id="bunkers"></div>
+<h3>Setup</h3>
+<div class="row">
+  <button id="undo">Undo last</button>
+  <button id="seatsMinus">Seats −</button><span id="seatsLbl" style="align-self:center"></span><button id="seatsPlus">Seats +</button>
+  <button id="reset" class="danger">Reset board</button>
+</div>
+<script src="state.js"></script>
+<script>
+let S = load(), sel = null, history = [], resetArm = 0;
+const $ = id => document.getElementById(id);
+function commit(fn, last) { history.push(JSON.stringify(S)); if (history.length > 50) history.shift(); fn(S); S.last = last || null; save(S); draw(); }
+function img(id) { return HAS_IMG.has(id) ? `<img src="heads/${id}.webp" alt="">` : `<div class="ph">${person(id).name[0]}</div>`; }
+function draw() {
+  document.querySelectorAll(".mode").forEach(b => b.classList.toggle("on", b.dataset.m === S.mode));
+  const n = tally(S);
+  $("pool").innerHTML = POOL.map(p => `<button class="pick ${sel === p.id ? "sel" : ""}" data-id="${p.id}">${img(p.id)}<span>${p.name}</span>
+    <span class="n">${n[p.id] ? "in " + n[p.id] : ""}${S.locked.includes(p.id) ? " · locked out" : ""}</span></button>`).join("");
+  $("dests").innerHTML = PANEL.map(p => `<button class="dest" data-to="${p}" ${!sel ? "disabled" : ""}>${person(p).name}'s bunker
+    <span style="opacity:.6">(${(S.bunkers[p] || []).length}/${S.seats})</span></button>`).join("") +
+    `<button class="dest out" data-to="out" ${!sel ? "disabled" : ""}>🚫 Locked out</button>`;
+  $("bunkers").innerHTML = PANEL.map(p => `<div class="bk"><b>${person(p).name}</b>${(S.bunkers[p] || []).map(id =>
+    `<button class="chip" data-rm="${p}:${id}">${person(id).name} ✕</button>`).join("") || '<span class="hint">empty</span>'}</div>`).join("") +
+    `<div class="bk"><b>Locked out</b>${S.locked.map(id => `<button class="chip" data-rm="out:${id}">${person(id).name} ✕</button>`).join("") || '<span class="hint">nobody</span>'}</div>`;
+  $("seatsLbl").textContent = S.seats + " seats";
+  $("reset").textContent = resetArm ? "Tap again to reset" : "Reset board";
+}
+document.body.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.m) return commit(s => s.mode = b.dataset.m);
+  if (b.dataset.id) { sel = sel === b.dataset.id ? null : b.dataset.id; return draw(); }
+  if (b.dataset.to && sel) {
+    const id = sel, to = b.dataset.to; sel = null;
+    return commit(s => {
+      if (to === "out") { if (!s.locked.includes(id)) s.locked.push(id); }
+      else { const l = s.bunkers[to]; if (!l.includes(id)) l.push(id); }   // a lockout is one person's call: picks and lockouts coexist
+      if (s.mode !== "board") s.mode = "board";
+    }, { id, to });
+  }
+  if (b.dataset.rm) {
+    const [where, id] = b.dataset.rm.split(":");
+    return commit(s => { if (where === "out") s.locked = s.locked.filter(x => x !== id); else s.bunkers[where] = s.bunkers[where].filter(x => x !== id); });
+  }
+  if (b.id === "undo" && history.length) { S = JSON.parse(history.pop()); S.last = null; save(S); return draw(); }
+  if (b.id === "seatsMinus") return commit(s => s.seats = Math.max(1, s.seats - 1));
+  if (b.id === "seatsPlus") return commit(s => s.seats = Math.min(6, s.seats + 1));
+  if (b.id === "reset") {
+    if (!resetArm) { resetArm = 1; draw(); setTimeout(() => { resetArm = 0; draw(); }, 3000); return; }
+    resetArm = 0; const seats = S.seats; return commit(s => Object.assign(s, blank(seats), { mode: s.mode }));
+  }
+});
+subscribe(s => { S = s; draw(); });
+</script></body></html>

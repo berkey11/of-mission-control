@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Bunker Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:transparent;font-family:Oswald,sans-serif;color:#fff}
+  .layer{position:absolute;inset:0;opacity:0;transition:opacity .5s}
+  .on{opacity:1}
+  #title{background:#000;overflow:hidden;transition:none;z-index:5}
+  body.t #board,body.t #tally{transition:none;opacity:0}
+  #title{--d:0s}
+  #title.opening{--d:2.05s}
+  #title .art{position:absolute;inset:-2%;background:url(title.jpg) center/cover;transform-origin:50% 60%;opacity:0}
+  #title.on .art{animation:thud .9s cubic-bezier(.2,1.4,.4,1) var(--d) both, push 14s ease-out calc(var(--d) + .9s) both}
+  @keyframes thud{0%{opacity:0;transform:scale(1.35) translateY(-40px);filter:brightness(2.2)}1%{opacity:1}55%{opacity:1;transform:scale(.985) translateY(6px);filter:brightness(1.15)}
+    70%{opacity:1;transform:scale(1.01) translate(-6px,-3px)}80%{opacity:1;transform:scale(1) translate(5px,2px)}100%{opacity:1;transform:scale(1);filter:brightness(1)}}
+  @keyframes push{from{transform:scale(1)}to{transform:scale(1.07)}}
+  /* the sealed hatch: rumbles, light leaks from the seam, then bursts */
+  #title .closed{position:absolute;inset:-3%;background:url(hatch-closed.jpg) center/cover;opacity:0;display:none}
+  #title.opening .closed{display:block}
+  #title.on.opening .closed{animation:cin .35s ease-out both, rumble 1.7s ease-in .35s both, cout .01s linear 2.05s both}
+  @keyframes cin{from{opacity:0}to{opacity:1}}
+  @keyframes cout{to{opacity:0}}
+  @keyframes rumble{0%{transform:translate(0,0)}10%{transform:translate(-2px,1px)}20%{transform:translate(2px,-1px)}30%{transform:translate(-3px,2px)}
+    40%{transform:translate(3px,-2px)}50%{transform:translate(-5px,3px)}60%{transform:translate(5px,-3px)}70%{transform:translate(-7px,4px)}
+    80%{transform:translate(8px,-4px)}90%{transform:translate(-10px,5px)}100%{transform:translate(0,-14px) scale(1.03);opacity:1}}
+  #title .seam{position:absolute;inset:0;background:radial-gradient(ellipse 47% 17% at 50% 77%,rgba(255,190,80,0),rgba(255,180,60,0) 72%,rgba(255,175,55,.9) 86%,rgba(255,150,40,0) 97%);
+    mix-blend-mode:screen;opacity:0;display:none}
+  #title.opening .seam{display:block}
+  #title.on.opening .seam{animation:seam 1.7s ease-in .35s both, cout .01s linear 2.05s both}
+  @keyframes seam{0%{opacity:0}40%{opacity:.35}70%{opacity:.6}85%{opacity:.4}100%{opacity:1}}
+  #title .flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 60%,#fff6dc,#ffb347 45%,#c46a10);opacity:0;z-index:3;pointer-events:none;display:none}
+  #title.opening .flash{display:block}
+  #title.on.opening .flash{animation:flash .55s ease-out 1.9s both}
+  @keyframes flash{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+  #title .glow{position:absolute;left:0;right:0;bottom:0;height:22%;background:radial-gradient(ellipse at 50% 100%,rgba(255,170,60,.55),rgba(255,140,30,0) 70%);
+    mix-blend-mode:screen;opacity:0}
+  #title.on .glow{animation:glowin 1.2s calc(var(--d) + .7s) both, flicker 3.1s steps(1) calc(var(--d) + .9s) infinite}
+  @keyframes glowin{from{opacity:0}to{opacity:1}}
+  @keyframes flicker{0%{opacity:1}7%{opacity:.55}9%{opacity:1}48%{opacity:.9}50%{opacity:.4}52%{opacity:1}100%{opacity:1}}
+  #title .siren{position:absolute;left:9%;top:30.3%;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,60,40,.95),rgba(255,40,20,0) 70%);mix-blend-mode:screen;opacity:0}
+  #title.on .siren{animation:pulse 1.1s ease-in-out calc(var(--d) + 1s) infinite}
+  @keyframes pulse{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:1;transform:scale(2.6)}}
+  #title .dust{position:absolute;inset:0;pointer-events:none}
+  #title .dust i{position:absolute;bottom:18%;width:4px;height:4px;border-radius:50%;background:rgba(255,215,150,.75);filter:blur(.5px);opacity:0}
+  #title.on .dust i{animation:rise linear infinite}
+  @keyframes rise{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}100%{transform:translate(var(--dx),-520px);opacity:0}}
+  #board{background:#120c08 url(bg.jpg) center/cover}
+  #board::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45));pointer-events:none}
+  .outside{position:absolute;left:60px;right:60px;top:34px;height:210px;z-index:2;display:flex;align-items:center;gap:22px;
+    padding:0 30px;border:3px dashed rgba(255,200,60,.55);border-radius:18px;background:rgba(10,10,14,.55)}
+  .outside h2{font-family:"Black Ops One";font-size:46px;margin:0 18px 0 0;color:#ff3b30;letter-spacing:2px;white-space:nowrap;
+    text-shadow:0 3px 0 #000}
+  .bunkers{position:absolute;left:60px;right:60px;top:280px;bottom:40px;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .bunker{background:rgba(18,12,6,.72);border:4px solid #4a4038;border-radius:22px;box-shadow:inset 0 0 60px rgba(255,170,60,.18),0 10px 30px rgba(0,0,0,.6);
+    display:flex;flex-direction:column;align-items:center;padding:20px 0 0}
+  .plate{font-family:"Black Ops One";font-size:40px;letter-spacing:1px;padding:6px 26px;background:#c8102e;border-radius:10px;
+    box-shadow:0 4px 0 #6d0816;margin-bottom:14px;white-space:nowrap}
+  .plate small{font-family:Oswald;font-size:24px;opacity:.85;margin-left:2px}
+  .seats{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;width:100%}
+  .seat{width:178px;height:178px;border-radius:50%;border:4px dashed rgba(255,200,60,.35);display:flex;align-items:center;justify-content:center;position:relative}
+  .seats.many .seat{width:132px;height:132px}
+  .head{position:relative;width:100%;height:100%;border-radius:50%;overflow:visible;display:flex;align-items:center;justify-content:center}
+  .head img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:radial-gradient(#ffcf7a,#b36b16);border:5px solid #ffc94a;box-shadow:0 0 30px rgba(255,190,70,.6)}
+  .head.noimg{background:radial-gradient(#ffcf7a,#b36b16);border:5px solid #ffc94a}
+  .head.noimg b{font-family:"Black Ops One";font-size:80px;color:#2a1a08}
+  .head span{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:#000;padding:2px 14px;border-radius:8px;font-size:26px;font-weight:700;white-space:nowrap}
+  .outside .head{width:150px;height:150px;flex:none}
+  .outside .head img{border-color:#ff3b30;filter:grayscale(.85);box-shadow:none}
+  .outside .head::after{content:"DENIED";position:absolute;top:44%;left:50%;transform:translate(-50%,-50%) rotate(-14deg);font-family:"Black Ops One";
+    font-size:30px;color:#ff3b30;border:4px solid #ff3b30;padding:0 8px;background:rgba(0,0,0,.35)}
+  .drop{animation:drop .55s cubic-bezier(.3,1.6,.5,1)}
+  @keyframes drop{0%{transform:translateY(-260px) scale(.6);opacity:0}100%{transform:none;opacity:1}}
+  .slam{animation:slam .45s ease-out}
+  @keyframes slam{0%{transform:scale(2.2);opacity:0}100%{transform:none;opacity:1}}
+  #tally{background:#120c08 url(bg.jpg) center/cover;display:flex;gap:60px;align-items:center;justify-content:center}
+  #tally::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6)}
+  .col{position:relative;z-index:1;width:760px;text-align:center}
+  .col h2{font-family:"Black Ops One";font-size:72px;margin:0 0 30px}
+  .col.want h2{color:#ffc94a}.col.out h2{color:#ff3b30}
+  .row{display:flex;flex-wrap:wrap;gap:34px;justify-content:center}
+  .row .head{width:190px;height:190px}
+  .row .count{position:absolute;top:-10px;right:-10px;background:#ffc94a;color:#000;font-weight:700;font-size:34px;width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center}
+  .col.out .head img{filter:grayscale(.85);border-color:#ff3b30}
+  .empty{font-size:34px;opacity:.7}
+</style></head><body>
+<div id="title" class="layer"><div class="closed"></div><div class="seam"></div><div class="art"></div><div class="flash"></div><div class="glow"></div><div class="siren"></div><div class="dust" id="dust"></div></div>
+<div id="board" class="layer">
+  <div class="outside"><h2>LOCKED OUT</h2><div id="locked" style="display:flex;gap:22px"></div></div>
+  <div class="bunkers" id="bunkers"></div>
+</div>
+<div id="tally" class="layer"></div>
+<script src="state.js"></script>
+<script>
+let prev = null;
+(function(){ const im = new Image(); im.onload = () => document.getElementById("title").classList.add("opening"); im.src = "hatch-closed.jpg"; })();
+(function dust(){ const d = document.getElementById("dust"); let h = "";
+  for (let i = 0; i < 40; i++) { const x = 30 + Math.random() * 40, dur = 5 + Math.random() * 6, del = Math.random() * 8, dx = (Math.random() * 120 - 60) + "px";
+    h += `<i style="left:${x}%;animation-duration:${dur}s;animation-delay:calc(var(--d) + ${1 + del}s);--dx:${dx};transform:scale(${.6 + Math.random()})"></i>`; }
+  d.innerHTML = h; })();
+function render(s) {
+  document.body.classList.toggle("t", s.mode === "title");
+  ["title", "board", "tally"].forEach(m => document.getElementById(m).classList.toggle("on", s.mode === m));
+  const fresh = id => s.last && s.last.id === id && (!prev || prev.rev !== s.rev);
+  document.getElementById("bunkers").innerHTML = PANEL.map(p => {
+    const list = s.bunkers[p] || [], seats = Math.max(s.seats, list.length);
+    let html = "";
+    for (let i = 0; i < seats; i++) {
+      const id = list[i];
+      html += `<div class="seat">${id ? headHTML(id, fresh(id) && s.last.to === p ? "drop" : "") : ""}</div>`;
+    }
+    return `<div class="bunker"><div class="plate">${person(p).name.toUpperCase()}<small>'S BUNKER</small></div>
+      <div class="seats ${seats > 3 ? "many" : ""}">${html}</div></div>`;
+  }).join("");
+  document.getElementById("locked").innerHTML = s.locked.map(id => headHTML(id, fresh(id) && s.last.to === "out" ? "slam" : "")).join("");
+  const n = tally(s);
+  const picked = POOL.filter(p => n[p.id] > 0).sort((a, b) => n[b.id] - n[a.id]);
+  const top = picked.filter(p => n[p.id] === (picked[0] ? n[picked[0].id] : 0)).slice(0, 4);
+  const out = POOL.filter(p => n[p.id] === 0);   // left outside = nobody took them (a lockout alone doesn't count if someone else picked them)
+  document.getElementById("tally").innerHTML =
+    `<div class="col want"><h2>MOST WANTED</h2><div class="row">${top.length ? top.map(p =>
+      headHTML(p.id).replace("</div>", `<i class="count">${n[p.id]}</i></div>`)).join("") : '<div class="empty">No picks yet</div>'}</div></div>
+     <div class="col out"><h2>LEFT OUTSIDE</h2><div class="row">${out.length ? out.map(p => headHTML(p.id)).join("") : '<div class="empty">Everyone made it</div>'}</div></div>`;
+  prev = s;
+}
+subscribe(render);
+</script></body></html>
