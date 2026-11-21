@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gift Train</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* OBS browser source: 1920 x 340, transparent, docked to the bottom of the frame. ?demo=1 previews with fake gifts. */
+  :root { --red: #dc1e28; --ink: #fff; --dim: rgba(255,255,255,.6); --panel: rgba(10,10,12,.88); --rail: rgba(255,255,255,.16); }
+  html, body { margin: 0; background: transparent; overflow: hidden; }
+  body { font-family: Inter, system-ui, sans-serif; color: var(--ink); width: 1920px; height: 340px; }
+  .band { position: absolute; left: 40px; right: 40px; bottom: 20px; height: 250px; background: var(--panel); border-radius: 6px;
+          border-top: 5px solid var(--red); box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+  .head { position: absolute; left: 36px; top: 18px; display: flex; align-items: baseline; gap: 22px; }
+  .title { font-family: Anton, Impact, sans-serif; font-size: 44px; letter-spacing: .03em; text-transform: uppercase; }
+  .title b { color: var(--red); font-weight: 400; }
+  .gifts { font-family: Anton, Impact, sans-serif; font-size: 40px; font-variant-numeric: tabular-nums; }
+  .gifts small { font-size: 24px; color: var(--dim); margin-left: 6px; }
+  .how { font-size: 18px; color: var(--dim); }
+  .top { position: absolute; right: 36px; top: 20px; text-align: right; font-size: 18px; color: var(--dim); }
+  .top div { color: var(--ink); font-weight: 700; font-size: 20px; line-height: 1.35; }
+  .top span { color: var(--red); margin-left: 8px; }
+  .track { position: absolute; left: 70px; right: 190px; bottom: 22px; height: 92px; }
+  .rail { position: absolute; left: 0; right: 0; top: 30px; height: 8px; background: var(--rail); border-radius: 4px; }
+  .done { position: absolute; left: 0; top: 30px; height: 8px; width: 0; background: var(--red); border-radius: 4px;
+          transition: width 2s cubic-bezier(.2,.8,.2,1); }
+  .stop { position: absolute; top: 18px; transform: translateX(-50%); text-align: center; width: 300px; }
+  .dot { width: 30px; height: 30px; margin: 0 auto; border-radius: 50%; background: #18181b; border: 4px solid var(--rail); box-sizing: border-box; }
+  .stop.on .dot { background: var(--red); border-color: #fff; }
+  .stop .at { font-family: Anton, Impact, sans-serif; font-size: 22px; margin-top: 6px; }
+  .stop .lab { font-size: 16px; color: var(--dim); line-height: 1.25; }
+  .stop.on .lab { color: var(--ink); }
+  .stop.next .at { color: var(--red); }
+  .engine { position: absolute; top: -10px; left: 0; transform: translateX(-50%); transition: left 2s cubic-bezier(.2,.8,.2,1); }
+  .engine svg { display: block; filter: drop-shadow(0 3px 6px rgba(0,0,0,.6)); }
+  .toast { position: absolute; left: 50%; top: -64px; transform: translateX(-50%); background: var(--red); color: #fff; padding: 10px 26px;
+           border-radius: 4px; font-family: Anton, Impact, sans-serif; font-size: 30px; letter-spacing: .02em; white-space: nowrap;
+           opacity: 0; pointer-events: none; }
+  .toast.go { animation: toast 4.5s ease-out; }
+  @keyframes toast { 0% { opacity: 0; transform: translate(-50%, 16px); } 8%, 82% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; } }
+  .hidden { opacity: 0; }
+</style>
+</head>
+<body>
+  <div class="band hidden" id="band">
+    <div class="toast" id="toast"></div>
+    <div class="head">
+      <div class="title">The Gift Train <b>·</b> Only Friends</div>
+      <div class="gifts"><span id="g">0</span><small>gifts this week</small></div>
+    </div>
+    <div class="how" style="position:absolute;left:38px;top:80px" id="how">Gift a membership in chat. Every stop unlocks something on the show.</div>
+    <div class="top" id="top"></div>
+    <div class="track" id="track">
+      <div class="rail"></div><div class="done" id="done"></div>
+      <div class="engine" id="engine">
+        <svg width="58" height="40" viewBox="0 0 58 40" aria-hidden="true">
+          <rect x="4" y="10" width="34" height="20" rx="3" fill="#dc1e28"/><rect x="30" y="2" width="16" height="28" rx="3" fill="#dc1e28"/>
+          <rect x="34" y="6" width="8" height="8" rx="1" fill="#fff"/><rect x="0" y="14" width="6" height="10" rx="1" fill="#fff"/>
+          <circle cx="14" cy="33" r="6" fill="#fff"/><circle cx="36" cy="33" r="6" fill="#fff"/><circle cx="14" cy="33" r="2.5" fill="#dc1e28"/><circle cx="36" cy="33" r="2.5" fill="#dc1e28"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+<script src="feed.js"></script>
+<script>
+  const $ = id => document.getElementById(id);
+  const fresh = OFSeen();
+  let lastReached = null, built = "";
+  function pos(g, stops) {                      // evenly spaced stations; the engine moves linearly between them
+    const n = stops.length, at = stops.map(s => s.at);
+    if (g <= 0) return 0;
+    for (let i = 0; i < n; i++) {
+      const lo = i ? at[i - 1] : 0, hi = at[i];
+      if (g < hi) return ((i + (g - lo) / (hi - lo)) / n) * 100;
+    }
+    return 100;
+  }
+  function toast(t) { const el = $("toast"); el.textContent = t; el.classList.remove("go"); void el.offsetWidth; el.classList.add("go"); }
+  OFFeed(d => {
+    const t = d.train || {}, stops = t.stops || [], g = t.gifts || 0;
+    $("band").classList.remove("hidden");
+    $("g").textContent = g;
+    const key = JSON.stringify(stops);
+    if (key !== built) {
+      built = key;
+      $("track").querySelectorAll(".stop").forEach(e => e.remove());
+      stops.forEach((s, i) => {
+        const el = document.createElement("div"); el.className = "stop"; el.style.left = ((i + 1) / stops.length) * 100 + "%";
+        el.innerHTML = `<div class="dot"></div><div class="at">${s.at} gifts</div><div class="lab">${esc(s.label)}</div>`;
+        $("track").appendChild(el);
+      });
+    }
+    const p = pos(g, stops);
+    $("done").style.width = p + "%"; $("engine").style.left = p + "%";
+    $("track").querySelectorAll(".stop").forEach((el, i) => {
+      el.classList.toggle("on", g >= stops[i].at);
+      el.classList.toggle("next", t.next && stops[i].at === t.next.at);
+    });
+    $("how").textContent = t.next ? `${t.next.at - g} more gifts to the next stop: ${t.next.label}.`
+                                  : "End of the line. Every stop unlocked this week. Thank you.";
+    $("top").innerHTML = (t.top && t.top.length) ? "Top gifters" + t.top.map(x => `<div>${esc(x.name)}<span>${x.n}</span></div>`).join("") : "";
+    const reached = t.reached || 0;
+    if (lastReached !== null && reached > lastReached) toast("Stop unlocked: " + stops[reached - 1].label);
+    else for (const e of fresh(d.recent)) if (e.kind === "gift") { toast(`${e.name} gifted ${e.n}!`); break; }
+    lastReached = reached;
+  });
+  function esc(s) { return String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+</script>
+</body>
+</html>
